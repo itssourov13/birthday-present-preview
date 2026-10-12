@@ -1,5 +1,7 @@
 # `/preview` Source Map
 
+> File paths in this report are relative to the repository root.
+
 Target page: `https://www.creategiftwebsite.com/preview`
 Capture source: `reference/preview-capture/preview.html`
 
@@ -48,7 +50,7 @@ The following root-relative public assets were not included in the original HTML
 | /raksha_bandhan.mp3 | reference/live-assets-20261012/raksha_bandhan.mp3 |
 | /song.mp3 | reference/live-assets-20261012/song.mp3 |
 
-/song.mp3 was seen requested by the live Chromium runtime. The five .png URLs currently return JPEG-signature bytes despite the .png names and image/png response type; this mismatch is preserved and documented. See reference/live-audit-20261012/LIVE-MEDIA-DOWNLOADS.json and BROWSER-RUNTIME-OBSERVATIONS.md.
+/song.mp3 was seen requested by the live Chromium runtime. The five .png URLs currently return JPEG-signature bytes despite the .png names and image/png response type; this mismatch is preserved and documented. See reference/live-audit-20261012/LIVE-MEDIA-DOWNLOADS.json and reference/live-audit-20261012/BROWSER-RUNTIME-OBSERVATIONS.md.
 
 
 ## CSS dependency audit
@@ -66,6 +68,6 @@ Browser runtime showed two extra JavaScript chunks being prefetched by the Home 
 
 ## Runtime-flow verification and current limits
 
-The default birthday flow was exercised through the final opened letter; Rakhi-specific screens were smoke-rendered and their SVG/audio dependencies loaded. See reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md for stage details and limits. The combined source/dependency inventory covers 50 first-party paths with 50 byte-identical local copies. Fifteen additional fonts and eleven journey media files recovered from the live origin are documented in LOCAL-ASSET-GAPS.md.
+The default birthday flow was exercised through the final opened letter; Rakhi-specific screens were smoke-rendered and their SVG/audio dependencies loaded. See reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md for stage details and limits. The combined source/dependency inventory covers 50 first-party paths with 50 byte-identical local copies. Fifteen additional fonts and eleven journey media files recovered from the live origin are documented in reference/reports/LOCAL-ASSET-GAPS.md.
 
 No source-map payload was recovered: no sourceMappingURL directive was found in selected JS/CSS, and four likely .map endpoints returned 403. This remains a compiled source recovery package rather than the original uncompiled source tree or a standalone runnable application.
