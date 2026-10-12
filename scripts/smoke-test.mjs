@@ -15,8 +15,14 @@ const manifest = JSON.parse(await readFile(path.join(DIST, "build-manifest.json"
 
 assert.match(homepage, /Some moments/);
 assert.match(homepage, /countdown-panel/);
+assert.equal([...homepage.matchAll(/class="time-unit"/g)].length, 4, "Homepage should render four countdown units.");
+assert.match(homepage, /class="gift-tag"/);
 assert.match(homepage, /href="\/preview"/);
 assert.match(homepageCss, /prefers-reduced-motion/);
+assert.match(homepageCss, /@keyframes rise-in \{ from \{ opacity: 1;/,
+  "Intro motion must never hide the headline or gift if animation rendering is delayed.");
+assert.match(homepageCss, /@keyframes orbit-one/);
+assert.match(homepageCss, /@keyframes halo-breathe/);
 assert.equal(manifest.homepage, "/");
 assert.equal(manifest.homeNavigation, "/");
 assert.match(html, /A surprise awaits you/);
