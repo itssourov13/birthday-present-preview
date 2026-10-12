@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0610">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A little more time, a little more magic. A birthday surprise is waiting.">
+  <title>A Little Surprise</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/countdown.css">
+</head>
+<body>
+  <!-- Atmosphere: purely decorative, sits behind everything. -->
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere__glow atmosphere__glow--rose"></div>
+    <div class="atmosphere__glow atmosphere__glow--gold"></div>
+    <div class="atmosphere__dust"></div>
+    <div class="atmosphere__dust atmosphere__dust--twinkle"></div>
+    <div class="atmosphere__grain"></div>
+    <div class="atmosphere__vignette"></div>
+  </div>
+
+  <div class="page">
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="A Little Surprise — home">
+        <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-opacity=".5"/>
+          <path d="m20 7.5 3.2 9.3 9.3 3.2-9.3 3.2-3.2 9.3-3.2-9.3-9.3-3.2 9.3-3.2L20 7.5Z" fill="currentColor"/>
+        </svg>
+        <span class="brand__name"><span>A Little</span><span>Surprise</span></span>
+      </a>
+      <p class="date-chip">
+        <span class="date-chip__label">A moment made for you</span>
+        <span class="date-chip__rule" aria-hidden="true"></span>
+        <time datetime="2026-10-14">Oct 14, 2026</time>
+      </p>
+    </header>
+
+    <main class="hero" id="top">
+      <!-- ───────── Copy column ───────── -->
+      <section class="copy" aria-labelledby="headline">
+        <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Just a little note for you</p>
+
+        <h1 id="headline">
+          <span class="line">Some moments</span>
+          <span class="line">are worth</span>
+          <span class="line">the <em>wait.</em></span>
+        </h1>
+
+        <p class="intro">A little more time. A little more magic. <span class="intro__rest">Something special is waiting just for&nbsp;you.</span></p>
+
+        <section class="plate" aria-labelledby="plate-title">
+          <header class="plate__head">
+            <h2 class="plate__title" id="plate-title"><span class="plate__dot" aria-hidden="true"></span>Counting down to your moment</h2>
+            <span class="plate__star" aria-hidden="true">✦</span>
+          </header>
+
+          <!-- DESIGN PLACEHOLDERS ONLY — static digits, not a live countdown.
+               Integration: replace the four .unit__num values with real data later. -->
+          <div class="plate__units" role="group" aria-label="Time remaining (static design placeholder)">
+            <div class="unit"><span class="unit__num">01</span><span class="unit__label">Days</span></div>
+            <div class="unit"><span class="unit__num">06</span><span class="unit__label">Hours</span></div>
+            <div class="unit"><span class="unit__num">24</span><span class="unit__label">Minutes</span></div>
+            <div class="unit"><span class="unit__num">38</span><span class="unit__label">Seconds</span></div>
+          </div>
+
+          <footer class="plate__foot">
+            <p class="plate__note">Good things are worth waiting for.</p>
+            <span class="plate__track" aria-hidden="true"></span>
+            <p class="plate__sign">Made for you <span aria-hidden="true">♥</span></p>
+          </footer>
+        </section>
+
+        <div class="actions">
+          <!-- Keep the existing same-domain preview journey; unlock logic is a separate phase. -->
+          <a class="cta" href="/preview">
+            <span class="cta__text">Continue</span>
+            <span class="cta__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <p class="actions__caption"><span aria-hidden="true">✦</span> Your little moment is almost here</p>
+        </div>
+      </section>
+
+      <!-- ───────── Stage column ───────── -->
+      <section class="stage" aria-label="Illustration of a wrapped birthday present">
+        <div class="stage__arch stage__arch--outer" aria-hidden="true"></div>
+        <div class="stage__arch stage__arch--inner" aria-hidden="true"></div>
+        <div class="stage__light" aria-hidden="true"></div>
+
+        <img class="stage__gift" src="assets/gift.svg" width="600" height="600"
+             alt="A rose-pink gift tied with a golden satin bow and a small heart-shaped tag">
+
+        <!-- Decorative date seal -->
+        <svg class="stage__seal" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+          <defs>
+            <path id="seal-ring" d="M70 70m-53 0a53 53 0 1 1 106 0a53 53 0 1 1-106 0"/>
+            <radialGradient id="seal-fill" cx=".35" cy=".3" r=".9"><stop stop-color="#4b2445"/><stop offset="1" stop-color="#241028"/></radialGradient>
+          </defs>
+          <circle cx="70" cy="70" r="68" fill="url(#seal-fill)" stroke="#e9c98d" stroke-opacity=".45"/>
+          <circle cx="70" cy="70" r="40" fill="none" stroke="#e9c98d" stroke-opacity=".35" stroke-dasharray="1.5 4" stroke-linecap="round"/>
+          <text class="seal__ring"><textPath href="#seal-ring" startOffset="0" textLength="326" lengthAdjust="spacing">OCT 14 · 2026 · A LITTLE SURPRISE ·</textPath></text>
+          <text class="seal__month" x="70" y="62" text-anchor="middle">OCT</text>
+          <text class="seal__day" x="70" y="92" text-anchor="middle">14</text>
+        </svg>
+
+        <p class="stage__caption" aria-hidden="true"><span></span>The wait is part of the magic<span></span></p>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p><span class="colophon__star" aria-hidden="true">✦</span> A little moment. A lasting memory.</p>
+      <p>Made with <span class="colophon__heart" role="img" aria-label="love">♥</span> and a little magic</p>
+    </footer>
+  </div>
+</body>
+</html>

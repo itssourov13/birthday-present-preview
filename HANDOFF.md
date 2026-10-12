@@ -11,20 +11,27 @@ The repository packages the public `https://www.creategiftwebsite.com/preview` e
 **Requirement:** Node.js 20 or newer. No third-party npm packages are required.
 
 ```bash
-npm run build    # Create the static site in dist/
-npm run start    # Serve locally at http://127.0.0.1:4179/preview
-npm test         # Rebuild and run HTTP/resource smoke tests
+npm run build    # Create both homepage and preview in dist/
+npm run start    # Serve locally at http://127.0.0.1:4179/
+npm test         # Rebuild and run routing/resource smoke tests
 sha256sum -c SOURCE-MANIFEST.sha256  # Verify source/evidence hashes
 ```
 
+The root URL (`/`) serves the countdown homepage; `/preview` serves the recovered birthday experience. The homepage currently uses static example digits for layout review only. Countdown calculation, the October 14 unlock state, and date-based access behavior are intentionally not implemented in this UI phase. The `Continue` link stays enabled for testing until that follow-up is designed and verified.
+
 To use another local port, set `PORT` when starting the server, for example `PORT=4180 npm run start`. `npm test` builds `dist/` before checking the generated output. The `dist/` directory is generated and ignored by Git.
+
+### Countdown mobile performance
+
+The mobile/touch-first CSS profile suppresses the decorative SVG turbulence grain, disables continuous star/gift/light animation, removes CSS blur/drop-shadow filters from the animated gift/light, and disables the countdown plate's backdrop blur. Introductory opacity/transform reveals remain for visual polish; the page still supports `prefers-reduced-motion`. These are code-level rendering-cost mitigations, not a claim of measured FPS or power consumption across physical phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md). The smoke suite guards these mobile overrides against accidental removal.
 
 ## How the package is assembled
 
-- `scripts/build.mjs` reads `reference/live-audit-20261012/preview.live.html`, recovered bundles, captured public assets, recovered journey media, and additional fonts; it writes the deployable files and build manifest to `dist/`.
-- `scripts/serve.mjs` is the dependency-free local HTTP server. It handles the `/` redirect, `/preview`, static MIME types, path containment, and audio byte-range responses.
+- `site/index.html` and `site/countdown.css` define the responsive countdown homepage, with a custom SVG gift illustration and CSS ambience. The displayed time is currently a visual placeholder, not a running clock.
+- `scripts/build.mjs` reads `reference/live-audit-20261012/preview.live.html`, recovered bundles, captured public assets, recovered journey media, additional fonts, and the homepage files; it writes the deployable files and build manifest to `dist/`.
+- `scripts/serve.mjs` is the dependency-free local HTTP server. It serves `/` as the homepage and `/preview` as the recovered experience, with static MIME types, path containment, and audio byte-range responses.
 - `scripts/smoke-test.mjs` checks required first-party resources, generated route behavior, MIME handling, path containment, and MP3 range requests.
-- `vercel.json` configures `npm run build`, `dist`, the root redirect, and the `/preview` rewrite for Vercel.
+- `vercel.json` configures `npm run build`, `dist`, the `/preview` rewrite, and response headers for Vercel. The static root `index.html` is served directly at `/`.
 - `source/raw-bundles/` preserves the recovered JavaScript chunks; readable/split module folders are analysis aids, not the deployed entry point.
 
 ## Documentation and evidence
@@ -41,7 +48,7 @@ To use another local port, set `PORT` when starting the server, for example `POR
 
 The 2026-10-12 audit recorded 50/50 inventoried first-party paths with byte-identical local copies, 12 JavaScript chunks, 2 stylesheets, 22 WOFF2 dependencies, and 11 journey-media assets. The default birthday path was exercised through the final letter; the Rakhi variant received smoke coverage but its complete drag/tie and sweets-completion interactions were not exhaustively tested. The microphone candle-blowing interaction was not tested.
 
-The captured HTML is intentionally kept close to the live page. Its Home control navigates to the original site's separate Home route, not a route included in this package. No original source maps, private backend code, arbitrary custom-builder uploads, or every possible user-specific journey were recovered. Audit results are historical verification evidence; rerun `npm test` and the manifest check after making changes.
+The captured birthday HTML is intentionally kept close to the live page. Its compiled Home control is rewritten in generated output to return to `/` on this deployment. The original recovered source bundle remains unchanged. No original source maps, private backend code, arbitrary custom-builder uploads, or every possible user-specific journey were recovered. Audit results are historical verification evidence; rerun `npm test` and the manifest check after making changes.
 
 Before publishing to a different domain, review analytics and SEO/social metadata retained in the captured HTML and confirm permission to republish the code and assets.
 

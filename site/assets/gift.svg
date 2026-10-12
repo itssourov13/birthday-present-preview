@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <title>A rose-pink gift tied with a golden satin bow and a small heart tag</title>
+  <desc>An isometric present in deep rose, wrapped with champagne-gold ribbon, resting on a softly lit floor with drifting sparkles.</desc>
+  <style>
+    .tw { animation: tw 5.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .tw.d1 { animation-delay: -1.2s; } .tw.d2 { animation-delay: -2.6s; } .tw.d3 { animation-delay: -3.9s; } .tw.d4 { animation-delay: -4.7s; }
+    .sway { animation: sway 8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 0; }
+    @keyframes tw { 0%,100% { opacity: .35; transform: scale(.78); } 50% { opacity: 1; transform: scale(1.08); } }
+    @keyframes sway { 0%,100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+    @media (prefers-reduced-motion: reduce) { .tw, .sway { animation: none; } .tw { opacity: .85; } }
+  </style>
+  <defs>
+    <!-- Surfaces -->
+    <linearGradient id="bodyL" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F28BB2"/><stop offset=".55" stop-color="#DB5D90"/><stop offset="1" stop-color="#B83D75"/></linearGradient>
+    <linearGradient id="bodyR" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#C7487E"/><stop offset=".6" stop-color="#9A2D61"/><stop offset="1" stop-color="#6A1A43"/></linearGradient>
+    <linearGradient id="lidL" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFB3CF"/><stop offset="1" stop-color="#EE79A4"/></linearGradient>
+    <linearGradient id="lidR" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#DB5F93"/><stop offset="1" stop-color="#A9356B"/></linearGradient>
+    <linearGradient id="lidTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFD3E4"/><stop offset=".55" stop-color="#FFB0CD"/><stop offset="1" stop-color="#F48CB4"/></linearGradient>
+    <!-- Satin gold -->
+    <linearGradient id="goldL" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#C79A52"/><stop offset=".3" stop-color="#F6E1AE"/><stop offset=".6" stop-color="#E0B870"/><stop offset="1" stop-color="#B08040"/></linearGradient>
+    <linearGradient id="goldR" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#A97B3C"/><stop offset=".35" stop-color="#DDB46B"/><stop offset=".65" stop-color="#C4964E"/><stop offset="1" stop-color="#8A5E28"/></linearGradient>
+    <linearGradient id="goldTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1C9"/><stop offset=".5" stop-color="#EBCB8B"/><stop offset="1" stop-color="#D4A55D"/></linearGradient>
+    <linearGradient id="goldBow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF3CE"/><stop offset=".45" stop-color="#E8C47E"/><stop offset=".8" stop-color="#C49549"/><stop offset="1" stop-color="#E9CB8D"/></linearGradient>
+    <linearGradient id="goldInner" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A3732F"/><stop offset="1" stop-color="#6E4A1E"/></linearGradient>
+    <!-- Shading overlays -->
+    <linearGradient id="lidShadowL" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="52" gradientTransform="matrix(1 .5774 0 1 0 183.6)"><stop stop-color="#2A0A1C" stop-opacity=".5"/><stop offset="1" stop-color="#2A0A1C" stop-opacity="0"/></linearGradient>
+    <linearGradient id="lidShadowR" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="52" gradientTransform="matrix(1 -.5774 0 1 0 530)"><stop stop-color="#220817" stop-opacity=".55"/><stop offset="1" stop-color="#220817" stop-opacity="0"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".26"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="floorGlow" cx=".5" cy=".5" r=".5"><stop stop-color="#FF9DC4" stop-opacity=".5"/><stop offset=".45" stop-color="#C74F8B" stop-opacity=".2"/><stop offset="1" stop-color="#6B2A63" stop-opacity="0"/></radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFE9C2" stop-opacity="0"/><stop offset=".35" stop-color="#FFE0C0" stop-opacity=".16"/><stop offset=".85" stop-color="#FFB8D4" stop-opacity=".1"/><stop offset="1" stop-color="#FFB8D4" stop-opacity="0"/></linearGradient>
+    <radialGradient id="rim" cx=".5" cy=".5" r=".5"><stop offset=".6" stop-color="#EFD095" stop-opacity="0"/><stop offset="1" stop-color="#EFD095" stop-opacity=".45"/></radialGradient>
+    <!-- Pattern: tiny embossed sparkles on the paper -->
+    <pattern id="spark" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M12 7l1.6 4.4L18 13l-4.4 1.6L12 19l-1.6-4.4L6 13l4.4-1.6z" fill="#FFE6F0" fill-opacity=".5"/>
+      <circle cx="35" cy="32" r="1.3" fill="#FFE6F0" fill-opacity=".45"/>
+      <path d="M36 9l.9 2.1L39 12l-2.1.9L36 15l-.9-2.1L33 12l2.1-.9z" fill="#FFE6F0" fill-opacity=".32"/>
+    </pattern>
+    <pattern id="sparkL" href="#spark" patternTransform="matrix(1 .5774 0 1 0 0)"/>
+    <pattern id="sparkR" href="#spark" patternTransform="matrix(1 -.5774 0 1 0 0)"/>
+    <filter id="blur14" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="blur6" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="blur22" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+    <path id="star" d="M0-10C1.4-3.4 3.4-1.4 10 0 3.4 1.4 1.4 3.4 0 10-1.4 3.4-3.4 1.4-10 0-3.4-1.4-1.4-3.4 0-10Z"/>
+  </defs>
+
+  <!-- Light from above and the lit floor -->
+  <path d="M255 0h90l150 470H105z" fill="url(#beam)" filter="url(#blur22)"/>
+  <ellipse cx="300" cy="468" rx="285" ry="92" fill="url(#floorGlow)"/>
+  <g stroke="#EFD095" fill="none">
+    <ellipse cx="300" cy="468" rx="232" ry="70" stroke-opacity=".22"/>
+    <ellipse cx="300" cy="468" rx="276" ry="86" stroke-opacity=".12"/>
+    <ellipse cx="300" cy="468" rx="196" ry="58" stroke-opacity=".3" stroke-dasharray="1.5 7" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="300" cy="476" rx="196" ry="56" fill="#220A1E" opacity=".62" filter="url(#blur14)"/>
+
+  <!-- ============ GIFT BODY ============ -->
+  <!-- left face -->
+  <path d="M170 275 300 350V540L170 465Z" fill="url(#bodyL)"/>
+  <path d="M170 275 300 350V540L170 465Z" fill="url(#sparkL)"/>
+  <path d="M170 275 300 350V540L170 465Z" fill="url(#sheen)"/>
+  <!-- right face -->
+  <path d="M300 350 430 275V465L300 540Z" fill="url(#bodyR)"/>
+  <path d="M300 350 430 275V465L300 540Z" fill="url(#sparkR)" opacity=".7"/>
+  <!-- shadow cast by the lid -->
+  <path d="M170 275 300 350V540L170 465Z" fill="url(#lidShadowL)"/>
+  <path d="M300 350 430 275V465L300 540Z" fill="url(#lidShadowR)"/>
+  <!-- ribbon bands on body -->
+  <path d="M218 302.7 252 322.3V512.3L218 492.7Z" fill="url(#goldL)"/>
+  <path d="M218 302.7v190" stroke="#FFF4D2" stroke-opacity=".55"/>
+  <path d="M348 322.3 382 302.7V492.7L348 512.3Z" fill="url(#goldR)"/>
+  <path d="M348 322.3v190" stroke="#F3D9A0" stroke-opacity=".35"/>
+  <!-- edges -->
+  <path d="M300 350V540" stroke="#FFC4DA" stroke-opacity=".55" stroke-width="1.2"/>
+  <path d="M170 275V465L300 540 430 465V275" stroke="#FFC4DA" stroke-opacity=".18"/>
+
+  <!-- ============ LID ============ -->
+  <path d="M158.3 229 300 310.8V356.8L158.3 275Z" fill="url(#lidL)"/>
+  <path d="M300 310.8 441.7 229V275L300 356.8Z" fill="url(#lidR)"/>
+  <path d="M158.3 229 300 310.8V356.8L158.3 275Z" fill="url(#sheen)" opacity=".7"/>
+  <!-- lid bands -->
+  <path d="M212.2 260.1 246.2 279.7V325.75L212.2 306.1Z" fill="url(#goldL)"/>
+  <path d="M353.85 279.7 387.85 260.1V306.1L353.85 325.7Z" fill="url(#goldR)"/>
+  <!-- lid top -->
+  <path d="M300 310.8 441.7 229 300 147.2 158.3 229Z" fill="url(#lidTop)"/>
+  <path d="M300 310.8 441.7 229 300 147.2 158.3 229Z" stroke="#FFF0F6" stroke-opacity=".7" stroke-width="1.2"/>
+  <!-- lid top ribbon crossing -->
+  <path d="M212.2 260.1 246.2 279.7 387.8 197.9 353.8 178.3Z" fill="url(#goldTop)"/>
+  <path d="M353.85 279.7 387.85 260.1 246.25 178.3 212.25 197.9Z" fill="url(#goldTop)"/>
+  <path d="M212.2 260.1 353.8 178.3M246.2 279.7 387.8 197.9M353.85 279.7 212.25 197.9M387.85 260.1 246.25 178.3" stroke="#B88A45" stroke-opacity=".35" stroke-width=".8"/>
+  <!-- lid edge highlights -->
+  <path d="M158.3 229V275L300 356.8 441.7 275V229" stroke="#FFD0E2" stroke-opacity=".5"/>
+  <path d="M300 310.8V356.8" stroke="#FFF0F6" stroke-opacity=".6" stroke-width="1.2"/>
+
+  <!-- ============ BOW ============ -->
+  <ellipse cx="300" cy="236" rx="46" ry="16" fill="#3A0F27" opacity=".4" filter="url(#blur6)"/>
+  <!-- upper loops (behind) -->
+  <g transform="translate(300 222)">
+    <g transform="rotate(-18)">
+      <path d="M0 0C-8-34-18-70-6-88-0-98 10-92 12-78 16-52 8-22 0 0Z" fill="url(#goldBow)" stroke="#FFF1C4" stroke-opacity=".7" stroke-width="1"/>
+      <path d="M1-6C-5-34-12-62-4-78 1-84 6-80 7-70 9-48 5-24 1-6Z" fill="url(#goldInner)" opacity=".85"/>
+    </g>
+    <g transform="rotate(20)">
+      <path d="M0 0C8-30 22-62 34-76 42-84 52-76 48-62 40-36 20-14 0 0Z" fill="url(#goldBow)" stroke="#FFF1C4" stroke-opacity=".7" stroke-width="1"/>
+      <path d="M4-6C12-28 24-52 34-64 38-68 43-64 41-56 35-36 20-18 4-6Z" fill="url(#goldInner)" opacity=".85"/>
+    </g>
+  </g>
+  <!-- side loops -->
+  <g transform="translate(300 224)">
+    <g id="loopL">
+      <path d="M0 2C-26-34-76-66-114-50-146-36-134 6-92 22-56 34-24 18 0 6Z" fill="url(#goldBow)" stroke="#FFF1C4" stroke-opacity=".8" stroke-width="1.1"/>
+      <path d="M-8 0C-30-26-66-48-94-38-116-30-108-4-76 8-48 18-26 10-8 4Z" fill="url(#goldInner)" opacity=".9"/>
+      <path d="M-14-6C-36-24-64-38-88-32" stroke="#FFF3CE" stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M-20 24C-46 28-78 22-104 4" stroke="#FFF3CE" stroke-opacity=".6" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+    <g transform="scale(-1 1)">
+      <path d="M0 2C-26-34-76-66-114-50-146-36-134 6-92 22-56 34-24 18 0 6Z" fill="url(#goldBow)" stroke="#FFF1C4" stroke-opacity=".8" stroke-width="1.1"/>
+      <path d="M-8 0C-30-26-66-48-94-38-116-30-108-4-76 8-48 18-26 10-8 4Z" fill="url(#goldInner)" opacity=".9"/>
+      <path d="M-14-6C-36-24-64-38-88-32" stroke="#FFF3CE" stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M-20 24C-46 28-78 22-104 4" stroke="#FFF3CE" stroke-opacity=".6" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- tails resting on the lid -->
+  <path d="M292 232C276 252 258 270 238 284L254 292 250 304 276 290C288 276 296 256 298 238Z" fill="url(#goldTop)" stroke="#FFF1C4" stroke-opacity=".7" stroke-width="1"/>
+  <path d="M308 232C324 252 344 268 366 278L352 290 360 300 332 290C316 276 308 256 304 238Z" fill="url(#goldBow)" stroke="#FFF1C4" stroke-opacity=".6" stroke-width="1"/>
+  <!-- knot -->
+  <ellipse cx="300" cy="226" rx="21" ry="17" fill="url(#goldBow)" stroke="#FFF6D8" stroke-opacity=".9" stroke-width="1.2"/>
+  <path d="M290 216C296 210 306 210 312 216" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M300 211v30" stroke="#8D6428" stroke-opacity=".35"/>
+
+  <!-- ============ TAG ============ -->
+  <g class="sway">
+    <path d="M318 236C348 262 386 290 404 322" stroke="#2A0A1C" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+    <path d="M318 234C348 260 386 288 404 320" stroke="#F6E3B4" stroke-width="1.7" stroke-linecap="round"/>
+    <g transform="matrix(1 -.5774 0 1 402 320) rotate(-5)">
+      <path d="M-22 14 0 0 22 14V62Q22 68 16 68H-16Q-22 68 -22 62Z" fill="#2A0A1C" opacity=".35" transform="translate(3 5)"/>
+      <path d="M-22 14 0 0 22 14V62Q22 68 16 68H-16Q-22 68 -22 62Z" fill="url(#goldBow)" stroke="#FFF3CE" stroke-opacity=".9" stroke-width="1.1"/>
+      <path d="M-17 16 0 4 17 16V60Q17 63 14 63H-14Q-17 63 -17 60Z" stroke="#8D6428" stroke-opacity=".5" stroke-width=".8"/>
+      <circle cx="0" cy="12" r="3" fill="#6E4A1E"/><circle cx="0" cy="12" r="1.2" fill="#FFF3CE"/>
+      <path d="M0 52C-14 41-16 31-9 28-5 26-1 28 0 32 1 28 5 26 9 28 16 31 14 41 0 52Z" fill="#B9356F"/>
+      <path d="M-8 31C-6 29-3 29-2 31" stroke="#FFD0E2" stroke-opacity=".8" stroke-width="1" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ============ SPARKLES ============ -->
+  <g transform="translate(112 168) scale(1.7)"><use href="#star" class="tw" fill="#FFE8A8"/></g>
+  <g transform="translate(488 238) scale(1.25)"><use href="#star" class="tw d2" fill="#F8B4D0"/></g>
+  <g transform="translate(440 112) scale(1.05)"><use href="#star" class="tw d1" fill="#FFE8A8"/></g>
+  <g transform="translate(150 330) scale(.8)"><use href="#star" class="tw d3" fill="#F8C8DA"/></g>
+  <g transform="translate(228 70) scale(.7)"><use href="#star" class="tw d4" fill="#FFF0C6"/></g>
+  <g transform="translate(522 388) scale(.65)"><use href="#star" class="tw d2" fill="#FFE8A8"/></g>
+  <g fill="#FFE9B3"><circle cx="396" cy="150" r="2"/><circle cx="142" cy="108" r="1.5" fill="#FFF2D8"/><circle cx="84" cy="262" r="1.6" fill="#FFB8D2"/><circle cx="506" cy="316" r="1.7"/><circle cx="352" cy="46" r="1.4" fill="#FFF2D8"/><circle cx="60" cy="400" r="1.4" fill="#FFE9B3"/><circle cx="548" cy="176" r="1.4" fill="#FFB8D2"/></g>
+</svg>

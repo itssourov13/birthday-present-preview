@@ -80,15 +80,15 @@ for (const name of [...jsNames, ...cssNames]) {
   const dest = path.join(chunkDestination, name);
   const record = await copyAsset(roots, name, dest);
 
-  // Keep the separate Home route functional without routing back into this preview-only deployment.
+  // Route the recovered Home control to this project's new countdown homepage.
   if (name === "44irkf401yrm6.js") {
     let code = await readFile(dest, "utf8");
     const homeNeedle = '"/?showHome=1"';
     const occurrences = code.split(homeNeedle).length - 1;
     if (occurrences !== 1) fail("Expected one recovered Home-route reference; found " + occurrences + ".");
-    code = code.replace(homeNeedle, '"https://www.creategiftwebsite.com/?showHome=1"');
+    code = code.replace(homeNeedle, '"/"');
     await writeFile(dest, code);
-    record.homeNavigation = "points to the live site's separate Home route";
+    record.homeNavigation = "/";
   }
   copied.push(record);
 }
@@ -140,8 +140,20 @@ for (const name of rootAssetNames) {
   copied.push(await copyAsset(sourceRoots, name, path.join(DIST, name)));
 }
 
+// Copy the new countdown landing page as the static root while keeping /preview separate.
+for (const [sourceName, outputName] of [["index.html", "index.html"], ["countdown.css", "countdown.css"]]) {
+  await cp(path.join(ROOT, "site", sourceName), path.join(DIST, outputName));
+}
+
+// Keep Claude's self-contained countdown UI artwork and local fonts in the production package.
+const countdownUiAssetSource = path.join(ROOT, "site", "assets");
+const countdownUiFiles = await listFiles(countdownUiAssetSource);
+await cp(countdownUiAssetSource, path.join(DIST, "assets"), { recursive: true });
+
 const manifest = {
   source: "reference/live-audit-20261012/preview.live.html",
+  homepage: "/",
+  homepageStylesheet: "/countdown.css",
   route: "/preview",
   output: "preview.html",
   jsChunks: jsNames.length,
@@ -149,8 +161,9 @@ const manifest = {
   woff2Dependencies: fontNames.size,
   rootAssets: rootAssetNames.length,
   routeMediaAssets: 11,
+  countdownUiAssets: countdownUiFiles.length,
   packagedFirstPartyResources: jsNames.length + cssNames.length + fontNames.size + 3 + 11,
-  homeNavigation: "https://www.creategiftwebsite.com/?showHome=1",
+  homeNavigation: "/",
   assets: copied
 };
 await writeFile(path.join(DIST, "build-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
@@ -161,4 +174,6 @@ console.log("  Live CSS files: " + cssNames.length);
 console.log("  WOFF2 dependencies: " + fontNames.size);
 console.log("  Root logos/icons/manifest and journey media: " + rootAssetNames.length);
 console.log("  Total inventoried first-party paths: " + manifest.packagedFirstPartyResources);
-console.log("  Landing route: /preview (root redirects to /preview)");
+console.log("  Countdown UI assets (SVG, fonts and licences): " + countdownUiFiles.length);
+console.log("  Homepage: / (countdown UI; timer logic deferred)");
+console.log("  Birthday experience: /preview");
