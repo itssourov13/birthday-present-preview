@@ -40,12 +40,6 @@ const server = http.createServer(async (req, res) => {
   }
 
   const url = new URL(req.url || "/", "http://" + HOST + ":" + PORT);
-  if (url.pathname === "/") {
-    res.writeHead(308, { Location: "/preview", "Cache-Control": "no-store" });
-    res.end();
-    return;
-  }
-
   let pathname;
   try {
     pathname = decodeURIComponent(url.pathname);
@@ -53,9 +47,11 @@ const server = http.createServer(async (req, res) => {
     respond(res, 400, "Bad URL encoding");
     return;
   }
-  const relativePath = pathname === "/preview" || pathname === "/preview/"
-    ? "preview.html"
-    : pathname.replace(/^\/+/, "");
+  const relativePath = pathname === "/"
+    ? "index.html"
+    : pathname === "/preview" || pathname === "/preview/"
+      ? "preview.html"
+      : pathname.replace(/^\/+/, "");
   const filePath = path.resolve(DIST, relativePath);
   if (filePath !== DIST && !filePath.startsWith(DIST + path.sep)) {
     respond(res, 403, "Forbidden");
@@ -139,6 +135,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log("Preview available at http://" + HOST + ":" + PORT + "/preview");
+  console.log("Countdown homepage available at http://" + HOST + ":" + PORT + "/");
+  console.log("Birthday experience available at http://" + HOST + ":" + PORT + "/preview");
   console.log("Press Ctrl+C to stop the local server.");
 });

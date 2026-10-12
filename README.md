@@ -18,7 +18,7 @@ npm run build
 npm run start
 ```
 
-Open [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview). The root URL redirects to `/preview`. To use another port, start the server with `PORT=4180 npm run start`.
+Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the new countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. To use another port, start the server with `PORT=4180 npm run start`. The countdown numbers are currently visual placeholders; clock and unlock behavior are a separate follow-up phase.
 
 Run the build and smoke tests together with:
 
@@ -28,12 +28,13 @@ npm test
 
 ## Deploy to Vercel
 
-Import the repository into Vercel and keep the included `vercel.json` settings: `npm run build` is the build command and `dist` is the output directory. The root route redirects to `/preview`.
+Import the repository into Vercel and keep the included `vercel.json` settings: `npm run build` is the build command and `dist` is the output directory. The root route serves the countdown homepage; `/preview` serves the recovered birthday experience.
 
 ## Repository guide
 
 | Path | Purpose |
 | --- | --- |
+| `site/` | Countdown homepage HTML and its responsive stylesheet |
 | `scripts/` | Static build, local server, and smoke tests |
 | `source/raw-bundles/` | Byte-preserving copies of recovered JavaScript chunks |
 | `source/` | Readable and split modules for analysis; not the build entry point |
@@ -43,7 +44,7 @@ Import the repository into Vercel and keep the included `vercel.json` settings: 
 
 ## Important notes
 
-This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The Home control still links to the live site's separate Home route. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
+This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The recovered experience's Home control now returns to this project's countdown homepage. The countdown display is UI-only at this stage; no target-time calculation or date-based gate has been implemented yet. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
 
 ## Integrity check
 

@@ -3,13 +3,6 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/preview",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/preview",

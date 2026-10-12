@@ -9,8 +9,16 @@ import { setTimeout as delay } from "node:timers/promises";
 const ROOT = process.cwd();
 const DIST = path.join(ROOT, "dist");
 const html = await readFile(path.join(DIST, "preview.html"), "utf8");
+const homepage = await readFile(path.join(DIST, "index.html"), "utf8");
+const homepageCss = await readFile(path.join(DIST, "countdown.css"), "utf8");
 const manifest = JSON.parse(await readFile(path.join(DIST, "build-manifest.json"), "utf8"));
 
+assert.match(homepage, /Some moments/);
+assert.match(homepage, /countdown-panel/);
+assert.match(homepage, /href="\/preview"/);
+assert.match(homepageCss, /prefers-reduced-motion/);
+assert.equal(manifest.homepage, "/");
+assert.equal(manifest.homeNavigation, "/");
 assert.match(html, /A surprise awaits you/);
 assert.match(html, /Tap the gift to open/);
 assert.equal(manifest.jsChunks, 12);
@@ -49,8 +57,10 @@ for (const name of mediaNames) await stat(path.join(DIST, name));
 
 const routeChunkPath = path.join(DIST, "_next/static/chunks/44irkf401yrm6.js");
 const routeChunk = await readFile(routeChunkPath, "utf8");
-assert.ok(routeChunk.includes("https://www.creategiftwebsite.com/?showHome=1"),
-  "Home button should lead to the live Home route, not loop into the preview.");
+assert.ok(routeChunk.includes('href:"/"'),
+  "Home button should lead to this project's countdown homepage.");
+assert.ok(!routeChunk.includes("https://www.creategiftwebsite.com/?showHome=1"),
+  "Home button must not send visitors to the separate live website.");
 
 async function getAvailablePort() {
   const probe = net.createServer();
@@ -90,8 +100,17 @@ try {
   assert.ok(ready, "Local server did not become ready.");
 
   const rootResponse = await fetch(origin + "/", { redirect: "manual" });
-  assert.equal(rootResponse.status, 308);
-  assert.equal(rootResponse.headers.get("location"), "/preview");
+  assert.equal(rootResponse.status, 200);
+  assert.match(rootResponse.headers.get("content-type") || "", /text\/html/);
+  assert.match(await rootResponse.text(), /Some moments/);
+
+  const homeQueryResponse = await fetch(origin + "/?showHome=1", { redirect: "manual" });
+  assert.equal(homeQueryResponse.status, 200);
+  assert.match(await homeQueryResponse.text(), /Some moments/);
+
+  const homeCssResponse = await fetch(origin + "/countdown.css");
+  assert.equal(homeCssResponse.status, 200);
+  assert.match(homeCssResponse.headers.get("content-type") || "", /text\/css/);
 
   const previewResponse = await fetch(origin + "/preview");
   assert.equal(previewResponse.status, 200);
@@ -127,6 +146,7 @@ try {
   if (server.exitCode === null) server.kill("SIGKILL");
 }
 
-console.log("PASS: generated HTML, all 50 inventoried dependencies, and Home navigation.");
-console.log("PASS: local HTTP routing, static MIME types, path containment, and audio range requests.");
+console.log("PASS: countdown homepage packaging and internal Home navigation.");
+console.log("PASS: recovered birthday HTML, all 50 inventoried dependencies, and preview route.");
+console.log("PASS: local homepage/query routing, static MIME types, path containment, and audio range requests.");
 console.log("PASS: 12 JS chunks, 2 CSS files, 22 fonts, and all 11 journey-media assets.");
