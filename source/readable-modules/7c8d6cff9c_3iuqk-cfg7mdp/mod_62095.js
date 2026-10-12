@@ -1,0 +1,123 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    HeadersAdapter: function () {
+      return s;
+    },
+    ReadonlyHeadersError: function () {
+      return i;
+    },
+  };
+  for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+  let o = e.r(21929);
+  class i extends Error {
+    constructor() {
+      super(
+        "Headers cannot be modified. Read more: https://nextjs.org/docs/app/api-reference/functions/headers",
+      );
+    }
+    static callable() {
+      throw new i();
+    }
+  }
+  class s extends Headers {
+    constructor(e) {
+      super(),
+        (this.headers = new Proxy(e, {
+          get(t, r, n) {
+            if ("symbol" == typeof r) return o.ReflectAdapter.get(t, r, n);
+            let a = r.toLowerCase(),
+              i = Object.keys(e).find((e) => e.toLowerCase() === a);
+            if (void 0 !== i) return o.ReflectAdapter.get(t, i, n);
+          },
+          set(t, r, n, a) {
+            if ("symbol" == typeof r) return o.ReflectAdapter.set(t, r, n, a);
+            let i = r.toLowerCase(),
+              s = Object.keys(e).find((e) => e.toLowerCase() === i);
+            return o.ReflectAdapter.set(t, s ?? r, n, a);
+          },
+          has(t, r) {
+            if ("symbol" == typeof r) return o.ReflectAdapter.has(t, r);
+            let n = r.toLowerCase(),
+              a = Object.keys(e).find((e) => e.toLowerCase() === n);
+            return void 0 !== a && o.ReflectAdapter.has(t, a);
+          },
+          deleteProperty(t, r) {
+            if ("symbol" == typeof r) return o.ReflectAdapter.deleteProperty(t, r);
+            let n = r.toLowerCase(),
+              a = Object.keys(e).find((e) => e.toLowerCase() === n);
+            return void 0 === a || o.ReflectAdapter.deleteProperty(t, a);
+          },
+        }));
+    }
+    static seal(e) {
+      return new Proxy(e, {
+        get(e, t, r) {
+          switch (t) {
+            case "append":
+            case "delete":
+            case "set":
+              return i.callable;
+            default:
+              return o.ReflectAdapter.get(e, t, r);
+          }
+        },
+      });
+    }
+    merge(e) {
+      return Array.isArray(e) ? e.join(", ") : e;
+    }
+    static from(e) {
+      return e instanceof Headers ? e : new s(e);
+    }
+    append(e, t) {
+      let r = this.headers[e];
+      "string" == typeof r
+        ? (this.headers[e] = [r, t])
+        : Array.isArray(r)
+          ? r.push(t)
+          : (this.headers[e] = t);
+    }
+    delete(e) {
+      delete this.headers[e];
+    }
+    get(e) {
+      let t = this.headers[e];
+      return void 0 !== t ? this.merge(t) : null;
+    }
+    has(e) {
+      return void 0 !== this.headers[e];
+    }
+    set(e, t) {
+      this.headers[e] = t;
+    }
+    forEach(e, t) {
+      for (let [r, n] of this.entries()) e.call(t, n, r, this);
+    }
+    *entries() {
+      for (let e of Object.keys(this.headers)) {
+        let t = e.toLowerCase(),
+          r = this.get(t);
+        yield [t, r];
+      }
+    }
+    *keys() {
+      for (let e of Object.keys(this.headers)) {
+        let t = e.toLowerCase();
+        yield t;
+      }
+    }
+    *values() {
+      for (let e of Object.keys(this.headers)) {
+        let t = this.get(e);
+        yield t;
+      }
+    }
+    [Symbol.iterator]() {
+      return this.entries();
+    }
+  }
+};

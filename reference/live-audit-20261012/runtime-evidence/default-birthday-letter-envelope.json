@@ -1,0 +1,78 @@
+{
+  "label": "letter-complete",
+  "buttonId": "scratch-continue-btn",
+  "before": {
+    "x": 682.5,
+    "y": 605.7031555175781,
+    "w": 236.469970703125,
+    "h": 57.20001220703125,
+    "disabled": false,
+    "text": "← Home One Last Surprise ✨ You uncovered it! 💝 🎉 Happy Birthday! 🎉 You found the hidden surprise 💝 ✨ ⭐ 💖 Read My Letter 💌 🎵"
+  },
+  "state": {
+    "text": "← Home 💌 A Letter Just For You ♥ Tap to open 💌 ↻ Watch it again 🎵",
+    "controls": [
+      {
+        "i": 0,
+        "tag": "A",
+        "id": "",
+        "role": null,
+        "text": "← Home",
+        "disabled": false,
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 95,
+          "h": 42
+        }
+      },
+      {
+        "i": 1,
+        "tag": "BUTTON",
+        "id": "open-letter-btn",
+        "role": null,
+        "text": "♥ Tap to open 💌",
+        "disabled": false,
+        "rect": {
+          "x": 533,
+          "y": 177,
+          "w": 300,
+          "h": 196
+        }
+      },
+      {
+        "i": 2,
+        "tag": "BUTTON",
+        "id": "replay-journey-btn",
+        "role": null,
+        "text": "↻ Watch it again",
+        "disabled": false,
+        "rect": {
+          "x": 614,
+          "y": 419,
+          "w": 137,
+          "h": 31
+        }
+      },
+      {
+        "i": 3,
+        "tag": "BUTTON",
+        "id": "music-btn-letter",
+        "role": null,
+        "text": "🎵",
+        "disabled": false,
+        "rect": {
+          "x": 1290,
+          "y": 825,
+          "w": 64,
+          "h": 64
+        }
+      }
+    ],
+    "media": [],
+    "backgrounds": []
+  },
+  "events": [],
+  "fails": [],
+  "exceptions": []
+}

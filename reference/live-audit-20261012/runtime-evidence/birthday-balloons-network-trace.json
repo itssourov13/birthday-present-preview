@@ -1,0 +1,33 @@
+{
+  "events": [
+    {
+      "kind": "request",
+      "id": "31472.315",
+      "url": "https://www.creategiftwebsite.com/puzzle.png",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.314",
+      "url": "https://www.creategiftwebsite.com/puzzle.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "response",
+      "id": "31472.315",
+      "url": "https://www.creategiftwebsite.com/puzzle.png",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.314",
+      "url": "https://www.creategiftwebsite.com/puzzle.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    }
+  ],
+  "fails": []
+}

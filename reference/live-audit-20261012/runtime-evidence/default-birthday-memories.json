@@ -1,0 +1,266 @@
+{
+  "label": "memories",
+  "buttonId": "memories-btn",
+  "before": {
+    "x": 682.4921875,
+    "y": 750.40625,
+    "w": 253.359375,
+    "h": 55,
+    "disabled": false,
+    "text": "← Home Happy Birthday Cutiepiee 🎂 The World Has Been Better Since ❤️ 20 YEARS 7,305 DAYS 175,320 HOURS 10,519,200 MINUTES 2 0 🔥 Relight Make a wish… 🌠 See Our Memories 🌸 🎵"
+  },
+  "state": {
+    "text": "← Home Cute Memories 💕 Our first adventure together 🌸 Stargazing till midnight ✨ Ice cream & sunshine ☀️ Cherry blossoms & you 🌺 ← swipe, or tap the photo → Next Surprise 🎁 🎵",
+    "controls": [
+      {
+        "i": 0,
+        "tag": "A",
+        "id": "",
+        "role": null,
+        "text": "← Home",
+        "disabled": false,
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 95,
+          "h": 42
+        }
+      },
+      {
+        "i": 1,
+        "tag": "BUTTON",
+        "id": "dot-0",
+        "role": null,
+        "text": "",
+        "disabled": false,
+        "rect": {
+          "x": 648,
+          "y": 591,
+          "w": 10,
+          "h": 10
+        }
+      },
+      {
+        "i": 2,
+        "tag": "BUTTON",
+        "id": "dot-1",
+        "role": null,
+        "text": "",
+        "disabled": false,
+        "rect": {
+          "x": 668,
+          "y": 591,
+          "w": 10,
+          "h": 10
+        }
+      },
+      {
+        "i": 3,
+        "tag": "BUTTON",
+        "id": "dot-2",
+        "role": null,
+        "text": "",
+        "disabled": false,
+        "rect": {
+          "x": 688,
+          "y": 591,
+          "w": 10,
+          "h": 10
+        }
+      },
+      {
+        "i": 4,
+        "tag": "BUTTON",
+        "id": "dot-3",
+        "role": null,
+        "text": "",
+        "disabled": false,
+        "rect": {
+          "x": 708,
+          "y": 591,
+          "w": 10,
+          "h": 10
+        }
+      },
+      {
+        "i": 5,
+        "tag": "BUTTON",
+        "id": "next-surprise-btn",
+        "role": null,
+        "text": "Next Surprise 🎁",
+        "disabled": false,
+        "rect": {
+          "x": 575,
+          "y": 659,
+          "w": 215,
+          "h": 55
+        }
+      },
+      {
+        "i": 6,
+        "tag": "BUTTON",
+        "id": "music-btn-mem",
+        "role": null,
+        "text": "🎵",
+        "disabled": false,
+        "rect": {
+          "x": 1290,
+          "y": 825,
+          "w": 64,
+          "h": 64
+        }
+      }
+    ],
+    "media": [
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/memory1.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      },
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/memory2.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      },
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/memory3.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      },
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      }
+    ],
+    "backgrounds": []
+  },
+  "events": [
+    {
+      "kind": "request",
+      "id": "31472.294",
+      "url": "https://www.creategiftwebsite.com/memory1.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.295",
+      "url": "https://www.creategiftwebsite.com/memory2.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.296",
+      "url": "https://www.creategiftwebsite.com/memory3.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.297",
+      "url": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "response",
+      "id": "31472.297",
+      "url": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.295",
+      "url": "https://www.creategiftwebsite.com/memory2.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.296",
+      "url": "https://www.creategiftwebsite.com/memory3.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.294",
+      "url": "https://www.creategiftwebsite.com/memory1.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "request",
+      "id": "31472.302",
+      "url": "https://www.creategiftwebsite.com/memory1.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.303",
+      "url": "https://www.creategiftwebsite.com/memory2.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.304",
+      "url": "https://www.creategiftwebsite.com/memory3.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "request",
+      "id": "31472.305",
+      "url": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "response",
+      "id": "31472.302",
+      "url": "https://www.creategiftwebsite.com/memory1.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.303",
+      "url": "https://www.creategiftwebsite.com/memory2.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    },
+    {
+      "kind": "response",
+      "id": "31472.304",
+      "url": "https://www.creategiftwebsite.com/memory3.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    }
+  ],
+  "fails": [],
+  "exceptions": []
+}

@@ -1,0 +1,229 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    discoverKnownRoute: function () {
+      return s;
+    },
+    matchKnownRoute: function () {
+      return d;
+    },
+    resetKnownRoutes: function () {
+      return h;
+    },
+  };
+  for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+  let l = e.r(69092),
+    u = e.r(27175),
+    i = e.r(95566);
+  function o() {
+    return {
+      staticChildren: null,
+      dynamicChild: null,
+      dynamicChildParamName: null,
+      dynamicChildParamType: null,
+      pattern: null,
+    };
+  }
+  let c = o();
+  function s(e, t, r, n, a, u, i, o, s, d) {
+    let h = t.split("/").filter((e) => "" !== e),
+      p = h.length > 0 ? h[0] : null,
+      y = h.length > 0 ? h.slice(1) : [];
+    if (null !== n) {
+      let h = (0, l.fulfillRouteCacheEntry)(e, n, a, u, i, o, s);
+      return d && (h.hasDynamicRewrite = !0), f(c, a, p, y, h, e, t, r, a, u, i, o, s, d), h;
+    }
+    return f(c, a, p, y, null, e, t, r, a, u, i, o, s, d);
+  }
+  function f(e, t, r, n, a, i, c, s, d, h, p, y, g, _) {
+    let v,
+      R,
+      E = t.segment,
+      m = null,
+      P = null,
+      S = null;
+    "string" == typeof E
+      ? (v = (0, u.doesStaticSegmentAppearInURL)(E))
+      : ((m = E[0]), (P = E[2]), (S = E[3]), (v = !0));
+    let b = e,
+      T = r,
+      O = n;
+    if (v) {
+      if (null === m && r !== E)
+        return null !== a ? a : (0, l.writeRouteIntoCache)(i, c, s, d, h, p, y, g);
+      if (null !== m && null !== P) {
+        if (
+          ((b = (function (e, t, r) {
+            if (null !== e.dynamicChild) return e.dynamicChild;
+            let n = o();
+            return (
+              (e.dynamicChild = n), (e.dynamicChildParamName = t), (e.dynamicChildParamType = r), n
+            );
+          })(e, m, P)),
+          null !== S)
+        )
+          for (let t of (null === e.staticChildren && (e.staticChildren = new Map()), S))
+            e.staticChildren.has(t) || e.staticChildren.set(t, o());
+      } else {
+        null === e.staticChildren && (e.staticChildren = new Map());
+        let t = e.staticChildren.get(r);
+        void 0 === t && ((t = o()), e.staticChildren.set(r, t)), (b = t);
+      }
+      (T = n.length > 0 ? n[0] : null), (O = n.length > 0 ? n.slice(1) : []);
+    }
+    let w = t.slots,
+      A = null;
+    if (null !== w) {
+      for (let e in w) {
+        let t = w[e];
+        null === t.refreshState && (A = f(b, t, T, O, a, i, c, s, d, h, p, y, g, _));
+      }
+      return null !== A ? A : null !== a ? a : (0, l.writeRouteIntoCache)(i, c, s, d, h, p, y, g);
+    }
+    return null !== b.pattern
+      ? (_ && (b.pattern.hasDynamicRewrite = !0), b.pattern)
+      : ((R = null !== a ? a : (0, l.writeRouteIntoCache)(i, c, s, d, h, p, y, g)),
+        _ && (R.hasDynamicRewrite = !0),
+        (b.pattern = R),
+        R);
+  }
+  function d(e, t) {
+    let r = e.split("/").filter((e) => "" !== e),
+      n = new Map(),
+      a = (function e(t, r, n, a) {
+        let l = n < r.length ? r[n] : null;
+        if (null === t.staticChildren) {
+          if (null === l) {
+            let e = t.pattern;
+            if (null !== e && !e.hasDynamicRewrite) return { part: t, pattern: e };
+          }
+          return null;
+        }
+        if (null !== l) {
+          let u = t.staticChildren.get(l);
+          if (void 0 !== u) {
+            if (null === u.pattern && null === u.dynamicChild && null === u.staticChildren)
+              return null;
+            let t = e(u, r, n + 1, a);
+            return null !== t ? t : null;
+          }
+        }
+        if (null !== t.dynamicChild) {
+          let u = t.dynamicChild,
+            i = t.dynamicChildParamName,
+            o = t.dynamicChildParamType,
+            c = u.pattern;
+          switch (o) {
+            case "c":
+              if (null !== c && !c.hasDynamicRewrite && null !== l)
+                return a.set(i, r.slice(n)), { part: u, pattern: c };
+              break;
+            case "oc":
+              if (null !== c && !c.hasDynamicRewrite) {
+                if (null !== l) return a.set(i, r.slice(n)), { part: u, pattern: c };
+                if (null === t.pattern || t.pattern.hasDynamicRewrite)
+                  return a.set(i, []), { part: u, pattern: c };
+              }
+              break;
+            case "d":
+              if (null !== l) return a.set(i, l), e(u, r, n + 1, a);
+              break;
+            case "ci(..)(..)":
+            case "ci(.)":
+            case "ci(..)":
+            case "ci(...)":
+            case "di(..)(..)":
+            case "di(.)":
+            case "di(..)":
+            case "di(...)":
+              return null;
+          }
+        }
+        if (null === l) {
+          let e = t.pattern;
+          if (null !== e && !e.hasDynamicRewrite) return { part: t, pattern: e };
+        }
+        return null;
+      })(c, r, 0, n);
+    if (null === a) return null;
+    let u = a.part,
+      o = a.pattern;
+    if (o.couldBeIntercepted) return null;
+    let s = { metadataVaryPath: null },
+      f = (function e(t, r, n, a, l) {
+        let u,
+          o = t.segment,
+          c = o;
+        if ("string" != typeof o) {
+          let e = o[0],
+            t = o[2],
+            n = o[3],
+            l = r.get(e);
+          if (void 0 !== l) {
+            let r = Array.isArray(l) ? l.join("/") : l;
+            (c = [e, r, t, n]), (u = (0, i.appendLayoutVaryPath)(a, r, e));
+          } else u = a;
+        } else u = a;
+        let s = null;
+        if (null !== t.slots) for (let a in ((s = {}), t.slots)) s[a] = e(t.slots[a], r, n, u, l);
+        if (t.isPage) {
+          let e = (0, i.finalizePageVaryPath)(t.requestKey, n, u);
+          return (
+            null === l.metadataVaryPath &&
+              (l.metadataVaryPath = (0, i.finalizeMetadataVaryPath)(t.requestKey, n, u)),
+            {
+              requestKey: t.requestKey,
+              segment: c,
+              refreshState: t.refreshState,
+              slots: s,
+              prefetchHints: t.prefetchHints,
+              isPage: !0,
+              varyPath: e,
+            }
+          );
+        }
+        {
+          let e = (0, i.finalizeLayoutVaryPath)(t.requestKey, u);
+          return {
+            requestKey: t.requestKey,
+            segment: c,
+            refreshState: t.refreshState,
+            slots: s,
+            prefetchHints: t.prefetchHints,
+            isPage: !1,
+            varyPath: e,
+          };
+        }
+      })(o.tree, n, t, null, s),
+      d = s.metadataVaryPath;
+    if (null === d) return null;
+    let h = (0, l.createMetadataRouteTree)(d),
+      p = {
+        canonicalUrl: e + t,
+        status: l.EntryStatus.Fulfilled,
+        blockedTasks: null,
+        tree: f,
+        metadata: h,
+        couldBeIntercepted: o.couldBeIntercepted,
+        supportsPerSegmentPrefetching: o.supportsPerSegmentPrefetching,
+        hasDynamicRewrite: !1,
+        renderedSearch: t,
+        ref: null,
+        size: o.size,
+        staleAt: o.staleAt,
+        version: o.version,
+      };
+    return (u.pattern = p), p;
+  }
+  function h() {
+    c = o();
+  }
+  ("function" == typeof r.default || ("object" == typeof r.default && null !== r.default)) &&
+    void 0 === r.default.__esModule &&
+    (Object.defineProperty(r.default, "__esModule", { value: !0 }),
+    Object.assign(r.default, r),
+    (t.exports = r.default));
+};

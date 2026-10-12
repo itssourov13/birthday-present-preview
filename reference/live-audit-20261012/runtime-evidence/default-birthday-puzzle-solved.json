@@ -1,0 +1,89 @@
+{
+  "label": "puzzle-solved",
+  "buttonId": "solve-btn",
+  "before": {
+    "x": 795.1171875,
+    "y": 716.203125,
+    "w": 223.171875,
+    "h": 55,
+    "disabled": false,
+    "text": "← Home Birthday Puzzle 🎂 Solve to unlock a special message ✨ 0 MOVES PICTURE 🔀 Shuffle Again ✨ Solve it for me 🎵"
+  },
+  "state": {
+    "text": "← Home Birthday Puzzle 🎂 Solve to unlock a special message ✨ 🎉 Puzzle complete! 🎊 One Last Surprise ✨ 🎵 ✨ ⭐ 💖 ❤️ 💖 💝 ✨ ⭐ ❤️ 🌟 🎈 💝 🌟 ✨ ❤️ 💖 ⭐ ✨ 💖 ✨ 💖 💖 ❤️ ✨ ✨ 🌟 🎈 🌟 ✨ 🎈 🎈 ✨ 🎈 🌟 ✨ 🎈 💝 💖 ⭐ ✨ 💖 ✨ 💝",
+    "controls": [
+      {
+        "i": 0,
+        "tag": "A",
+        "id": "",
+        "role": null,
+        "text": "← Home",
+        "disabled": false,
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 95,
+          "h": 42
+        }
+      },
+      {
+        "i": 1,
+        "tag": "BUTTON",
+        "id": "read-letter-btn",
+        "role": null,
+        "text": "One Last Surprise ✨",
+        "disabled": false,
+        "rect": {
+          "x": 540,
+          "y": 642,
+          "w": 286,
+          "h": 61
+        }
+      },
+      {
+        "i": 2,
+        "tag": "BUTTON",
+        "id": "music-btn-puzzle",
+        "role": null,
+        "text": "🎵",
+        "disabled": false,
+        "rect": {
+          "x": 1293,
+          "y": 828,
+          "w": 59,
+          "h": 59
+        }
+      }
+    ],
+    "media": [
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/puzzle.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      }
+    ],
+    "backgrounds": []
+  },
+  "events": [
+    {
+      "kind": "request",
+      "id": "31472.317",
+      "url": "https://www.creategiftwebsite.com/puzzle.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "response",
+      "id": "31472.317",
+      "url": "https://www.creategiftwebsite.com/puzzle.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    }
+  ],
+  "fails": [],
+  "exceptions": []
+}

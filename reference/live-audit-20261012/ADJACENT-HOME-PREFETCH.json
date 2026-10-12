@@ -1,0 +1,31 @@
+{
+  "purpose": "Optional adjacent-route references observed in Chromium while /preview was open. The page Home link is a Next.js Link to /?showHome=1, which prefetches these modules. They are not required to render the /preview route and are deliberately excluded from the 50-path core first-party manifest.",
+  "audit_timestamp_asia_dhaka": "2026-10-12T14:35:17+06:00",
+  "resources": [
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/153hveo8lc6r-.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 10521,
+      "sha256": "90e9ba255bad2ffcde7f97d93779b0a912df2c352f419657d7756a2e3bb9bfcb",
+      "etag": "W/\"4cb735c0456fe423adb9ad41395a8081\"",
+      "local_path": "reference/adjacent-home-prefetch-20261012/153hveo8lc6r-.js",
+      "saved_bytes": 10521,
+      "saved_sha256": "90e9ba255bad2ffcde7f97d93779b0a912df2c352f419657d7756a2e3bb9bfcb",
+      "sha256_matches_live": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/2budgi1s4ilo6.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 230040,
+      "sha256": "340996b976c8dd0700446c0c6bdea256705b734cd5c2f2ff5c036413b01dbb8e",
+      "etag": "W/\"fb3cd5dbf5d84d70f9d5e460f39c1d6e\"",
+      "local_path": "reference/adjacent-home-prefetch-20261012/2budgi1s4ilo6.js",
+      "saved_bytes": 230040,
+      "saved_sha256": "340996b976c8dd0700446c0c6bdea256705b734cd5c2f2ff5c036413b01dbb8e",
+      "sha256_matches_live": true
+    }
+  ],
+  "all_downloaded_and_hash_verified": true
+}

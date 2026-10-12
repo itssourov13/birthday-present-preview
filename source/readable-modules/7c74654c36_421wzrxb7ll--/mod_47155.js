@@ -1,0 +1,547 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n,
+    a = {
+      FreshnessPolicy: function () {
+        return P;
+      },
+      createInitialCacheNodeForHydration: function () {
+        return b;
+      },
+      isDeferredRsc: function () {
+        return k;
+      },
+      spawnDynamicRequests: function () {
+        return j;
+      },
+      startPPRNavigation: function () {
+        return T;
+      },
+    };
+  for (var l in a) Object.defineProperty(r, l, { enumerable: !0, get: a[l] });
+  let u = e.r(1109),
+    i = e.r(65855),
+    o = e.r(18801),
+    c = e.r(54250),
+    s = e.r(60806),
+    f = e.r(7919),
+    d = e.r(72458),
+    h = e.r(34833),
+    p = e.r(89465),
+    y = e.r(75439),
+    g = e.r(69092),
+    _ = e.r(53973),
+    v = e.r(10607),
+    R = e.r(3257),
+    E = e.r(95566),
+    m = e.r(5243);
+  var P =
+    (((n = {})[(n.Default = 0)] = "Default"),
+    (n[(n.Hydration = 1)] = "Hydration"),
+    (n[(n.HistoryTraversal = 2)] = "HistoryTraversal"),
+    (n[(n.RefreshAll = 3)] = "RefreshAll"),
+    (n[(n.HMRRefresh = 4)] = "HMRRefresh"),
+    (n[(n.Gesture = 5)] = "Gesture"),
+    n);
+  let S = () => {};
+  function b(e, t, r, n, a) {
+    return O(e, t, null, 1, r, n, a, !1, { separateRefreshUrls: null, scrollRef: null });
+  }
+  function T(e, t, r, n, a, l, s, f, d, p, y, _, v) {
+    let R = { canonicalUrl: (0, c.createHrefFromUrl)(t), renderedSearch: r };
+    return (function e(t, r, n, a, l, c, s, f, d, p, y, _, v, R, E, m) {
+      var P, S, b;
+      let T,
+        A,
+        M,
+        j,
+        D = a[0],
+        F = w(l);
+      if (!(0, o.matchSegment)(F, D))
+        return (!f && (0, h.isNavigatingToNewRootLayout)(a, l)) || F === i.NOT_FOUND_SEGMENT_KEY
+          ? null
+          : O(t, l, c, s, d, p, y, v, m);
+      let U = l.slots,
+        L = a[1],
+        k = null !== d ? d[1] : null,
+        x = f || (l.prefetchHints & u.PrefetchHint.IsRootLayout) != 0,
+        H = !1;
+      switch (s) {
+        case 0:
+        case 2:
+        case 1:
+        case 5:
+          H = !1;
+          break;
+        case 3:
+        case 4:
+          H = !0;
+      }
+      let V = null === U;
+      if (void 0 === n || H || (V && _)) {
+        let e = N(t, l, null !== d ? d[0] : null, c, p, s, y);
+        (M = e.cacheNode), (j = e.needsDynamicRequest), void 0 !== n && (M.scrollRef = n.scrollRef);
+      } else {
+        (P = !1),
+          (M = I(
+            (S = n).rsc,
+            P ? null : S.prefetchRsc,
+            S.head,
+            P ? null : S.prefetchHead,
+            S.scrollRef,
+          )),
+          (j = !1);
+      }
+      let B = l.refreshState,
+        X = null != B ? B : E;
+      j &&
+        null !== X &&
+        ((b = m),
+        (T = X.canonicalUrl),
+        null === (A = b.separateRefreshUrls) ? (b.separateRefreshUrls = new Set([T])) : A.add(T));
+      let $ = {},
+        K = null,
+        G = !1,
+        q = {},
+        Y = null;
+      if (null !== U) {
+        let a = void 0 !== n ? n.slots : null;
+        for (let n in ((M.slots = Y = {}), (K = new Map()), U)) {
+          let u = U[n],
+            o = L[n];
+          if (void 0 === o) return null;
+          let f = null !== k ? k[n] : null,
+            d = o[0],
+            h = w(u),
+            E = p;
+          2 !== s &&
+            h === i.DEFAULT_SEGMENT_KEY &&
+            d !== i.DEFAULT_SEGMENT_KEY &&
+            ((h = w(
+              (u = (function (e, t, r, n) {
+                let a,
+                  l,
+                  u = n[2];
+                null != u
+                  ? ((a = u[0]), (l = u[1]))
+                  : ((a = r.canonicalUrl), (l = r.renderedSearch));
+                let i = (0, g.convertReusedFlightRouterStateToRouteTree)(e, t, n, l, {
+                  metadataVaryPath: null,
+                });
+                return (i.refreshState = { canonicalUrl: a, renderedSearch: l }), i;
+              })(l, n, R, o)),
+            )),
+            (f = null),
+            (E = null));
+          let P = e(
+            t,
+            r,
+            null !== a ? a[n] : void 0,
+            o,
+            u,
+            c,
+            s,
+            x,
+            f ?? null,
+            E,
+            y,
+            _,
+            v || j,
+            R,
+            X,
+            m,
+          );
+          if (null === P) return null;
+          K.set(n, P), (Y[n] = P.node);
+          let S = P.route;
+          $[n] = S;
+          let b = P.dynamicRequestTree;
+          null !== b ? ((G = !0), (q[n] = b)) : (q[n] = S);
+        }
+      }
+      let z = [
+        w(l),
+        $,
+        null !== X ? [X.canonicalUrl, X.renderedSearch] : null,
+        null,
+        l.prefetchHints,
+      ];
+      return {
+        status: +!j,
+        route: z,
+        node: M,
+        dynamicRequestTree: C(z, q, j, G, v),
+        refreshState: X,
+        children: K,
+      };
+    })(e, t, null !== n ? n : void 0, a, l, s, f, !1, d, p, y, _, !1, R, null, v);
+  }
+  function O(e, t, r, n, a, l, u, i, o) {
+    let c = w(t),
+      s = t.slots,
+      f = null !== a ? a[1] : null,
+      d = N(e, t, null !== a ? a[0] : null, r, l, n, u),
+      h = d.cacheNode,
+      p = d.needsDynamicRequest;
+    null === s &&
+      (function (e, t, r) {
+        switch (e) {
+          case 0:
+          case 5:
+          case 3:
+          case 4:
+            null === r.scrollRef && (r.scrollRef = { current: !0 }), (t.scrollRef = r.scrollRef);
+        }
+      })(n, h, o);
+    let y = {},
+      g = null,
+      _ = !1,
+      v = {},
+      R = null;
+    if (null !== s)
+      for (let t in ((h.slots = R = {}), (g = new Map()), s)) {
+        let a = O(e, s[t], r, n, (null !== f ? f[t] : null) ?? null, l, u, i || p, o);
+        g.set(t, a), (R[t] = a.node);
+        let c = a.route;
+        y[t] = c;
+        let d = a.dynamicRequestTree;
+        null !== d ? ((_ = !0), (v[t] = d)) : (v[t] = c);
+      }
+    let E = [c, y, null, null, t.prefetchHints];
+    return {
+      status: +!p,
+      route: E,
+      node: h,
+      dynamicRequestTree: C(E, v, p, _, i),
+      refreshState: null,
+      children: g,
+    };
+  }
+  function w(e) {
+    if (e.isPage) {
+      let t = (0, E.getRenderedSearchFromVaryPath)(e.varyPath);
+      if (null === t) return i.PAGE_SEGMENT_KEY;
+      let r = JSON.stringify(Object.fromEntries(new URLSearchParams(t)));
+      return "{}" !== r ? i.PAGE_SEGMENT_KEY + "?" + r : i.PAGE_SEGMENT_KEY;
+    }
+    return e.segment;
+  }
+  function A(e, t) {
+    let r = [e[0], t];
+    return 2 in e && (r[2] = e[2]), 3 in e && (r[3] = e[3]), 4 in e && (r[4] = e[4]), r;
+  }
+  function C(e, t, r, n, a) {
+    let l = null;
+    return r ? ((l = A(e, t)), a || (l[3] = "refetch")) : (l = n ? A(e, t) : null), l;
+  }
+  function N(e, t, r, n, a, l, u) {
+    let i,
+      o,
+      c,
+      s = t.isPage;
+    switch (l) {
+      case 0: {
+        let r = (0, m.readFromBFCacheDuringRegularNavigation)(e, t.varyPath);
+        if (null !== r)
+          return {
+            cacheNode: I(r.rsc, r.prefetchRsc, r.head, r.prefetchHead),
+            needsDynamicRequest: !1,
+          };
+        break;
+      }
+      case 1: {
+        let l = s ? a : null;
+        return (
+          (0, m.writeToBFCache)(e, t.varyPath, r, null, l, null, u),
+          s && null !== n && (0, m.writeHeadToBFCache)(e, n, l, null, u),
+          { cacheNode: I(r, null, l, null), needsDynamicRequest: !1 }
+        );
+      }
+      case 2:
+        let f = (0, m.readFromBFCache)(t.varyPath);
+        if (null !== f) {
+          let e = f.rsc,
+            t = !k(e) || "pending" !== e.status;
+          return {
+            cacheNode: I(f.rsc, t ? null : f.prefetchRsc, f.head, t ? null : f.prefetchHead),
+            needsDynamicRequest: !1,
+          };
+        }
+    }
+    let d = null,
+      h = !0,
+      p = (0, g.readSegmentCacheEntry)(e, t.varyPath);
+    if (null !== p)
+      switch (p.status) {
+        case g.EntryStatus.Fulfilled:
+          (d = p.rsc), (h = p.isPartial);
+          break;
+        case g.EntryStatus.Pending:
+          (d = (0, g.waitForSegmentCacheEntry)(p).then((e) => (null !== e ? e.rsc : null))),
+            (h = p.isPartial);
+        case g.EntryStatus.Empty:
+        case g.EntryStatus.Rejected:
+      }
+    null !== r
+      ? (h ? ((i = d), (o = r)) : ((i = null), (o = d)), (c = !1))
+      : (h ? ((i = d), (o = x())) : ((i = null), (o = d)), (c = h));
+    let y = null,
+      _ = null,
+      v = s;
+    if (s) {
+      let t = null,
+        r = !0;
+      if (null !== n) {
+        let a = (0, g.readSegmentCacheEntry)(e, n);
+        if (null !== a)
+          switch (a.status) {
+            case g.EntryStatus.Fulfilled:
+              (t = a.rsc), (r = a.isPartial);
+              break;
+            case g.EntryStatus.Pending:
+              (t = (0, g.waitForSegmentCacheEntry)(a).then((e) => (null !== e ? e.rsc : null))),
+                (r = a.isPartial);
+            case g.EntryStatus.Empty:
+            case g.EntryStatus.Rejected:
+          }
+      }
+      null !== a
+        ? (r ? ((y = t), (_ = a)) : ((y = null), (_ = t)), (v = !1))
+        : (r ? ((y = t), (_ = x())) : ((y = null), (_ = t)), (v = r));
+    }
+    return (
+      5 !== l &&
+        ((0, m.writeToBFCache)(e, t.varyPath, o, i, _, y, u),
+        s && null !== n && (0, m.writeHeadToBFCache)(e, n, _, y, u)),
+      { cacheNode: I(o, i, _, y), needsDynamicRequest: c || v }
+    );
+  }
+  function I(e, t, r, n, a = null) {
+    return { rsc: e, prefetchRsc: t, head: r, prefetchHead: n, slots: null, scrollRef: a };
+  }
+  let M = !1;
+  function j(e, t, r, n, a, l, u) {
+    let i = e.dynamicRequestTree;
+    if (null === i) {
+      M = !1;
+      return;
+    }
+    let o = U(e, i, t, r, n, l),
+      s = a.separateRefreshUrls,
+      f = null;
+    if (null !== s) {
+      f = [];
+      let a = (0, c.createHrefFromUrl)(t);
+      for (let t of s)
+        t !== a && null !== i && f.push(U(e, i, new URL(t, location.origin), r, n, l));
+    }
+    D(e, r, o, f, l, u).then(S, S);
+  }
+  async function D(e, t, r, n, a, l) {
+    var u, i;
+    let o = await ((u = r),
+    (i = n),
+    new Promise((e) => {
+      let t = (t) => {
+          0 === t.exitStatus ? 0 == --n && e(0) : e(t.exitStatus);
+        },
+        r = () => e(2),
+        n = 1;
+      u.then(t, r), null !== i && ((n += i.length), i.forEach((e) => e.then(t, r)));
+    }));
+    switch (
+      (0 === o &&
+        (o = (function e(t, r, n) {
+          var a, l, u;
+          let i, o, c;
+          0 === t.status
+            ? ((t.status = 2),
+              (a = t.node),
+              (l = r),
+              (u = n),
+              k((o = a.rsc)) && (null === l ? o.resolve(null, u) : o.reject(l, u)),
+              k((c = a.head)) && c.resolve(null, u),
+              (i = null === t.refreshState ? 1 : 2))
+            : (i = 0);
+          let s = t.children;
+          if (null !== s)
+            for (let [, t] of s) {
+              let a = e(t, r, n);
+              a > i && (i = a);
+            }
+          return i;
+        })(e, null, null)),
+      o)
+    ) {
+      case 0:
+        M = !1;
+        return;
+      case 1: {
+        let n = await r;
+        F(!1, n.url, t, n.seed, e.route, a, l);
+        return;
+      }
+      case 2: {
+        let n = await r;
+        F(!0, n.url, t, n.seed, e.route, a, l);
+        return;
+      }
+      default:
+        return o;
+    }
+  }
+  function F(e, t, r, n, a, l, u) {
+    if (null !== l) (0, g.markRouteEntryAsDynamicRewrite)(l);
+    else if (null !== n) {
+      let e = n.metadataVaryPath;
+      if (null !== e) {
+        let a = Date.now();
+        (0, v.discoverKnownRoute)(
+          a,
+          t.pathname,
+          r,
+          null,
+          n.routeTree,
+          e,
+          !1,
+          (0, c.createHrefFromUrl)(t),
+          !1,
+          !0,
+        );
+      }
+    }
+    (0, g.invalidateRouteCacheEntries)(r, a), (e = e || M), (M = !0);
+    let i = (0, p.getLastCommittedTree)(),
+      o = null !== i && a !== i ? u : "replace",
+      s = {
+        type: d.ACTION_SERVER_PATCH,
+        previousTree: a,
+        url: t,
+        nextUrl: r,
+        seed: n,
+        mpa: e,
+        navigateType: o,
+      };
+    (0, f.dispatchAppRouterAction)(s);
+  }
+  async function U(e, t, r, n, a, l) {
+    try {
+      let u = await (0, s.fetchServerResponse)(r, {
+        flightRouterState: t,
+        nextUrl: n,
+        isHmrRefresh: 4 === a,
+      });
+      if ("string" == typeof u)
+        return { exitStatus: 2, url: new URL(u, location.origin), seed: null };
+      let i = Date.now(),
+        c = (0, y.convertServerPatchToFullTree)(
+          i,
+          e.route,
+          u.flightData,
+          u.renderedSearch,
+          u.dynamicStaleTime,
+        );
+      if (null !== l && null !== u.staticStageData) {
+        let { response: e, isResponsePartial: r } = u.staticStageData;
+        (0, g.getStaleAt)(i, e.s)
+          .then((n) => {
+            let a = u.responseHeaders.get(R.NEXT_NAV_DEPLOYMENT_ID_HEADER) ?? e.b;
+            (0, g.writeStaticStageResponseIntoCache)(i, e.f, a, e.h, n, t, u.renderedSearch, r);
+          })
+          .catch(() => {});
+      }
+      null !== l &&
+        null !== u.runtimePrefetchStream &&
+        (0, g.processRuntimePrefetchStream)(i, u.runtimePrefetchStream, t, u.renderedSearch)
+          .then((e) => {
+            null !== e &&
+              (0, g.writeDynamicRenderResponseIntoCache)(
+                i,
+                _.FetchStrategy.PPRRuntime,
+                e.flightDatas,
+                e.buildId,
+                e.isResponsePartial,
+                e.headVaryParams,
+                e.staleAt,
+                e.navigationSeed,
+                null,
+              );
+          })
+          .catch(() => {});
+      let f = (0, m.computeDynamicStaleAt)(i, u.dynamicStaleTime);
+      return {
+        exitStatus: +!!(function e(t, r, n, a, l, u) {
+          0 === t.status &&
+            null !== n &&
+            ((t.status = 1),
+            (function (e, t, r, n) {
+              let a = e.rsc,
+                l = t[0];
+              if (null === l) return;
+              null === a ? (e.rsc = l) : k(a) && a.resolve(l, n);
+              let u = e.head;
+              k(u) && u.resolve(r, n);
+            })(t.node, n, a, u),
+            (0, m.updateBFCacheEntryStaleAt)(r.varyPath, l));
+          let i = t.children,
+            c = r.slots,
+            s = null !== n ? n[1] : null,
+            f = !1;
+          if (null !== i)
+            if (null !== c)
+              for (let t in c) {
+                let r = c[t],
+                  n = null !== s ? s[t] : null,
+                  d = i.get(t);
+                if (void 0 === d) f = !0;
+                else {
+                  let t = d.route[0],
+                    i = w(r);
+                  (0, o.matchSegment)(i, t) && null != n && e(d, r, n, a, l, u) && (f = !0);
+                }
+              }
+            else null !== c && (f = !0);
+          return f;
+        })(e, c.routeTree, c.data, c.head, f, u.debugInfo),
+        url: new URL(u.canonicalUrl, location.origin),
+        seed: c,
+      };
+    } catch {
+      return { exitStatus: 2, url: r, seed: null };
+    }
+  }
+  let L = Symbol();
+  function k(e) {
+    return e && "object" == typeof e && e.tag === L;
+  }
+  function x() {
+    let e,
+      t,
+      r = [],
+      n = new Promise((r, n) => {
+        (e = r), (t = n);
+      });
+    return (
+      (n.status = "pending"),
+      (n.resolve = (t, a) => {
+        "pending" === n.status &&
+          ((n.status = "fulfilled"), (n.value = t), null !== a && r.push.apply(r, a), e(t));
+      }),
+      (n.reject = (e, a) => {
+        "pending" === n.status &&
+          ((n.status = "rejected"), (n.reason = e), null !== a && r.push.apply(r, a), t(e));
+      }),
+      (n.tag = L),
+      (n._debugInfo = r),
+      n
+    );
+  }
+  ("function" == typeof r.default || ("object" == typeof r.default && null !== r.default)) &&
+    void 0 === r.default.__esModule &&
+    (Object.defineProperty(r.default, "__esModule", { value: !0 }),
+    Object.assign(r.default, r),
+    (t.exports = r.default));
+};

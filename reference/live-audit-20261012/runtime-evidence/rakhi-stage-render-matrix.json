@@ -1,0 +1,382 @@
+{
+  "stages": [
+    {
+      "stage": "thali",
+      "text": "← Home Shubh Raksha Bandhan 🪔 The thali is set — light the diya first Tap the thali to light the diya 🪔 🎵",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "Tap to light the diya",
+          "disabled": false,
+          "w": 232,
+          "h": 232
+        },
+        {
+          "tag": "BUTTON",
+          "id": "music-btn-thali",
+          "role": null,
+          "text": "🎵",
+          "disabled": false,
+          "w": 63,
+          "h": 63
+        }
+      ],
+      "images": [],
+      "canvas": [
+        {
+          "role": null,
+          "aria": null,
+          "w": 1365,
+          "h": 900
+        }
+      ]
+    },
+    {
+      "stage": "tieRakhi",
+      "text": "← Home Hold still, Bhai 🎀 Some things a sister has to do herself Drag the rakhi up to Bhai's wrist ❉ 🎵",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "❉",
+          "disabled": false,
+          "w": 108,
+          "h": 111
+        },
+        {
+          "tag": "BUTTON",
+          "id": "music-btn-rakhi",
+          "role": null,
+          "text": "🎵",
+          "disabled": false,
+          "w": 62,
+          "h": 62
+        }
+      ],
+      "images": [],
+      "canvas": [
+        {
+          "role": null,
+          "aria": null,
+          "w": 1365,
+          "h": 900
+        }
+      ]
+    },
+    {
+      "stage": "sweets",
+      "text": "← Home Muh meetha karo 🍬 A thali of your favourites — tap each one Tap a mithai — each one came with something 🍬 0 / 4 tasted Finish the thali to carry on 🎵",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "Motichoor Laddoo — tap to read",
+          "disabled": false,
+          "w": 46,
+          "h": 46
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "Kaju Katli — tap to read",
+          "disabled": false,
+          "w": 46,
+          "h": 46
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "Jalebi — tap to read",
+          "disabled": false,
+          "w": 46,
+          "h": 46
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "role": null,
+          "text": "Soan Papdi — tap to read",
+          "disabled": false,
+          "w": 46,
+          "h": 46
+        },
+        {
+          "tag": "BUTTON",
+          "id": "music-btn-mithai",
+          "role": null,
+          "text": "🎵",
+          "disabled": false,
+          "w": 65,
+          "h": 65
+        }
+      ],
+      "images": [],
+      "canvas": [
+        {
+          "role": null,
+          "aria": null,
+          "w": 1365,
+          "h": 900
+        }
+      ]
+    },
+    {
+      "stage": "memories",
+      "text": "← Home Cute Memories 💕 Long before we were this far apart 💫 Still the best fight we ever had 😄 Ma’s kitchen, both of us in trouble 🍬 Next Rakhi, same place — promise 🎀 ← swipe, or tap the photo → Next Surprise 🎁 🎵",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "dot-0",
+          "role": null,
+          "text": "",
+          "disabled": false,
+          "w": 10,
+          "h": 10
+        },
+        {
+          "tag": "BUTTON",
+          "id": "dot-1",
+          "role": null,
+          "text": "",
+          "disabled": false,
+          "w": 10,
+          "h": 10
+        },
+        {
+          "tag": "BUTTON",
+          "id": "dot-2",
+          "role": null,
+          "text": "",
+          "disabled": false,
+          "w": 10,
+          "h": 10
+        },
+        {
+          "tag": "BUTTON",
+          "id": "dot-3",
+          "role": null,
+          "text": "",
+          "disabled": false,
+          "w": 10,
+          "h": 10
+        },
+        {
+          "tag": "BUTTON",
+          "id": "next-surprise-btn",
+          "role": null,
+          "text": "Next Surprise 🎁",
+          "disabled": false,
+          "w": 215,
+          "h": 55
+        },
+        {
+          "tag": "BUTTON",
+          "id": "music-btn-mem",
+          "role": null,
+          "text": "🎵",
+          "disabled": false,
+          "w": 65,
+          "h": 65
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+          "complete": true,
+          "w": 400,
+          "h": 400
+        },
+        {
+          "src": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+          "complete": true,
+          "w": 400,
+          "h": 400
+        },
+        {
+          "src": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+          "complete": true,
+          "w": 400,
+          "h": 400
+        },
+        {
+          "src": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+          "complete": true,
+          "w": 400,
+          "h": 400
+        }
+      ],
+      "canvas": [
+        {
+          "role": null,
+          "aria": null,
+          "w": 1365,
+          "h": 900
+        }
+      ]
+    },
+    {
+      "stage": "letter",
+      "text": "← Home 💌 A Letter Just For You ♥ Tap to open 💌 ↻ Watch it again 🎵",
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "id": "open-letter-btn",
+          "role": null,
+          "text": "♥ Tap to open 💌",
+          "disabled": false,
+          "w": 300,
+          "h": 196
+        },
+        {
+          "tag": "BUTTON",
+          "id": "replay-journey-btn",
+          "role": null,
+          "text": "↻ Watch it again",
+          "disabled": false,
+          "w": 137,
+          "h": 31
+        },
+        {
+          "tag": "BUTTON",
+          "id": "music-btn-letter",
+          "role": null,
+          "text": "🎵",
+          "disabled": false,
+          "w": 59,
+          "h": 59
+        }
+      ],
+      "images": [],
+      "canvas": [
+        {
+          "role": null,
+          "aria": null,
+          "w": 1365,
+          "h": 900
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "kind": "request",
+      "id": "31472.336",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.337",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.338",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.339",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "response",
+      "id": "31472.336",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.337",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.338",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.339",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "request",
+      "id": "31472.344",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.345",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.346",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "request",
+      "id": "31472.347",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image"
+    },
+    {
+      "kind": "response",
+      "id": "31472.344",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.345",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.347",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    },
+    {
+      "kind": "response",
+      "id": "31472.346",
+      "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/svg+xml"
+    }
+  ],
+  "fails": [],
+  "exceptions": []
+}

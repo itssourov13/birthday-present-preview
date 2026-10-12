@@ -1,0 +1,333 @@
+{
+  "target": "https://www.creategiftwebsite.com/preview",
+  "audit_timestamp_asia_dhaka": "2026-10-12T14:39:38+06:00",
+  "browser": "Headless Chromium 150 on connected Kali workspace",
+  "core_route_validation": {
+    "live_html_byte_identical_to_original_capture": true,
+    "html_sha256": "fddf726f0dd86a4981ba024c2fcddea30b540ae4c22855c64759e5dec5f8eb2f",
+    "unique_first_party_paths_across_html_css_and_recovered_code": 50,
+    "first_party_paths_hash_verified": 50,
+    "unresolved_core_paths": 0,
+    "css_font_url_count": 22,
+    "css_font_urls_hash_verified": 22,
+    "public_static_media_assets_downloaded": 11,
+    "additional_css_font_files_downloaded": 15,
+    "original_source_module_comparison_mismatches": 0
+  },
+  "default_birthday_flow": [
+    {
+      "stage": "opening-gift",
+      "status": "observed",
+      "interaction": "Clicked the gift with a physical browser mouse event; transitioned to the public demo PIN screen."
+    },
+    {
+      "stage": "pin-entry",
+      "status": "observed",
+      "interaction": "The page itself displays Demo PIN: 1234. Entered that displayed demo value through the keypad in headless Chromium; it showed Welcome/Opening and then an Open button."
+    },
+    {
+      "stage": "intro",
+      "status": "observed",
+      "interaction": "Clicked Open, then Continue; introductory text and Continue control rendered."
+    },
+    {
+      "stage": "birthday-cake",
+      "status": "observed",
+      "interaction": "Tapped the cake. The candle/wish state changed and See Our Memories became available. Microphone-based blowing was not tested."
+    },
+    {
+      "stage": "memories",
+      "status": "observed",
+      "interaction": "Four memory images loaded from live root paths; each DOM image reached complete=true at 1024x1024 with HTTP 200."
+    },
+    {
+      "stage": "balloon-wishes",
+      "status": "observed",
+      "interaction": "Clicked all six balloon controls; wish text appeared and the Continue control advanced the flow. No external media dependency was observed."
+    },
+    {
+      "stage": "birthday-puzzle",
+      "status": "observed",
+      "interaction": "Puzzle image loaded (1024x1024, HTTP 200); clicked Solve it for me; Puzzle complete and One Last Surprise appeared."
+    },
+    {
+      "stage": "scratch-card",
+      "status": "observed",
+      "interaction": "memory4.png loaded (HTTP 200). Focused the accessible scratch canvas and pressed Enter; You uncovered it! appeared. Read My Letter advanced to the letter envelope."
+    },
+    {
+      "stage": "letter-envelope",
+      "status": "observed",
+      "interaction": "The A Letter Just For You envelope screen rendered with Tap to open."
+    },
+    {
+      "stage": "letter-opened",
+      "status": "observed",
+      "interaction": "Clicked Tap to open. Default letter body rendered and replay control appeared."
+    }
+  ],
+  "observed_memory_image_urls": [
+    {
+      "url": "/memory1.png",
+      "observed_http_status": 200,
+      "dom_image_size": [
+        1024,
+        1024
+      ],
+      "saved_package_path": "reference/live-assets-20261012/memory1.png"
+    },
+    {
+      "url": "/memory2.png",
+      "observed_http_status": 200,
+      "dom_image_size": [
+        1024,
+        1024
+      ],
+      "saved_package_path": "reference/live-assets-20261012/memory2.png"
+    },
+    {
+      "url": "/memory3.png",
+      "observed_http_status": 200,
+      "dom_image_size": [
+        1024,
+        1024
+      ],
+      "saved_package_path": "reference/live-assets-20261012/memory3.png"
+    },
+    {
+      "url": "/memory4.png",
+      "observed_http_status": 200,
+      "dom_image_size": [
+        1024,
+        1024
+      ],
+      "saved_package_path": "reference/live-assets-20261012/memory4.png"
+    }
+  ],
+  "observed_puzzle_and_scratch": [
+    {
+      "url": "/puzzle.png",
+      "observed_http_status": 200,
+      "dom_image_size": [
+        1024,
+        1024
+      ],
+      "saved_package_path": "reference/live-assets-20261012/puzzle.png"
+    },
+    {
+      "url": "/memory4.png",
+      "observed_http_status": 200,
+      "stage": "scratch",
+      "saved_package_path": "reference/live-assets-20261012/memory4.png"
+    }
+  ],
+  "rakhi_variant_smoke_test": {
+    "mechanism": "The route-supported journey-config postMessage preview interface was used to render Rakhi page variants directly. This verifies rendering and asset dependencies, but is not a full human-paced end-to-end Rakhi journey.",
+    "stages_rendered": [
+      {
+        "stage": "thali",
+        "rendered": true,
+        "visible_control": "Tap to light the diya",
+        "test_note": "Also physically tapped once; control changed to Tap to circle the aarti."
+      },
+      {
+        "stage": "tieRakhi",
+        "rendered": true,
+        "visible_instruction": "Drag the rakhi up to Bhai’s wrist"
+      },
+      {
+        "stage": "sweets",
+        "rendered": true,
+        "visible_controls": "Four sweet buttons; 0/4 tasted state observed"
+      },
+      {
+        "stage": "memories",
+        "rendered": true,
+        "assets": [
+          "rakhi-memory1.svg",
+          "rakhi-memory2.svg",
+          "rakhi-memory3.svg",
+          "rakhi-memory4.svg"
+        ],
+        "natural_image_dimensions": [
+          400,
+          400
+        ]
+      },
+      {
+        "stage": "letter",
+        "rendered": true,
+        "visible_control": "Tap to open"
+      }
+    ],
+    "music_asset": {
+      "url": "/raksha_bandhan.mp3",
+      "status": 206,
+      "mime": "audio/mpeg",
+      "saved_package_path": "reference/live-assets-20261012/raksha_bandhan.mp3"
+    },
+    "network_observations": [
+      {
+        "kind": "request",
+        "url": "https://www.creategiftwebsite.com/raksha_bandhan.mp3",
+        "type": "Media"
+      },
+      {
+        "kind": "response",
+        "url": "https://www.creategiftwebsite.com/raksha_bandhan.mp3",
+        "status": 206,
+        "type": "Media",
+        "mime": "audio/mpeg"
+      },
+      {
+        "kind": "request",
+        "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "type": "Image"
+      },
+      {
+        "kind": "request",
+        "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "type": "Image"
+      },
+      {
+        "kind": "request",
+        "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "type": "Image"
+      },
+      {
+        "kind": "request",
+        "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "type": "Image"
+      }
+    ],
+    "asset_failures_observed": 0
+  },
+  "audio_observations": [
+    {
+      "url": "/song.mp3",
+      "runtime_observation": "Requested in the default preview; server responded 206 Partial Content with audio/mpeg. Full asset stored at reference/live-assets-20261012/song.mp3."
+    },
+    {
+      "url": "/raksha_bandhan.mp3",
+      "runtime_observation": "Requested with the Rakhi config; server responded 206 Partial Content with audio/mpeg. Full asset stored at reference/live-assets-20261012/raksha_bandhan.mp3."
+    }
+  ],
+  "adjacent_home_prefetch": {
+    "reason": "The Home link in preview triggered Next.js prefetch for the separate /?showHome=1 route.",
+    "chunks_downloaded_and_hash_verified": 2,
+    "paths": [
+      "reference/adjacent-home-prefetch-20261012/153hveo8lc6r-.js",
+      "reference/adjacent-home-prefetch-20261012/2budgi1s4ilo6.js"
+    ],
+    "scope_note": "Optional adjacent-route chunks are kept separately; the Home route, its React Server Component responses, and complete Home page are not part of the /preview core package."
+  },
+  "source_map_availability": {
+    "sourceMappingURL_directive_found": false,
+    "probes": [
+      {
+        "url": "https://www.creategiftwebsite.com/_next/static/chunks/44irkf401yrm6.js.map?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "status": 403,
+        "content_type": "text/plain",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "looks_like_source_map": false,
+        "sample": "\n"
+      },
+      {
+        "url": "https://www.creategiftwebsite.com/_next/static/chunks/3z5ozuetb4fvu.js.map?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "status": 403,
+        "content_type": "text/plain",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "looks_like_source_map": false,
+        "sample": "\n"
+      },
+      {
+        "url": "https://www.creategiftwebsite.com/_next/static/chunks/0634h1z7ibyg5.js.map?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "status": 403,
+        "content_type": "text/plain",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "looks_like_source_map": false,
+        "sample": "\n"
+      },
+      {
+        "url": "https://www.creategiftwebsite.com/_next/static/chunks/3klunzeywsa48.css.map?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "status": 403,
+        "content_type": "text/plain",
+        "bytes": 1,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "looks_like_source_map": false,
+        "sample": "\n"
+      }
+    ],
+    "result": "Selected JS/CSS has no sourceMappingURL directive. Four likely .map URLs returned 403 plain text rather than a source-map payload; original uncompiled source maps were not recoverable from this public origin."
+  },
+  "scope_limits": [
+    "The package is compiled first-party route source, extracted/readable modules, direct CSS/fonts and discovered static media; it is not an original developer source repository or independently runnable Next.js project.",
+    "All file/media paths detectable from the recovered route chunks, route HTML and CSS are included and locally hash-verified. Builder-supplied custom media URLs, every arbitrary journey configuration, private backend data and third-party services cannot be recovered completely from the public default route alone.",
+    "Some third-party analytics requests were aborted during browser navigation; these are not preview application assets. No failed first-party content/media request was observed in inspected stages."
+  ],
+  "copied_runtime_evidence_files": [
+    {
+      "source_temp_name": "preview-stage-memories.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-memories.json",
+      "bytes": 6841,
+      "sha256": "f088dbce60a24046059e6ce7986f8a5d383270d3b4326ab09a5b85f2282a9a6c"
+    },
+    {
+      "source_temp_name": "preview-stage-balloons.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-balloons.json",
+      "bytes": 3054,
+      "sha256": "8ab249a093e026447bc8e948521235931642a387054f753bdbd986735bc6412c"
+    },
+    {
+      "source_temp_name": "preview-stage-puzzle-solved.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-puzzle-solved.json",
+      "bytes": 2294,
+      "sha256": "c6bd39ff592c2c57392bdf5eca59d011997e3cae0468eeeee46c2d835d9bb426"
+    },
+    {
+      "source_temp_name": "preview-stage-after-puzzle.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-scratch-before-reveal.json",
+      "bytes": 2447,
+      "sha256": "8ea730f248a8ddad7dc0964276e17cf05d18e6615f7af00e46d6661c342af822"
+    },
+    {
+      "source_temp_name": "preview-stage-letter-complete.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-letter-envelope.json",
+      "bytes": 1702,
+      "sha256": "9f11a5963d1c99d4c7ccbb3aa06daf455aed09b642b33521289cce4d5a7f73d3"
+    },
+    {
+      "source_temp_name": "preview-stage-letter-opened.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/default-birthday-letter-opened.json",
+      "bytes": 1973,
+      "sha256": "02335ce89738fcdbba6186c33eddbca76b64ddc2892710229a55f92effc03dbc"
+    },
+    {
+      "source_temp_name": "preview-rakhi-stage-audit.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/rakhi-stage-render-matrix.json",
+      "bytes": 9848,
+      "sha256": "bf6c9b3e4ea0eeb7a596aae087f4a8e058b55765fd5ebbe2e58d3d201e3fd615"
+    },
+    {
+      "source_temp_name": "preview-rakhi-assets-network.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/rakhi-static-assets-network.json",
+      "bytes": 906,
+      "sha256": "63f28ad122056994285209e65c37c0bd0128f2bd8534b1f9ab816566301fadf2"
+    },
+    {
+      "source_temp_name": "preview-live-stage-network.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/initial-route-network-trace.json",
+      "bytes": 24224,
+      "sha256": "48534e160767474a3dbb53dbe99d0d754baf03c47ddd05958c397743e8fe0347"
+    },
+    {
+      "source_temp_name": "preview-stage-balloons-network.json",
+      "package_path": "reference/live-audit-20261012/runtime-evidence/birthday-balloons-network-trace.json",
+      "bytes": 791,
+      "sha256": "63cd7b965282760784f500e3654a27b8a9f1e8574011783770940ff7ed920210"
+    }
+  ]
+}

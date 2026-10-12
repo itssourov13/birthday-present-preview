@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-12",
+  "checks": {
+    "live_html_identical": true,
+    "html_direct_first_party_resources": 24,
+    "direct_resources_hash_matched": 24,
+    "core_union_unique_paths": 50,
+    "core_union_hash_verified": 50,
+    "core_union_unresolved_paths": 0,
+    "css_font_dependencies": 22,
+    "css_fonts_hash_verified": 22,
+    "journey_media_downloaded": 11,
+    "adjacent_home_prefetch_assets_hash_verified": 2,
+    "source_map_probes": [
+      [
+        "44irkf401yrm6.js.map",
+        403
+      ],
+      [
+        "3z5ozuetb4fvu.js.map",
+        403
+      ],
+      [
+        "0634h1z7ibyg5.js.map",
+        403
+      ],
+      [
+        "3klunzeywsa48.css.map",
+        403
+      ]
+    ],
+    "source_tree_comparison_checks": 28,
+    "source_tree_mismatches": 0,
+    "manifest_entry_count": 522,
+    "manifested_files_checked": 522,
+    "total_package_files": 523,
+    "package_bytes": 23619005,
+    "package_size_human": "25M",
+    "zip_created": false,
+    "runtime_default_stages": 10,
+    "rakhi_variant_stages": 5,
+    "runtime_report_exists": true,
+    "all_manifest_hashes_expected_to_verify": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "label": "letter-opened",
+  "buttonId": "open-letter-btn",
+  "before": {
+    "x": 682.5,
+    "y": 275.265625,
+    "w": 300,
+    "h": 196,
+    "disabled": false,
+    "text": "← Home 💌 A Letter Just For You ♥ Tap to open 💌 ↻ Watch it again 🎵"
+  },
+  "state": {
+    "text": "← Home 💌 A Letter Just For You My dearest, On this v|ery special day, I want you to know how deeply you are loved. Every single moment I spend with you feels like a beautiful dream I never want to wake up from. You make every ordinary day feel extraordinary. Your smile is my favourite thing in the entire world, and your laugh — oh, your laugh — is the most beautiful sound I have ever heard. Thank you for being you. Thank you for choosing me, every single day. I promise to always be there, to hold your hand through every storm, and to celebrate every little joy with you. Happy Birthday, my love. You deserve every good thing the universe has to offer. Today and always. 🌸 Forever yours, with all my heart 💖 ↻ Watch it again 🎵",
+    "controls": [
+      {
+        "i": 0,
+        "tag": "A",
+        "id": "",
+        "role": null,
+        "text": "← Home",
+        "disabled": false,
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 95,
+          "h": 42
+        }
+      },
+      {
+        "i": 1,
+        "tag": "BUTTON",
+        "id": "replay-journey-btn",
+        "role": null,
+        "text": "↻ Watch it again",
+        "disabled": false,
+        "rect": {
+          "x": 614,
+          "y": 833,
+          "w": 137,
+          "h": 31
+        }
+      },
+      {
+        "i": 2,
+        "tag": "BUTTON",
+        "id": "music-btn-letter",
+        "role": null,
+        "text": "🎵",
+        "disabled": false,
+        "rect": {
+          "x": 1290,
+          "y": 825,
+          "w": 65,
+          "h": 65
+        }
+      }
+    ],
+    "media": [],
+    "backgrounds": []
+  },
+  "events": [],
+  "fails": [],
+  "exceptions": []
+}

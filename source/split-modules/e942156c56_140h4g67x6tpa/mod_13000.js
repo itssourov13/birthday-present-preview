@@ -1,0 +1,3 @@
+// MODULE 13000 — from chunk e942156c56_140h4g67x6tpa.js
+// Recovered from production bundle (factory source, verbatim)
+((e,t,r)=>{"use strict";Object.defineProperty(r,"__esModule",{value:!0}),Object.defineProperty(r,"createRouterCacheKey",{enumerable:!0,get:function(){return o}});let n=e.r(65855);function o(e,t=!1){return Array.isArray(e)?`${e[0]}|${e[1]}|${e[2]}`:t&&e.startsWith(n.PAGE_SEGMENT_KEY)?n.PAGE_SEGMENT_KEY:e}("function"==typeof r.default||"object"==typeof r.default&&null!==r.default)&&void 0===r.default.__esModule&&(Object.defineProperty(r.default,"__esModule",{value:!0}),Object.assign(r.default,r),t.exports=r.default)});

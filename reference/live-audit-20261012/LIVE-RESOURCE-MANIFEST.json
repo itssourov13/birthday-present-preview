@@ -1,0 +1,943 @@
+{
+  "target_route": "https://www.creategiftwebsite.com/preview",
+  "generated_at_asia_dhaka": "2026-10-12T14:09:52+06:00",
+  "inventory_scope": "Union of same-origin resources referenced by current route HTML, CSS url() dependencies, and literal viewer/config media paths identified in the recovered route source.",
+  "unique_first_party_paths": 50,
+  "resources_hash_verified": 50,
+  "resources_with_missing_or_conflicting_copies": [],
+  "excluded_external_integrations": [
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-3RB546Z4FE",
+      "reason": "Third-party analytics script referenced by page HTML; not part of the first-party route source bundle."
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "reason": "Third-party Facebook Pixel script referenced at runtime; not part of the first-party route source bundle."
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/?showHome=1&_rsc=...",
+      "reason": "Next.js prefetch/response for the separate root Home route; intentionally outside the /preview route-scoped package."
+    }
+  ],
+  "resources": [
+    {
+      "path": "/_next/static/chunks/0634h1z7ibyg5.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/0634h1z7ibyg5.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/0634h1z7ibyg5.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 226343,
+      "sha256": "1f5a45690679ed9c620bc557ab1e9f7af9dc79bfcde37b63eb42b2d186b1297a",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/1320795458_0634h1z7ibyg5.js",
+        "source/raw-bundles/1320795458_0634h1z7ibyg5.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/0cz1d0mv5g_q7.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/0cz1d0mv5g_q7.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/27cad0ed14_0cz1d0mv5g_q7.js",
+        "source/raw-bundles/27cad0ed14_0cz1d0mv5g_q7.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/140h4g67x6tpa.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/140h4g67x6tpa.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/140h4g67x6tpa.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 31493,
+      "sha256": "577d3807937695c6a62876f28629f3a89c5eadb60b83c52710da7dd1245a3f22",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/e942156c56_140h4g67x6tpa.js",
+        "source/raw-bundles/e942156c56_140h4g67x6tpa.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/143jnbtnnaigb.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/143jnbtnnaigb.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/143jnbtnnaigb.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 3377,
+      "sha256": "45a33ef8d0ceb547e79f120c610a95d5b06730038626456808d06647cc97430e",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/9978744876_143jnbtnnaigb.js",
+        "source/raw-bundles/9978744876_143jnbtnnaigb.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/1h_f92j606zzt.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/1h_f92j606zzt.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/1h_f92j606zzt.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 6543,
+      "sha256": "0596f0f4a7369944f1675867e53b4eff4b09f394b0abe3099490caf786448bc7",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/985604af69_1h_f92j606zzt.js",
+        "source/raw-bundles/985604af69_1h_f92j606zzt.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/2r8rlytqf6jwk.css",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/2r8rlytqf6jwk.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/2r8rlytqf6jwk.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 162203,
+      "sha256": "e2ef52e0fc39cf542454ec68b973877c374cf72f8ca3df218aeea240ecd171e7",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/ae56dd113c_2r8rlytqf6jwk.css"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/391k3ex376o3l.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/391k3ex376o3l.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/391k3ex376o3l.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 44413,
+      "sha256": "214b12107e818cdbe34b704d935190b0c0e254c0ac2af82997e73acecd197012",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/9661354b52_391k3ex376o3l.js",
+        "source/raw-bundles/9661354b52_391k3ex376o3l.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/3iuqk-cfg7mdp.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/3iuqk-cfg7mdp.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/3iuqk-cfg7mdp.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 54643,
+      "sha256": "5ee511beb475f5637c1c0e7b61e6b9b632fad90e6a75e3fc1fa4bf00058c7014",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/7c8d6cff9c_3iuqk-cfg7mdp.js",
+        "source/raw-bundles/7c8d6cff9c_3iuqk-cfg7mdp.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/3klunzeywsa48.css",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/3klunzeywsa48.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/3klunzeywsa48.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 29389,
+      "sha256": "b73e39defd053c29d995d32e8330ed6b628350a1458a0ada6639341b4926aebf",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/89ce5fc05f_3klunzeywsa48.css"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/3m0nqrslwleed.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/3m0nqrslwleed.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/3m0nqrslwleed.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 22429,
+      "sha256": "9a7cb9ae9798290273862675f87a5ba8b08dda63f8829e4426b4a9526fe23b77",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/e7e2e0e53b_3m0nqrslwleed.js",
+        "source/raw-bundles/e7e2e0e53b_3m0nqrslwleed.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/3z5ozuetb4fvu.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/3z5ozuetb4fvu.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/3z5ozuetb4fvu.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 305958,
+      "sha256": "f86a5ae67b9d5341caa1bfe51b01563da61770df378fc0cb681710059376544e",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/7640d6d361_3z5ozuetb4fvu.js",
+        "source/raw-bundles/7640d6d361_3z5ozuetb4fvu.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/421wzrxb7ll--.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/421wzrxb7ll--.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/421wzrxb7ll--.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 137438,
+      "sha256": "b75794aec78823c2995ac58003832d42526d27969d1c9848bb108fc07cdc427b",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/7c74654c36_421wzrxb7ll--.js",
+        "source/raw-bundles/7c74654c36_421wzrxb7ll--.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/44irkf401yrm6.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/44irkf401yrm6.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/44irkf401yrm6.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 1051,
+      "sha256": "39a8cbec71f18dcb40cafe92713c3d45e7c98ef2054695bbb7519c89dccde881",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/f57da82495_44irkf401yrm6.js",
+        "source/raw-bundles/f57da82495_44irkf401yrm6.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-39hb7wt80nhvd.js",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/chunks/turbopack-39hb7wt80nhvd.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/chunks/turbopack-39hb7wt80nhvd.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 11074,
+      "sha256": "48bc1578a7bb9aa9fd95a5c7cfc066db6cf59652d775a3a7ad185ad7d1084009",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/d1fd414a72_turbopack-39hb7wt80nhvd.js",
+        "source/raw-bundles/d1fd414a72_turbopack-39hb7wt80nhvd.js"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 36560,
+      "sha256": "88e17be075f1be50ab67b057b99e3701b828f44ed28f9452df6c02645bb0cba9",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/0e5a02d3d2_03bda585a99c6450-s.p.32sris142tqlb.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 39152,
+      "sha256": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/a14cfb0dff_07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 1716,
+      "sha256": "a16f29d7d2a21a4f9b3249a82eb2725ed5bdb91500dfb5c4758977de27477f20",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 21688,
+      "sha256": "0303e02b53b0298fb26a0193941a2e8754f0f9a9fce50d90b178d8da3424873f",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 11536,
+      "sha256": "250cc2966c658fb6d336731de9d82a8129025e9839c20c253bbc477852f6cf4f",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/224e262ef877bfa4-s.1zkvd_innyig_.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/224e262ef877bfa4-s.1zkvd_innyig_.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/224e262ef877bfa4-s.1zkvd_innyig_.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 28908,
+      "sha256": "2d06f2c340ecb52c55153ec56093dc70b167699d7206246570f8ad4800190825",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/224e262ef877bfa4-s.1zkvd_innyig_.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 7776,
+      "sha256": "11a88b30f1441581bb8ef629548a827c540e9559a7bf68a50c61067c200cf03d",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 45624,
+      "sha256": "c9745ee907c02cdd46cc41a65bb711cd861432f679a76c18e3de204a18723040",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/8ba8dbd98d_3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 42604,
+      "sha256": "5e08eb55c88b8658453e2ba916023964e0f67b98cd7abfa436eb8150968ee19e",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/6ff51aae43_406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 12956,
+      "sha256": "d24c3502a91415f2ec44f107807673255b696c379b3995543270921c27863e32",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/73091b67359a1d13-s.22yt1aol_-g3w.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/73091b67359a1d13-s.22yt1aol_-g3w.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/73091b67359a1d13-s.22yt1aol_-g3w.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 22608,
+      "sha256": "0be22fbaae6716f7b55ce24268c86381589d31fc8f5f43a9295b740a1c54a457",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/73091b67359a1d13-s.22yt1aol_-g3w.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 15684,
+      "sha256": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/b11b6fbffb_7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 20780,
+      "sha256": "b63651df977d08650ff2e598a3979a490f114b59353605e091dd3fdb530f530e",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 33640,
+      "sha256": "f1451edd6434085c4f9f3a8b4a674182dd7d6acccf53bfced19fd167f0705a06",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/b887d91685b8c137-s.330vchwb4izzb.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/b887d91685b8c137-s.330vchwb4izzb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/b887d91685b8c137-s.330vchwb4izzb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 40560,
+      "sha256": "7e701dc124492f7d0856fba4a07157d0cecc84e2b2b4615f08530c1e8bc112dd",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/b887d91685b8c137-s.330vchwb4izzb.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 7828,
+      "sha256": "a8c4bd7cd7073180e740d2d83a616b5cb0845579b73207eeafeae8532e70c901",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 35464,
+      "sha256": "511ce967375fd2d924483d798f1086a533259fc675181f62944ec1176fe8786d",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 15040,
+      "sha256": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/c15859c010_e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 8292,
+      "sha256": "5c913fc1b1f86f4b475e5df45a796aa480d1f7f0891ed6f1a5991d6d1be887c3",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 13040,
+      "sha256": "d107f72673f443b440185eea74262d7aecbe8fb70150e397334e2ab202c5d301",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource",
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 27272,
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/f5216a8503_fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/_next/static/media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2",
+      "canonical_live_url": "https://www.creategiftwebsite.com/_next/static/media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/_next/static/media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "stylesheet URL dependency"
+      ],
+      "http_status": 200,
+      "content_type": "font/woff2",
+      "bytes": 8444,
+      "sha256": "a04fc7ed18a8037149ce0bfda58076709d8e0840e136ed00abbdc196b7992443",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/next-static-media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/favicon.ico",
+      "canonical_live_url": "https://www.creategiftwebsite.com/favicon.ico?favicon.2vob68tjqpejf.ico?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/favicon.ico?favicon.2vob68tjqpejf.ico?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "image/vnd.microsoft.icon",
+      "bytes": 25931,
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/4cd4d02d5b_favicon.ico"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/giftweblogoo.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/giftweblogoo.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/giftweblogoo.png"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 101738,
+      "sha256": "3030c49c63f349fce92f86c66c8e7c67b9b7a546b19f9a7de2faba12f2449b51",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/10fe39fad1_giftweblogoo.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/manifest.webmanifest",
+      "canonical_live_url": "https://www.creategiftwebsite.com/manifest.webmanifest",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/manifest.webmanifest"
+      ],
+      "discovered_via": [
+        "live HTML linked resource"
+      ],
+      "http_status": 200,
+      "content_type": "application/manifest+json; charset=utf-8",
+      "bytes": 330,
+      "sha256": "54b7c912644bce5e7974b63ad36d438752f2898c3c3b19908bb1d28468f0ea51",
+      "local_copy_paths": [
+        "reference/preview-capture/public-assets/e9a87a581b_manifest.webmanifest"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/memory1.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/memory1.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/memory1.png"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 1188394,
+      "sha256": "543d72a2a2074e8499ab220d1250cac2ab24be18d2ab781b371b11ba68becb21",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/memory1.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/memory2.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/memory2.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/memory2.png"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 1132577,
+      "sha256": "2892d74986c3d24d3dea7a1fb4b3884eac67c20e81577def5446ae162abcc714",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/memory2.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/memory3.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/memory3.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/memory3.png"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 970061,
+      "sha256": "aa8ae31075c8b36d0786a5cb5d81a19e1b4637985c08329a5221594dbd9e456b",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/memory3.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/memory4.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/memory4.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/memory4.png"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 1055834,
+      "sha256": "51c348997d29ef32f86c368837745402af23a6eb4e2c15f69c17de3af41b3b32",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/memory4.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/puzzle.png",
+      "canonical_live_url": "https://www.creategiftwebsite.com/puzzle.png",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/puzzle.png"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 1154270,
+      "sha256": "df758ef350e683d84a37668ce315424f69314872c4201187f9bfce534b90a62e",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/puzzle.png"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/rakhi-memory1.svg",
+      "canonical_live_url": "https://www.creategiftwebsite.com/rakhi-memory1.svg",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/rakhi-memory1.svg"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1047,
+      "sha256": "c2f5939bf8b7e84630a7ba61b756c3bc81d0ff22e8558de9a031d02023cae509",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/rakhi-memory1.svg"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/rakhi-memory2.svg",
+      "canonical_live_url": "https://www.creategiftwebsite.com/rakhi-memory2.svg",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/rakhi-memory2.svg"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1052,
+      "sha256": "7e12d395f7317562e0eaa9f492db8b5499a9325fc51136625a2b9ed6d42889da",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/rakhi-memory2.svg"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/rakhi-memory3.svg",
+      "canonical_live_url": "https://www.creategiftwebsite.com/rakhi-memory3.svg",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/rakhi-memory3.svg"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1226,
+      "sha256": "6d621cd97483e69803eae71f6e496ca35d166539db2b2395aaaab04587d313b7",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/rakhi-memory3.svg"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/rakhi-memory4.svg",
+      "canonical_live_url": "https://www.creategiftwebsite.com/rakhi-memory4.svg",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/rakhi-memory4.svg"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "image/svg+xml",
+      "bytes": 1056,
+      "sha256": "c0eeb94b1170e50041d5195fd4be51d766088d60b84f25231658871c8314fbaa",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/rakhi-memory4.svg"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/raksha_bandhan.mp3",
+      "canonical_live_url": "https://www.creategiftwebsite.com/raksha_bandhan.mp3",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/raksha_bandhan.mp3"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "audio/mpeg",
+      "bytes": 4665024,
+      "sha256": "5da2ad095bfc01fd05e3efbe75a08a8e5cb8af997c853adacb8078a97d487a0f",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/raksha_bandhan.mp3"
+      ],
+      "sha256_verified": true
+    },
+    {
+      "path": "/song.mp3",
+      "canonical_live_url": "https://www.creategiftwebsite.com/song.mp3",
+      "observed_urls": [
+        "https://www.creategiftwebsite.com/song.mp3"
+      ],
+      "discovered_via": [
+        "viewer/config static media path"
+      ],
+      "http_status": 200,
+      "content_type": "audio/mpeg",
+      "bytes": 7300953,
+      "sha256": "4d1151d98430b0981fa553607059212626c165514a922df165dee8a0eb55dc62",
+      "local_copy_paths": [
+        "reference/live-assets-20261012/song.mp3"
+      ],
+      "sha256_verified": true
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "label": "after-puzzle",
+  "buttonId": "read-letter-btn",
+  "before": {
+    "x": 682.5,
+    "y": 672.703125,
+    "w": 285.78125,
+    "h": 61,
+    "disabled": false,
+    "text": "← Home Birthday Puzzle 🎂 Solve to unlock a special message ✨ 🎉 Puzzle complete! 🎊 One Last Surprise ✨ 🎵"
+  },
+  "state": {
+    "text": "← Home One Last Surprise ✨ Scratch the golden card to reveal it 🎉 Happy Birthday! 🎉 You found the hidden surprise 💝 ✨ ⭐ 💖 Read My Letter 💌 🎵",
+    "controls": [
+      {
+        "i": 0,
+        "tag": "A",
+        "id": "",
+        "role": null,
+        "text": "← Home",
+        "disabled": false,
+        "rect": {
+          "x": 16,
+          "y": 16,
+          "w": 95,
+          "h": 42
+        }
+      },
+      {
+        "i": 1,
+        "tag": "CANVAS",
+        "id": "",
+        "role": "button",
+        "text": "Scratch card — press Enter or Space to reveal the surprise",
+        "disabled": false,
+        "rect": {
+          "x": 527,
+          "y": 342,
+          "w": 312,
+          "h": 202
+        }
+      },
+      {
+        "i": 2,
+        "tag": "BUTTON",
+        "id": "scratch-continue-btn",
+        "role": null,
+        "text": "Read My Letter 💌",
+        "disabled": false,
+        "rect": {
+          "x": 569,
+          "y": 590,
+          "w": 227,
+          "h": 55
+        }
+      },
+      {
+        "i": 3,
+        "tag": "BUTTON",
+        "id": "music-btn-scratch",
+        "role": null,
+        "text": "🎵",
+        "disabled": false,
+        "rect": {
+          "x": 1290,
+          "y": 825,
+          "w": 65,
+          "h": 65
+        }
+      }
+    ],
+    "media": [
+      {
+        "tag": "IMG",
+        "src": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+        "poster": "",
+        "complete": true,
+        "naturalWidth": 1024,
+        "naturalHeight": 1024
+      }
+    ],
+    "backgrounds": []
+  },
+  "events": [
+    {
+      "kind": "request",
+      "id": "31472.320",
+      "url": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "type": "Image",
+      "method": "GET"
+    },
+    {
+      "kind": "response",
+      "id": "31472.320",
+      "url": "https://www.creategiftwebsite.com/memory4.png?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "type": "Image",
+      "mime": "image/png"
+    }
+  ],
+  "fails": [],
+  "exceptions": []
+}

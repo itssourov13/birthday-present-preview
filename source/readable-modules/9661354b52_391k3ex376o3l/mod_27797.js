@@ -1,0 +1,37 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    NavigationPromisesContext: function () {
+      return l;
+    },
+    PathParamsContext: function () {
+      return c;
+    },
+    PathnameContext: function () {
+      return u;
+    },
+    ReadonlyURLSearchParams: function () {
+      return o.ReadonlyURLSearchParams;
+    },
+    SearchParamsContext: function () {
+      return s;
+    },
+    createDevToolsInstrumentedPromise: function () {
+      return d;
+    },
+  };
+  for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+  let i = e.r(12472),
+    o = e.r(34871),
+    s = (0, i.createContext)(null),
+    u = (0, i.createContext)(null),
+    c = (0, i.createContext)(null),
+    l = (0, i.createContext)(null);
+  function d(e, t) {
+    let r = Promise.resolve(t);
+    return (r.status = "fulfilled"), (r.value = t), (r.displayName = `${e} (SSR)`), r;
+  }
+};

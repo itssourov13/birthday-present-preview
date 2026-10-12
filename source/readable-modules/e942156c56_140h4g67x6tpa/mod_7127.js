@@ -1,0 +1,129 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  var n = {
+      229: function (e) {
+        var t,
+          r,
+          n,
+          o = (e.exports = {});
+        function u() {
+          throw Error("setTimeout has not been defined");
+        }
+        function i() {
+          throw Error("clearTimeout has not been defined");
+        }
+        try {
+          t = "function" == typeof setTimeout ? setTimeout : u;
+        } catch (e) {
+          t = u;
+        }
+        try {
+          r = "function" == typeof clearTimeout ? clearTimeout : i;
+        } catch (e) {
+          r = i;
+        }
+        function c(e) {
+          if (t === setTimeout) return setTimeout(e, 0);
+          if ((t === u || !t) && setTimeout) return (t = setTimeout), setTimeout(e, 0);
+          try {
+            return t(e, 0);
+          } catch (r) {
+            try {
+              return t.call(null, e, 0);
+            } catch (r) {
+              return t.call(this, e, 0);
+            }
+          }
+        }
+        var a = [],
+          s = !1,
+          l = -1;
+        function f() {
+          s && n && ((s = !1), n.length ? (a = n.concat(a)) : (l = -1), a.length && d());
+        }
+        function d() {
+          if (!s) {
+            var e = c(f);
+            s = !0;
+            for (var t = a.length; t; ) {
+              for (n = a, a = []; ++l < t; ) n && n[l].run();
+              (l = -1), (t = a.length);
+            }
+            (n = null),
+              (s = !1),
+              (function (e) {
+                if (r === clearTimeout) return clearTimeout(e);
+                if ((r === i || !r) && clearTimeout) return (r = clearTimeout), clearTimeout(e);
+                try {
+                  r(e);
+                } catch (t) {
+                  try {
+                    return r.call(null, e);
+                  } catch (t) {
+                    return r.call(this, e);
+                  }
+                }
+              })(e);
+          }
+        }
+        function p(e, t) {
+          (this.fun = e), (this.array = t);
+        }
+        function _() {}
+        (o.nextTick = function (e) {
+          var t = Array(arguments.length - 1);
+          if (arguments.length > 1)
+            for (var r = 1; r < arguments.length; r++) t[r - 1] = arguments[r];
+          a.push(new p(e, t)), 1 !== a.length || s || c(d);
+        }),
+          (p.prototype.run = function () {
+            this.fun.apply(null, this.array);
+          }),
+          (o.title = "browser"),
+          (o.browser = !0),
+          (o.env = {}),
+          (o.argv = []),
+          (o.version = ""),
+          (o.versions = {}),
+          (o.on = _),
+          (o.addListener = _),
+          (o.once = _),
+          (o.off = _),
+          (o.removeListener = _),
+          (o.removeAllListeners = _),
+          (o.emit = _),
+          (o.prependListener = _),
+          (o.prependOnceListener = _),
+          (o.listeners = function (e) {
+            return [];
+          }),
+          (o.binding = function (e) {
+            throw Error("process.binding is not supported");
+          }),
+          (o.cwd = function () {
+            return "/";
+          }),
+          (o.chdir = function (e) {
+            throw Error("process.chdir is not supported");
+          }),
+          (o.umask = function () {
+            return 0;
+          });
+      },
+    },
+    o = {};
+  function u(e) {
+    var t = o[e];
+    if (void 0 !== t) return t.exports;
+    var r = (o[e] = { exports: {} }),
+      i = !0;
+    try {
+      n[e](r, r.exports, u), (i = !1);
+    } finally {
+      i && delete o[e];
+    }
+    return r.exports;
+  }
+  (u.ab = "/ROOT/builder/node_modules/next/dist/compiled/process/"), (t.exports = u(229));
+};

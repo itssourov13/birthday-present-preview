@@ -1,0 +1,47 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    assign: function () {
+      return l;
+    },
+    searchParamsToUrlQuery: function () {
+      return a;
+    },
+    urlQueryToSearchParams: function () {
+      return s;
+    },
+  };
+  for (var i in n) Object.defineProperty(r, i, { enumerable: !0, get: n[i] });
+  function a(e) {
+    let t = {};
+    for (let [r, n] of e.entries()) {
+      let e = t[r];
+      void 0 === e ? (t[r] = n) : Array.isArray(e) ? e.push(n) : (t[r] = [e, n]);
+    }
+    return t;
+  }
+  function o(e) {
+    return "string" == typeof e
+      ? e
+      : ("number" != typeof e || isNaN(e)) && "boolean" != typeof e
+        ? ""
+        : String(e);
+  }
+  function s(e) {
+    let t = new URLSearchParams();
+    for (let [r, n] of Object.entries(e))
+      if (Array.isArray(n)) for (let e of n) t.append(r, o(e));
+      else t.set(r, o(n));
+    return t;
+  }
+  function l(e, ...t) {
+    for (let r of t) {
+      for (let t of r.keys()) e.delete(t);
+      for (let [t, n] of r.entries()) e.append(t, n);
+    }
+    return e;
+  }
+};

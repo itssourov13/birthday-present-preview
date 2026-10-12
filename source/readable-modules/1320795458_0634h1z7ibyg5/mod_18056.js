@@ -1,0 +1,32 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, n) => {
+  "use strict";
+  Object.defineProperty(n, "__esModule", { value: !0 });
+  var r = {
+    isRecoverableError: function () {
+      return c;
+    },
+    onRecoverableError: function () {
+      return f;
+    },
+  };
+  for (var l in r) Object.defineProperty(n, l, { enumerable: !0, get: r[l] });
+  let a = e.r(2178),
+    o = e.r(39982),
+    i = a._(e.r(6955)),
+    u = e.r(64587),
+    s = new WeakSet();
+  function c(e) {
+    return s.has(e);
+  }
+  let f = (e) => {
+    let t = (0, i.default)(e) && "cause" in e ? e.cause : e;
+    (0, o.isBailoutToCSRError)(t) || (0, u.reportGlobalError)(t);
+  };
+  ("function" == typeof n.default || ("object" == typeof n.default && null !== n.default)) &&
+    void 0 === n.default.__esModule &&
+    (Object.defineProperty(n.default, "__esModule", { value: !0 }),
+    Object.assign(n.default, n),
+    (t.exports = n.default));
+};

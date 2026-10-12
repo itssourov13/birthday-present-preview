@@ -1,0 +1,466 @@
+{
+  "target": "https://www.creategiftwebsite.com/preview",
+  "audit_timestamp_asia_dhaka": "2026-10-12T14:05:14+06:00",
+  "html_sha256_live": "fddf726f0dd86a4981ba024c2fcddea30b540ae4c22855c64759e5dec5f8eb2f",
+  "html_sha256_existing_capture": "fddf726f0dd86a4981ba024c2fcddea30b540ae4c22855c64759e5dec5f8eb2f",
+  "html_byte_identical_to_existing_capture": true,
+  "same_origin_unique_html_references": 24,
+  "resources": [
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 36560,
+      "sha256": "88e17be075f1be50ab67b057b99e3701b828f44ed28f9452df6c02645bb0cba9",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/0e5a02d3d2_03bda585a99c6450-s.p.32sris142tqlb.woff2",
+          "local_sha256": "88e17be075f1be50ab67b057b99e3701b828f44ed28f9452df6c02645bb0cba9",
+          "sha256_matches_live": true,
+          "local_bytes": 36560
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 39152,
+      "sha256": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/a14cfb0dff_07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2",
+          "local_sha256": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+          "sha256_matches_live": true,
+          "local_bytes": 39152
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 45624,
+      "sha256": "c9745ee907c02cdd46cc41a65bb711cd861432f679a76c18e3de204a18723040",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/8ba8dbd98d_3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2",
+          "local_sha256": "c9745ee907c02cdd46cc41a65bb711cd861432f679a76c18e3de204a18723040",
+          "sha256_matches_live": true,
+          "local_bytes": 45624
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 42604,
+      "sha256": "5e08eb55c88b8658453e2ba916023964e0f67b98cd7abfa436eb8150968ee19e",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/6ff51aae43_406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2",
+          "local_sha256": "5e08eb55c88b8658453e2ba916023964e0f67b98cd7abfa436eb8150968ee19e",
+          "sha256_matches_live": true,
+          "local_bytes": 42604
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 15684,
+      "sha256": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/b11b6fbffb_7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2",
+          "local_sha256": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702",
+          "sha256_matches_live": true,
+          "local_bytes": 15684
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 15040,
+      "sha256": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/c15859c010_e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2",
+          "local_sha256": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d",
+          "sha256_matches_live": true,
+          "local_bytes": 15040
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "bytes": 27272,
+      "sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/f5216a8503_fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+          "local_sha256": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+          "sha256_matches_live": true,
+          "local_bytes": 27272
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/3klunzeywsa48.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 29389,
+      "sha256": "b73e39defd053c29d995d32e8330ed6b628350a1458a0ada6639341b4926aebf",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/89ce5fc05f_3klunzeywsa48.css",
+          "local_sha256": "b73e39defd053c29d995d32e8330ed6b628350a1458a0ada6639341b4926aebf",
+          "sha256_matches_live": true,
+          "local_bytes": 29389
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/2r8rlytqf6jwk.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 162203,
+      "sha256": "e2ef52e0fc39cf542454ec68b973877c374cf72f8ca3df218aeea240ecd171e7",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/ae56dd113c_2r8rlytqf6jwk.css",
+          "local_sha256": "e2ef52e0fc39cf542454ec68b973877c374cf72f8ca3df218aeea240ecd171e7",
+          "sha256_matches_live": true,
+          "local_bytes": 162203
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/1h_f92j606zzt.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 6543,
+      "sha256": "0596f0f4a7369944f1675867e53b4eff4b09f394b0abe3099490caf786448bc7",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/985604af69_1h_f92j606zzt.js",
+          "local_sha256": "0596f0f4a7369944f1675867e53b4eff4b09f394b0abe3099490caf786448bc7",
+          "sha256_matches_live": true,
+          "local_bytes": 6543
+        },
+        {
+          "relative_path": "source/raw-bundles/985604af69_1h_f92j606zzt.js",
+          "local_sha256": "0596f0f4a7369944f1675867e53b4eff4b09f394b0abe3099490caf786448bc7",
+          "sha256_matches_live": true,
+          "local_bytes": 6543
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/140h4g67x6tpa.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 31493,
+      "sha256": "577d3807937695c6a62876f28629f3a89c5eadb60b83c52710da7dd1245a3f22",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/e942156c56_140h4g67x6tpa.js",
+          "local_sha256": "577d3807937695c6a62876f28629f3a89c5eadb60b83c52710da7dd1245a3f22",
+          "sha256_matches_live": true,
+          "local_bytes": 31493
+        },
+        {
+          "relative_path": "source/raw-bundles/e942156c56_140h4g67x6tpa.js",
+          "local_sha256": "577d3807937695c6a62876f28629f3a89c5eadb60b83c52710da7dd1245a3f22",
+          "sha256_matches_live": true,
+          "local_bytes": 31493
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/421wzrxb7ll--.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 137438,
+      "sha256": "b75794aec78823c2995ac58003832d42526d27969d1c9848bb108fc07cdc427b",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/7c74654c36_421wzrxb7ll--.js",
+          "local_sha256": "b75794aec78823c2995ac58003832d42526d27969d1c9848bb108fc07cdc427b",
+          "sha256_matches_live": true,
+          "local_bytes": 137438
+        },
+        {
+          "relative_path": "source/raw-bundles/7c74654c36_421wzrxb7ll--.js",
+          "local_sha256": "b75794aec78823c2995ac58003832d42526d27969d1c9848bb108fc07cdc427b",
+          "sha256_matches_live": true,
+          "local_bytes": 137438
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/0634h1z7ibyg5.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 226343,
+      "sha256": "1f5a45690679ed9c620bc557ab1e9f7af9dc79bfcde37b63eb42b2d186b1297a",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/1320795458_0634h1z7ibyg5.js",
+          "local_sha256": "1f5a45690679ed9c620bc557ab1e9f7af9dc79bfcde37b63eb42b2d186b1297a",
+          "sha256_matches_live": true,
+          "local_bytes": 226343
+        },
+        {
+          "relative_path": "source/raw-bundles/1320795458_0634h1z7ibyg5.js",
+          "local_sha256": "1f5a45690679ed9c620bc557ab1e9f7af9dc79bfcde37b63eb42b2d186b1297a",
+          "sha256_matches_live": true,
+          "local_bytes": 226343
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/391k3ex376o3l.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 44413,
+      "sha256": "214b12107e818cdbe34b704d935190b0c0e254c0ac2af82997e73acecd197012",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/9661354b52_391k3ex376o3l.js",
+          "local_sha256": "214b12107e818cdbe34b704d935190b0c0e254c0ac2af82997e73acecd197012",
+          "sha256_matches_live": true,
+          "local_bytes": 44413
+        },
+        {
+          "relative_path": "source/raw-bundles/9661354b52_391k3ex376o3l.js",
+          "local_sha256": "214b12107e818cdbe34b704d935190b0c0e254c0ac2af82997e73acecd197012",
+          "sha256_matches_live": true,
+          "local_bytes": 44413
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/turbopack-39hb7wt80nhvd.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 11074,
+      "sha256": "48bc1578a7bb9aa9fd95a5c7cfc066db6cf59652d775a3a7ad185ad7d1084009",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/d1fd414a72_turbopack-39hb7wt80nhvd.js",
+          "local_sha256": "48bc1578a7bb9aa9fd95a5c7cfc066db6cf59652d775a3a7ad185ad7d1084009",
+          "sha256_matches_live": true,
+          "local_bytes": 11074
+        },
+        {
+          "relative_path": "source/raw-bundles/d1fd414a72_turbopack-39hb7wt80nhvd.js",
+          "local_sha256": "48bc1578a7bb9aa9fd95a5c7cfc066db6cf59652d775a3a7ad185ad7d1084009",
+          "sha256_matches_live": true,
+          "local_bytes": 11074
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/143jnbtnnaigb.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 3377,
+      "sha256": "45a33ef8d0ceb547e79f120c610a95d5b06730038626456808d06647cc97430e",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/9978744876_143jnbtnnaigb.js",
+          "local_sha256": "45a33ef8d0ceb547e79f120c610a95d5b06730038626456808d06647cc97430e",
+          "sha256_matches_live": true,
+          "local_bytes": 3377
+        },
+        {
+          "relative_path": "source/raw-bundles/9978744876_143jnbtnnaigb.js",
+          "local_sha256": "45a33ef8d0ceb547e79f120c610a95d5b06730038626456808d06647cc97430e",
+          "sha256_matches_live": true,
+          "local_bytes": 3377
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/3iuqk-cfg7mdp.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 54643,
+      "sha256": "5ee511beb475f5637c1c0e7b61e6b9b632fad90e6a75e3fc1fa4bf00058c7014",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/7c8d6cff9c_3iuqk-cfg7mdp.js",
+          "local_sha256": "5ee511beb475f5637c1c0e7b61e6b9b632fad90e6a75e3fc1fa4bf00058c7014",
+          "sha256_matches_live": true,
+          "local_bytes": 54643
+        },
+        {
+          "relative_path": "source/raw-bundles/7c8d6cff9c_3iuqk-cfg7mdp.js",
+          "local_sha256": "5ee511beb475f5637c1c0e7b61e6b9b632fad90e6a75e3fc1fa4bf00058c7014",
+          "sha256_matches_live": true,
+          "local_bytes": 54643
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/3m0nqrslwleed.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 22429,
+      "sha256": "9a7cb9ae9798290273862675f87a5ba8b08dda63f8829e4426b4a9526fe23b77",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/e7e2e0e53b_3m0nqrslwleed.js",
+          "local_sha256": "9a7cb9ae9798290273862675f87a5ba8b08dda63f8829e4426b4a9526fe23b77",
+          "sha256_matches_live": true,
+          "local_bytes": 22429
+        },
+        {
+          "relative_path": "source/raw-bundles/e7e2e0e53b_3m0nqrslwleed.js",
+          "local_sha256": "9a7cb9ae9798290273862675f87a5ba8b08dda63f8829e4426b4a9526fe23b77",
+          "sha256_matches_live": true,
+          "local_bytes": 22429
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/44irkf401yrm6.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 1051,
+      "sha256": "39a8cbec71f18dcb40cafe92713c3d45e7c98ef2054695bbb7519c89dccde881",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/f57da82495_44irkf401yrm6.js",
+          "local_sha256": "39a8cbec71f18dcb40cafe92713c3d45e7c98ef2054695bbb7519c89dccde881",
+          "sha256_matches_live": true,
+          "local_bytes": 1051
+        },
+        {
+          "relative_path": "source/raw-bundles/f57da82495_44irkf401yrm6.js",
+          "local_sha256": "39a8cbec71f18dcb40cafe92713c3d45e7c98ef2054695bbb7519c89dccde881",
+          "sha256_matches_live": true,
+          "local_bytes": 1051
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/3z5ozuetb4fvu.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 305958,
+      "sha256": "f86a5ae67b9d5341caa1bfe51b01563da61770df378fc0cb681710059376544e",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/7640d6d361_3z5ozuetb4fvu.js",
+          "local_sha256": "f86a5ae67b9d5341caa1bfe51b01563da61770df378fc0cb681710059376544e",
+          "sha256_matches_live": true,
+          "local_bytes": 305958
+        },
+        {
+          "relative_path": "source/raw-bundles/7640d6d361_3z5ozuetb4fvu.js",
+          "local_sha256": "f86a5ae67b9d5341caa1bfe51b01563da61770df378fc0cb681710059376544e",
+          "sha256_matches_live": true,
+          "local_bytes": 305958
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/manifest.webmanifest",
+      "status": 200,
+      "content_type": "application/manifest+json; charset=utf-8",
+      "bytes": 330,
+      "sha256": "54b7c912644bce5e7974b63ad36d438752f2898c3c3b19908bb1d28468f0ea51",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/e9a87a581b_manifest.webmanifest",
+          "local_sha256": "54b7c912644bce5e7974b63ad36d438752f2898c3c3b19908bb1d28468f0ea51",
+          "sha256_matches_live": true,
+          "local_bytes": 330
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/giftweblogoo.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 101738,
+      "sha256": "3030c49c63f349fce92f86c66c8e7c67b9b7a546b19f9a7de2faba12f2449b51",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/10fe39fad1_giftweblogoo.png",
+          "local_sha256": "3030c49c63f349fce92f86c66c8e7c67b9b7a546b19f9a7de2faba12f2449b51",
+          "sha256_matches_live": true,
+          "local_bytes": 101738
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/favicon.ico?favicon.2vob68tjqpejf.ico?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "image/vnd.microsoft.icon",
+      "bytes": 25931,
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/4cd4d02d5b_favicon.ico",
+          "local_sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932",
+          "sha256_matches_live": true,
+          "local_bytes": 25931
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    },
+    {
+      "url": "https://www.creategiftwebsite.com/_next/static/chunks/0cz1d0mv5g_q7.js?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "local_matches": [
+        {
+          "relative_path": "reference/preview-capture/public-assets/27cad0ed14_0cz1d0mv5g_q7.js",
+          "local_sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+          "sha256_matches_live": true,
+          "local_bytes": 112594
+        },
+        {
+          "relative_path": "source/raw-bundles/27cad0ed14_0cz1d0mv5g_q7.js",
+          "local_sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+          "sha256_matches_live": true,
+          "local_bytes": 112594
+        }
+      ],
+      "at_least_one_byte_identical_local_copy": true
+    }
+  ]
+}

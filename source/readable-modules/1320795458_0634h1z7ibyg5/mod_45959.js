@@ -1,0 +1,104 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, n) => {
+  "use strict";
+  Object.defineProperty(n, "__esModule", { value: !0 }),
+    Object.defineProperty(n, "createInitialRouterState", {
+      enumerable: !0,
+      get: function () {
+        return d;
+      },
+    });
+  let r = e.r(54250),
+    l = e.r(44424),
+    a = e.r(16112),
+    o = e.r(47155),
+    i = e.r(69092),
+    u = e.r(53973),
+    s = e.r(5243),
+    c = e.r(60806),
+    f = e.r(10607);
+  function d({
+    navigatedAt: e,
+    initialRSCPayload: t,
+    initialFlightStreamForCache: n,
+    location: p,
+  }) {
+    let { c: m, f: h, q: g, i: v, S: y, s: b, l: w, h: S, p: k, d: E } = t,
+      _ = m.join("/"),
+      { tree: x, seedData: N, head: P } = (0, a.getFlightDataPartsFromPath)(h[0]),
+      C = p ? (0, r.createHrefFromUrl)(p) : _,
+      T = { metadataVaryPath: null },
+      O = (0, i.convertRootFlightRouterStateToRouteTree)(x, g, T),
+      z = T.metadataVaryPath,
+      L = (0, o.createInitialCacheNodeForHydration)(
+        e,
+        O,
+        N,
+        P,
+        (0, s.computeDynamicStaleAt)(e, E ?? s.UnknownDynamicStaleTime),
+      );
+    if (null !== p && null !== z) {
+      if (
+        ((0, f.discoverKnownRoute)(Date.now(), p.pathname, null, null, O, z, v, C, y, !1),
+        null !== N && void 0 !== b)
+      )
+        if (void 0 !== w && null != n)
+          (0, c.decodeStaticStage)(n, w, void 0)
+            .then(async (e) => {
+              let t = Date.now(),
+                n = await (0, i.getStaleAt)(t, e.s);
+              (0, i.writeStaticStageResponseIntoCache)(t, e.f, void 0, e.h, n, x, g, !0);
+            })
+            .catch(() => {});
+        else {
+          let e = Date.now();
+          (0, i.getStaleAt)(e, b)
+            .then((t) => {
+              (0, i.writeStaticStageResponseIntoCache)(e, h, void 0, S, t, x, g, !1);
+            })
+            .catch(() => {}),
+            n?.cancel();
+        }
+      else n?.cancel();
+      null != k &&
+        (0, i.processRuntimePrefetchStream)(Date.now(), k, x, g)
+          .then((e) => {
+            null !== e &&
+              (0, i.writeDynamicRenderResponseIntoCache)(
+                Date.now(),
+                u.FetchStrategy.PPRRuntime,
+                e.flightDatas,
+                e.buildId,
+                e.isResponsePartial,
+                e.headVaryParams,
+                e.staleAt,
+                e.navigationSeed,
+                null,
+              );
+          })
+          .catch(() => {});
+    }
+    return {
+      tree: L.route,
+      cache: L.node,
+      pushRef: { pendingPush: !1, mpaNavigation: !1, preserveCustomHistoryState: !0 },
+      focusAndScrollRef: {
+        scrollRef: null,
+        forceScroll: !1,
+        onlyHashChange: !1,
+        hashFragment: null,
+      },
+      canonicalUrl: C,
+      renderedSearch: g,
+      nextUrl: ((0, l.extractPathFromFlightRouterState)(x) || p?.pathname) ?? null,
+      previousNextUrl: null,
+      debugInfo: null,
+    };
+  }
+  ("function" == typeof n.default || ("object" == typeof n.default && null !== n.default)) &&
+    void 0 === n.default.__esModule &&
+    (Object.defineProperty(n.default, "__esModule", { value: !0 }),
+    Object.assign(n.default, n),
+    (t.exports = n.default));
+};

@@ -1,0 +1,77 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    INTERCEPTION_ROUTE_MARKERS: function () {
+      return u;
+    },
+    extractInterceptionRouteInformation: function () {
+      return o;
+    },
+    isInterceptionRouteAppPath: function () {
+      return i;
+    },
+  };
+  for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+  let l = e.r(95438),
+    u = ["(..)(..)", "(.)", "(..)", "(...)"];
+  function i(e) {
+    return void 0 !== e.split("/").find((e) => u.find((t) => e.startsWith(t)));
+  }
+  function o(e) {
+    let t, r, n;
+    for (let a of e.split("/"))
+      if ((r = u.find((e) => a.startsWith(e)))) {
+        [t, n] = e.split(r, 2);
+        break;
+      }
+    if (!t || !r || !n)
+      throw Object.defineProperty(
+        Error(
+          `Invalid interception route: ${e}. Must be in the format /<intercepting route>/(..|...|..)(..)/<intercepted route>`,
+        ),
+        "__NEXT_ERROR_CODE",
+        { value: "E269", enumerable: !1, configurable: !0 },
+      );
+    switch (((t = (0, l.normalizeAppPath)(t)), r)) {
+      case "(.)":
+        n = "/" === t ? `/${n}` : t + "/" + n;
+        break;
+      case "(..)":
+        if ("/" === t)
+          throw Object.defineProperty(
+            Error(
+              `Invalid interception route: ${e}. Cannot use (..) marker at the root level, use (.) instead.`,
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E207", enumerable: !1, configurable: !0 },
+          );
+        n = t.split("/").slice(0, -1).concat(n).join("/");
+        break;
+      case "(...)":
+        n = "/" + n;
+        break;
+      case "(..)(..)":
+        let a = t.split("/");
+        if (a.length <= 2)
+          throw Object.defineProperty(
+            Error(
+              `Invalid interception route: ${e}. Cannot use (..)(..) marker at the root level or one level up.`,
+            ),
+            "__NEXT_ERROR_CODE",
+            { value: "E486", enumerable: !1, configurable: !0 },
+          );
+        n = a.slice(0, -2).concat(n).join("/");
+        break;
+      default:
+        throw Object.defineProperty(Error("Invariant: unexpected marker"), "__NEXT_ERROR_CODE", {
+          value: "E112",
+          enumerable: !1,
+          configurable: !0,
+        });
+    }
+    return { interceptingRoute: t, interceptedRoute: n };
+  }
+};

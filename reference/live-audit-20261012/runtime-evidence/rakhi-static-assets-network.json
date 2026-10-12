@@ -1,0 +1,34 @@
+[
+  {
+    "kind": "request",
+    "url": "https://www.creategiftwebsite.com/raksha_bandhan.mp3",
+    "type": "Media"
+  },
+  {
+    "kind": "response",
+    "url": "https://www.creategiftwebsite.com/raksha_bandhan.mp3",
+    "status": 206,
+    "type": "Media",
+    "mime": "audio/mpeg"
+  },
+  {
+    "kind": "request",
+    "url": "https://www.creategiftwebsite.com/rakhi-memory1.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+    "type": "Image"
+  },
+  {
+    "kind": "request",
+    "url": "https://www.creategiftwebsite.com/rakhi-memory2.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+    "type": "Image"
+  },
+  {
+    "kind": "request",
+    "url": "https://www.creategiftwebsite.com/rakhi-memory3.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+    "type": "Image"
+  },
+  {
+    "kind": "request",
+    "url": "https://www.creategiftwebsite.com/rakhi-memory4.svg?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+    "type": "Image"
+  }
+]

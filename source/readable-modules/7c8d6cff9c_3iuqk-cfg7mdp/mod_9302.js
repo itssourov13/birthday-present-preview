@@ -1,0 +1,318 @@
+/* RECOVERED SOURCE — de-minified with prettier from production Turbopack chunk */
+/* Not original developer source; factory logic is verbatim. */
+(e, t, r) => {
+  "use strict";
+  Object.defineProperty(r, "__esModule", { value: !0 });
+  var n = {
+    assertRootParamInSamples: function () {
+      return S;
+    },
+    createCookiesFromSample: function () {
+      return y;
+    },
+    createDraftModeForValidation: function () {
+      return _;
+    },
+    createExhaustiveParamsProxy: function () {
+      return v;
+    },
+    createExhaustiveSearchParamsProxy: function () {
+      return E;
+    },
+    createExhaustiveURLSearchParamsProxy: function () {
+      return R;
+    },
+    createHeadersFromSample: function () {
+      return P;
+    },
+    createRelativeURLFromSamples: function () {
+      return w;
+    },
+    createValidationSampleTracking: function () {
+      return m;
+    },
+    trackMissingSampleError: function () {
+      return h;
+    },
+    trackMissingSampleErrorAndThrow: function () {
+      return g;
+    },
+  };
+  for (var a in n) Object.defineProperty(r, a, { enumerable: !0, get: n[a] });
+  let o = e.r(58120),
+    i = e.r(87962),
+    s = e.r(62095),
+    l = e.r(55055),
+    c = e.r(99240),
+    u = e.r(20502),
+    d = e.r(75933),
+    f = e.r(8386),
+    p = e.r(69186);
+  function m() {
+    return { missingSampleErrors: [] };
+  }
+  function h(e) {
+    (function () {
+      let e = null,
+        t = f.workUnitAsyncStorage.getStore();
+      if (t)
+        switch (t.type) {
+          case "request":
+          case "validation-client":
+            e = t.validationSampleTracking ?? null;
+        }
+      if (!e)
+        throw Object.defineProperty(
+          new u.InvariantError(
+            "Expected to have a workUnitStore that provides validationSampleTracking",
+          ),
+          "__NEXT_ERROR_CODE",
+          { value: "E1110", enumerable: !1, configurable: !0 },
+        );
+      return e;
+    })().missingSampleErrors.push(e);
+  }
+  function g(e) {
+    throw (h(e), e);
+  }
+  function y(e, t) {
+    let r = new Set(),
+      n = new o.RequestCookies(new Headers());
+    if (e) for (let t of e) r.add(t.name), null !== t.value && n.set(t.name, t.value);
+    return new Proxy(i.RequestCookiesAdapter.seal(n), {
+      get(e, n, a) {
+        if ("has" === n) {
+          let o = Reflect.get(e, n, a);
+          return function (n) {
+            return r.has(n) || g(b(t, n)), o.call(e, n);
+          };
+        }
+        if ("get" === n) {
+          let o = Reflect.get(e, n, a);
+          return function (n) {
+            let a;
+            if ("string" == typeof n) a = n;
+            else {
+              if (!n || "object" != typeof n || "string" != typeof n.name) return o.call(e, n);
+              a = n.name;
+            }
+            return r.has(a) || g(b(t, a)), o.call(e, a);
+          };
+        }
+        return Reflect.get(e, n, a);
+      },
+    });
+  }
+  function b(e, t) {
+    return Object.defineProperty(
+      new d.InstantValidationError(
+        `Route "${e}" accessed cookie "${t}" which is not defined in the \`samples\` of \`unstable_instant\`. Add it to the sample's \`cookies\` array, or \`{ name: "${t}", value: null }\` if it should be absent.`,
+      ),
+      "__NEXT_ERROR_CODE",
+      { value: "E1115", enumerable: !1, configurable: !0 },
+    );
+  }
+  function P(e, t, r) {
+    let n = e ? [...e] : [];
+    if (n.find(([e]) => "cookie" === e.toLowerCase()))
+      throw Object.defineProperty(
+        new d.InstantValidationError(
+          'Invalid sample: Defining cookies via a "cookie" header is not supported. Use `cookies: [{ name: ..., value: ... }]` instead.',
+        ),
+        "__NEXT_ERROR_CODE",
+        { value: "E1111", enumerable: !1, configurable: !0 },
+      );
+    if (t) {
+      let e = t.toString();
+      n.push(["cookie", "" !== e ? e : null]);
+    }
+    let a = new Set(),
+      o = {};
+    for (let [e, t] of n) a.add(e.toLowerCase()), null !== t && (o[e.toLowerCase()] = t);
+    return new Proxy(s.HeadersAdapter.seal(s.HeadersAdapter.from(o)), {
+      get(e, t, n) {
+        if ("get" === t || "has" === t) {
+          let o = Reflect.get(e, t, n);
+          return function (t) {
+            let n = t.toLowerCase();
+            return (
+              a.has(n) ||
+                g(
+                  Object.defineProperty(
+                    new d.InstantValidationError(
+                      `Route "${r}" accessed header "${n}" which is not defined in the \`samples\` of \`unstable_instant\`. Add it to the sample's \`headers\` array, or \`["${n}", null]\` if it should be absent.`,
+                    ),
+                    "__NEXT_ERROR_CODE",
+                    { value: "E1116", enumerable: !1, configurable: !0 },
+                  ),
+                ),
+              o.call(e, n)
+            );
+          };
+        }
+        return Reflect.get(e, t, n);
+      },
+    });
+  }
+  function _() {
+    return {
+      get isEnabled() {
+        return !1;
+      },
+      enable() {
+        throw Object.defineProperty(
+          Error("Draft mode cannot be enabled during build-time instant validation."),
+          "__NEXT_ERROR_CODE",
+          { value: "E1092", enumerable: !1, configurable: !0 },
+        );
+      },
+      disable() {
+        throw Object.defineProperty(
+          Error("Draft mode cannot be disabled during build-time instant validation."),
+          "__NEXT_ERROR_CODE",
+          { value: "E1094", enumerable: !1, configurable: !0 },
+        );
+      },
+    };
+  }
+  function v(e, t, r) {
+    return new Proxy(e, {
+      get: (n, a, o) => (
+        "string" == typeof a &&
+          !p.wellKnownProperties.has(a) &&
+          a in e &&
+          !t.has(a) &&
+          g(
+            Object.defineProperty(
+              new d.InstantValidationError(
+                `Route "${r}" accessed param "${a}" which is not defined in the \`samples\` of \`unstable_instant\`. Add it to the sample's \`params\` object.`,
+              ),
+              "__NEXT_ERROR_CODE",
+              { value: "E1095", enumerable: !1, configurable: !0 },
+            ),
+          ),
+        Reflect.get(n, a, o)
+      ),
+    });
+  }
+  function E(e, t, r) {
+    return new Proxy(e, {
+      get: (e, n, a) => (
+        "string" != typeof n || p.wellKnownProperties.has(n) || t.has(n) || g(O(r, n)),
+        Reflect.get(e, n, a)
+      ),
+      has: (e, n) => (
+        "string" != typeof n || p.wellKnownProperties.has(n) || t.has(n) || g(O(r, n)),
+        Reflect.has(e, n)
+      ),
+    });
+  }
+  function R(e, t, r) {
+    return new Proxy(e, {
+      get(e, n, a) {
+        if ("get" === n || "getAll" === n || "has" === n) {
+          let o = Reflect.get(e, n, a);
+          return (n) => ("string" != typeof n || t.has(n) || g(O(r, n)), o.call(e, n));
+        }
+        let o = Reflect.get(e, n, a);
+        return "function" != typeof o || Object.hasOwn(e, n) ? o : o.bind(e);
+      },
+    });
+  }
+  function O(e, t) {
+    return Object.defineProperty(
+      new d.InstantValidationError(
+        `Route "${e}" accessed searchParam "${t}" which is not defined in the \`samples\` of \`unstable_instant\`. Add it to the sample's \`searchParams\` object, or \`{ "${t}": null }\` if it should be absent.`,
+      ),
+      "__NEXT_ERROR_CODE",
+      { value: "E1098", enumerable: !1, configurable: !0 },
+    );
+  }
+  function w(e, t, r) {
+    let n = (function (e, t) {
+        let r = [];
+        for (let n of e.split("/")) {
+          let e = (0, l.getSegmentParam)(n);
+          if (e)
+            switch (e.paramType) {
+              case "catchall":
+              case "optional-catchall": {
+                let a = t[e.paramName];
+                if (void 0 === a) a = [n];
+                else if (!Array.isArray(a))
+                  throw Object.defineProperty(
+                    new d.InstantValidationError(
+                      `Expected sample param value for segment '${n}' to be an array of strings, got ${typeof a}`,
+                    ),
+                    "__NEXT_ERROR_CODE",
+                    { value: "E1104", enumerable: !1, configurable: !0 },
+                  );
+                r.push(...a.map((e) => encodeURIComponent(e)));
+                break;
+              }
+              case "dynamic": {
+                let a = t[e.paramName];
+                if (void 0 === a) a = n;
+                else if ("string" != typeof a)
+                  throw Object.defineProperty(
+                    new d.InstantValidationError(
+                      `Expected sample param value for segment '${n}' to be a string, got ${typeof a}`,
+                    ),
+                    "__NEXT_ERROR_CODE",
+                    { value: "E1108", enumerable: !1, configurable: !0 },
+                  );
+                r.push(encodeURIComponent(a));
+                break;
+              }
+              case "catchall-intercepted-(..)(..)":
+              case "catchall-intercepted-(.)":
+              case "catchall-intercepted-(..)":
+              case "catchall-intercepted-(...)":
+              case "dynamic-intercepted-(..)(..)":
+              case "dynamic-intercepted-(.)":
+              case "dynamic-intercepted-(..)":
+              case "dynamic-intercepted-(...)":
+                throw Object.defineProperty(
+                  new u.InvariantError("Not implemented: Validation of interception routes"),
+                  "__NEXT_ERROR_CODE",
+                  { value: "E1106", enumerable: !1, configurable: !0 },
+                );
+              default:
+                e.paramType;
+            }
+          else r.push(n);
+        }
+        return r.join("/");
+      })(e, t ?? {}),
+      a = "";
+    if (r) {
+      let e = (function (e) {
+        let t = new URLSearchParams();
+        if (e) {
+          for (let [r, n] of Object.entries(e))
+            if (null != n)
+              if (Array.isArray(n)) for (let e of n) t.append(r, e);
+              else t.set(r, n);
+        }
+        return t;
+      })(r).toString();
+      e && (a = "?" + e);
+    }
+    return (0, c.parseRelativeUrl)(n + a, void 0, !0);
+  }
+  function S(e, t, r) {
+    if (t && r in t);
+    else {
+      let t = e.route;
+      g(
+        Object.defineProperty(
+          new d.InstantValidationError(
+            `Route "${t}" accessed root param "${r}" which is not defined in the \`samples\` of \`unstable_instant\`. Add it to the sample's \`params\` object.`,
+          ),
+          "__NEXT_ERROR_CODE",
+          { value: "E1114", enumerable: !1, configurable: !0 },
+        ),
+      );
+    }
+  }
+};

@@ -1,0 +1,373 @@
+{
+  "target_route": "https://www.creategiftwebsite.com/preview",
+  "stylesheet_url": "https://www.creategiftwebsite.com/_next/static/chunks/3klunzeywsa48.css?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+  "stylesheet_local_path": "reference/preview-capture/public-assets/89ce5fc05f_3klunzeywsa48.css",
+  "audit_timestamp_asia_dhaka": "2026-10-12T14:08:17+06:00",
+  "unique_non_data_css_url_count": 22,
+  "new_font_files_copied": 15,
+  "copied_font_filenames": [
+    "0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2",
+    "1a099d89ee94ee96-s.35a5cae5tspm2.woff2",
+    "1e219c03c996efbd-s.2qo5md4hn_gum.woff2",
+    "224e262ef877bfa4-s.1zkvd_innyig_.woff2",
+    "32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2",
+    "50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2",
+    "73091b67359a1d13-s.22yt1aol_-g3w.woff2",
+    "7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2",
+    "b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2",
+    "b887d91685b8c137-s.330vchwb4izzb.woff2",
+    "ccf27e5a7366fb23-s.1icgra-w5i50b.woff2",
+    "d8cb5ab3660140cd-s.2demiz2t05dx4.woff2",
+    "e629b5bc06499d58-s.10u7vx61f1ie7.woff2",
+    "e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2",
+    "fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2"
+  ],
+  "all_css_urls_http_200_and_hash_verified": true,
+  "dependencies": [
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "36560",
+      "bytes_live": 36560,
+      "sha256_live": "88e17be075f1be50ab67b057b99e3701b828f44ed28f9452df6c02645bb0cba9",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/0e5a02d3d2_03bda585a99c6450-s.p.32sris142tqlb.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/0e5a02d3d2_03bda585a99c6450-s.p.32sris142tqlb.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"1e6b6cdca8d31530d3519768cbd4825a\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "39152",
+      "bytes_live": 39152,
+      "sha256_live": "20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/a14cfb0dff_07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/a14cfb0dff_07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"acfce21e9f6eaf62a1058b502b920e06\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "1716",
+      "bytes_live": 1716,
+      "sha256_live": "a16f29d7d2a21a4f9b3249a82eb2725ed5bdb91500dfb5c4758977de27477f20",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/0b1dc8ddaa74ba49-s.0e__wj8580tc5.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"2591db816b61d44b6e87ba79d13622b2\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "21688",
+      "bytes_live": 21688,
+      "sha256_live": "0303e02b53b0298fb26a0193941a2e8754f0f9a9fce50d90b178d8da3424873f",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/1a099d89ee94ee96-s.35a5cae5tspm2.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"5ffe46eeb00dd9fa8a70cb10ccc3817e\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "11536",
+      "bytes_live": 11536,
+      "sha256_live": "250cc2966c658fb6d336731de9d82a8129025e9839c20c253bbc477852f6cf4f",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/1e219c03c996efbd-s.2qo5md4hn_gum.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"bd4666010daec121be2beb32688adbce\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/224e262ef877bfa4-s.1zkvd_innyig_.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "28908",
+      "bytes_live": 28908,
+      "sha256_live": "2d06f2c340ecb52c55153ec56093dc70b167699d7206246570f8ad4800190825",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/224e262ef877bfa4-s.1zkvd_innyig_.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/224e262ef877bfa4-s.1zkvd_innyig_.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"f83a932e4390acc2339567f36b215614\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "7776",
+      "bytes_live": 7776,
+      "sha256_live": "11a88b30f1441581bb8ef629548a827c540e9559a7bf68a50c61067c200cf03d",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/32fe63294b6cd18c-s.0tc1fqk3fgfsz.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"8433e08f6088d84b9f68a4d17f202123\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "45624",
+      "bytes_live": 45624,
+      "sha256_live": "c9745ee907c02cdd46cc41a65bb711cd861432f679a76c18e3de204a18723040",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/8ba8dbd98d_3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/8ba8dbd98d_3c7c6164b2587822-s.p.16u3vygyjnhr0.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"42e704fdcb66f030aaf4385749f0bdcb\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "42604",
+      "bytes_live": 42604,
+      "sha256_live": "5e08eb55c88b8658453e2ba916023964e0f67b98cd7abfa436eb8150968ee19e",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/6ff51aae43_406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/6ff51aae43_406d3fc8d5ec9f59-s.p.0mnr43et3sf34.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"6a68d0af647150cb9701577064f93400\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "12956",
+      "bytes_live": 12956,
+      "sha256_live": "d24c3502a91415f2ec44f107807673255b696c379b3995543270921c27863e32",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/50a3f1070da3c6cc-s.2xm1k7t3a0pcd.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"47d509a8ac6f9731f0a21534de8c9f48\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/73091b67359a1d13-s.22yt1aol_-g3w.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "22608",
+      "bytes_live": 22608,
+      "sha256_live": "0be22fbaae6716f7b55ce24268c86381589d31fc8f5f43a9295b740a1c54a457",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/73091b67359a1d13-s.22yt1aol_-g3w.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/73091b67359a1d13-s.22yt1aol_-g3w.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"e75b4852893cecbe4dbe49f188875755\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "15684",
+      "bytes_live": 15684,
+      "sha256_live": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/b11b6fbffb_7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/b11b6fbffb_7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"26082c73a711d4530a40ee117c5d6cb5\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "20780",
+      "bytes_live": 20780,
+      "sha256_live": "b63651df977d08650ff2e598a3979a490f114b59353605e091dd3fdb530f530e",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/7f11d98043fdedc9-s.2c8-7nzo1jf9r.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"f228e29cc52b9499570eda6fe998bbbb\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "33640",
+      "bytes_live": 33640,
+      "sha256_live": "f1451edd6434085c4f9f3a8b4a674182dd7d6acccf53bfced19fd167f0705a06",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/b35b0dbffda7f2c4-s.1d9rlgtqyj_-l.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"82557ba8bacea89a845b10ba48554d21\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/b887d91685b8c137-s.330vchwb4izzb.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "40560",
+      "bytes_live": 40560,
+      "sha256_live": "7e701dc124492f7d0856fba4a07157d0cecc84e2b2b4615f08530c1e8bc112dd",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/b887d91685b8c137-s.330vchwb4izzb.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/b887d91685b8c137-s.330vchwb4izzb.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"be6da6a24d8b5bc5c287a7dadc9cdd1d\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "7828",
+      "bytes_live": 7828,
+      "sha256_live": "a8c4bd7cd7073180e740d2d83a616b5cb0845579b73207eeafeae8532e70c901",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/ccf27e5a7366fb23-s.1icgra-w5i50b.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"18e8ea957b6c2d8032ba0f1c9603b6af\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "35464",
+      "bytes_live": 35464,
+      "sha256_live": "511ce967375fd2d924483d798f1086a533259fc675181f62944ec1176fe8786d",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/d8cb5ab3660140cd-s.2demiz2t05dx4.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"cd5cabf5b80f62cb7b59dd200d84a9d7\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "15040",
+      "bytes_live": 15040,
+      "sha256_live": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/c15859c010_e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/c15859c010_e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"c008db4e8a972ad72dcbd4251a98ac63\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "8292",
+      "bytes_live": 8292,
+      "sha256_live": "5c913fc1b1f86f4b475e5df45a796aa480d1f7f0891ed6f1a5991d6d1be887c3",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/e629b5bc06499d58-s.10u7vx61f1ie7.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"196acbb650c75807ea2f0ef36edbd186\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "13040",
+      "bytes_live": 13040,
+      "sha256_live": "d107f72673f443b440185eea74262d7aecbe8fb70150e397334e2ab202c5d301",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/e6d00ff86ef9e699-s.1vcas2uk12q5a.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"2ff2e1d51f89a9391b6ee71296a62a79\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "27272",
+      "bytes_live": 27272,
+      "sha256_live": "cd8db90cd950e26bc8761f65d323588bd5cd112d326d6d322bc7c8ea86771215",
+      "original_package_copy_paths_before_addition": [
+        "reference/preview-capture/public-assets/f5216a8503_fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+      ],
+      "saved_additional_copy": null,
+      "byte_identical_local_path_found": [
+        "reference/preview-capture/public-assets/f5216a8503_fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"52d04440a9faae0db9adc6cdc844099b\""
+    },
+    {
+      "source_url": "https://www.creategiftwebsite.com/_next/static/media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2?dpl=dpl_Ar66bJL3z5FYL2qhDaSegDmpamVY",
+      "status": 200,
+      "content_type": "font/woff2",
+      "content_length_header": "8444",
+      "bytes_live": 8444,
+      "sha256_live": "a04fc7ed18a8037149ce0bfda58076709d8e0840e136ed00abbdc196b7992443",
+      "original_package_copy_paths_before_addition": [],
+      "saved_additional_copy": "reference/live-assets-20261012/next-static-media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2",
+      "byte_identical_local_path_found": [
+        "reference/live-assets-20261012/next-static-media/fc0a7394b875fa43-s.2ytmazkdrg7t9.woff2"
+      ],
+      "sha256_verified": true,
+      "etag": "\"c3fbcb38845f29aec4dfd00940b0c166\""
+    }
+  ],
+  "note": "CSS is preserved unchanged. Seven of these fonts were already captured because the HTML preloaded them; any remaining missing font bytes are stored under reference/live-assets-20261012/next-static-media/."
+}
