@@ -1,5 +1,7 @@
 # Live /preview Asset Gap and Recovery Report
 
+> File paths in this report are relative to the repository root.
+
 Audit target: https://www.creategiftwebsite.com/preview
 Audit date: 2026-10-12
 
@@ -30,7 +32,7 @@ The stylesheet 3klunzeywsa48.css references 22 unique WOFF2 URLs. Seven were alr
 - The live HTML is byte-identical to the captured HTML.
 - Two additional JavaScript chunks prefetched by the Home link for the separate /?showHome=1 route are saved separately in reference/adjacent-home-prefetch-20261012/. They are optional adjacent-route evidence, not required to render /preview itself.
 
-Details: reference/live-audit-20261012/LIVE-RESOURCE-MANIFEST.json, LIVE-LINKED-RESOURCE-VALIDATION.json, and ADJACENT-HOME-PREFETCH.json.
+Details: `reference/live-audit-20261012/LIVE-RESOURCE-MANIFEST.json`, `reference/live-audit-20261012/LIVE-LINKED-RESOURCE-VALIDATION.json`, and `reference/live-audit-20261012/ADJACENT-HOME-PREFETCH.json`.
 
 ## Runtime test coverage
 
@@ -47,7 +49,7 @@ The default birthday route was exercised through these visible stages:
 
 Rakhi smoke coverage rendered thali, tieRakhi, sweets, memories, and letter. The diya-light action was tested; four Rakhi SVGs loaded at 400×400 and raksha_bandhan.mp3 was requested successfully. The complete drag/tie interaction and all sweets-completion states were not exhaustively tested.
 
-Detailed record: reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md, its JSON report, and runtime-evidence/.
+Detailed record: reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md, its JSON report, and reference/live-audit-20261012/runtime-evidence/.
 
 ## Remaining limitations (not local static-file gaps)
 
@@ -57,4 +59,4 @@ Custom journeys may receive arbitrary builder state and user-uploaded media thro
 
 ## Final integrity status
 
-SOURCE-MANIFEST.sha256 covers the recovered source, references, audit reports, packaging scripts, configuration, and documentation, excluding itself, Git metadata, and generated dist output. Regenerate and verify it after any further source/documentation changes.
+`SOURCE-MANIFEST.sha256` covers recovered source, references, audit reports, packaging scripts, configuration, and documentation, excluding itself, Git metadata, and generated `dist/` output. Regenerate and verify it after any further source or documentation changes.

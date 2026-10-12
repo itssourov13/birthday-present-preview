@@ -1,5 +1,7 @@
 # Production Landing Page — Live Comparison & Delivery Notes
 
+> File paths in this report are relative to the repository root.
+
 ## Target and comparison baseline
 
 - Live route: https://www.creategiftwebsite.com/preview
