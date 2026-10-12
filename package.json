@@ -1,0 +1,15 @@
+{
+  "name": "birthday-present-preview",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hostable production package for the recovered CreateGiftWebsite preview experience.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "npm run build && node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

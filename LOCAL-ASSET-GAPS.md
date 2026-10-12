@@ -53,8 +53,8 @@ Detailed record: reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md, it
 
 No original authoring source maps could be retrieved. The selected JavaScript/CSS contain no sourceMappingURL directive; four probable .map endpoints returned HTTP 403 plain text. Therefore this is compiled source recovery, not the original uncompiled TypeScript/React repository.
 
-Custom journeys may receive arbitrary builder state and user-uploaded media through localStorage or the journey-config postMessage interface. Those user-specific uploads and every possible custom configuration cannot be recovered from the public default route alone. Private backend data, third-party analytics behavior, and the entire separate Home route are outside the /preview core package. The package is not yet a standalone runnable implementation.
+Custom journeys may receive arbitrary builder state and user-uploaded media through localStorage or the journey-config postMessage interface. Those user-specific uploads and every possible custom configuration cannot be recovered from the public default route alone. Private backend data, third-party analytics behavior, and the entire separate Home route are outside the /preview core package. The production packaging work on branch feat/preview-production-landing-page now provides a standalone static build for the recovered default /preview journey; it does not reconstruct the original private builder/backend or recover arbitrary custom-user journeys.
 
 ## Final integrity status
 
-SOURCE-MANIFEST.sha256 covers every package file other than itself. The final check passed all manifest entries with zero errors.
+SOURCE-MANIFEST.sha256 covers the recovered source, references, audit reports, packaging scripts, configuration, and documentation, excluding itself, Git metadata, and generated dist output. Regenerate and verify it after any further source/documentation changes.

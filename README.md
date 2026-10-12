@@ -1,50 +1,46 @@
-# Birthday Present Preview — Recovered Route Source
+# Birthday Present Preview
 
-Forensic recovery package for the public /preview route at https://www.creategiftwebsite.com/preview.
+Self-hostable static packaging of the recovered /preview experience from the live CreateGiftWebsite page. It uses the actual recovered HTML, JavaScript, CSS, fonts, and journey media so that it stays as close to the live implementation as possible.
 
-**Current scope:** recovered compiled frontend chunks, extracted/readable modules, direct stylesheets, public font dependencies, route media, capture evidence, and runtime-flow audit. This is a source/reference package for a later implementation phase; it is **not yet a standalone runnable landing page**.
+Live comparison target: https://www.creategiftwebsite.com/preview
 
-## Repository layout
+## Run locally
 
-- source/raw-bundles/ — byte-preserving copies of the 12 JavaScript chunks linked by the live /preview HTML.
-- source/split-modules/ — extracted modules from the route-linked chunks.
-- source/readable-modules/ — formatted versions of the extracted module files.
-- source/route-modules/ — recovered /preview page module, in readable and split form.
-- source/key-modules/ — recovered viewer implementation and occasion/default configuration module.
-- reference/preview-capture/ — captured HTML, headers, structure, original public asset inventory, CSS, fonts, icon/logo and manifest.
-- reference/live-assets-20261012/ — additional public images, SVGs, MP3s, and 15 fonts recovered during live comparison.
-- reference/adjacent-home-prefetch-20261012/ — two optional chunks observed when Next.js prefetched the separate Home route; these are not part of the /preview core.
-- reference/live-audit-20261012/ — hash comparisons, resource inventories, browser-stage evidence, source-map probes, audit notes and final verification.
-- PREVIEW-SOURCE-MAP.md — route resource mapping.
-- LOCAL-ASSET-GAPS.md — missing items recovered and remaining limitations.
-- SOURCE-MANIFEST.sha256 — per-file integrity manifest (does not hash itself).
+Requirements: Node.js 20+ (no npm dependencies are required).
 
-## Live verification results (2026-10-12)
+1. Run npm run build to generate dist/.
+2. Run npm run start to launch the local server.
+3. Open http://127.0.0.1:4179/preview. The root URL redirects to /preview.
+4. Run npm test to rebuild the package and check that all expected first-party resources exist.
 
-- Live HTML was fetched again and was byte-identical to the earlier capture.
-- All 24/24 unique first-party resources directly referenced by live HTML were hash-matched to local copies.
-- Combined inventory across HTML, CSS and recovered viewer/config media references covers 50 unique first-party paths: 50 hash-verified, 0 unresolved.
-- The stylesheet scan found 22 WOFF2 URLs; all 22 were checked against live bytes. Fifteen fonts missing from the original capture were added.
-- All 11 identified public journey media files were recovered: four memory images, puzzle image, four Rakhi SVGs and two MP3 files.
-- Chromium runtime verification exercised the default birthday path from gift opening through opening the final letter. Rakhi-specific thali, tieRakhi, sweets, memories and letter screens were smoke-rendered; the first diya interaction and Rakhi media loading were also checked.
-- The /preview Home link caused Next.js to prefetch two chunks for the separate /?showHome=1 route. These were kept separately and hash-verified.
+To choose another port, run PORT=4180 npm run start.
 
-See reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md and FINAL-VERIFICATION.json for details and limitations.
+## Deploy to Vercel
 
-## Important limitations
+Import this repository into Vercel and use the included vercel.json configuration. The build command is npm run build and the output directory is dist. The root URL redirects to /preview; /preview serves the generated HTML without changing the browser URL.
 
-This is **compiled production source recovery**, not the author's original uncompiled TypeScript/React repository. No sourceMappingURL directive was found in the selected chunks or stylesheets, and four likely .map endpoints returned HTTP 403 plain text. Private backend code, builder-supplied media uploads, every possible custom journey configuration, and every gesture/occasion flow are not claimed as recovered. This package has not been converted into a self-contained, independently runnable app.
+## Repository map
 
-The five live paths ending in .png (memory1.png through memory4.png and puzzle.png) contain JPEG-signature bytes despite their server names and image/png content type. Exact server bytes and names are preserved; no transcoding or renaming was performed.
+- reference/ — live captures, recovered assets, hash comparisons, browser observations, and audit reports.
+- source/raw-bundles/ — byte-preserving copies of the live-linked JavaScript chunks.
+- source/key-modules/ and source/route-modules/ — readable recovered modules for analysis, not the deployment entry point.
+- scripts/build.mjs — assembles the static production output using the recovered resources.
+- scripts/serve.mjs — local HTTP server with MIME and range-response support.
+- scripts/smoke-test.mjs — package integrity and resource-presence assertions.
+- PRODUCTION-COMPARISON.md — fidelity approach, implementation decisions, and remaining limitations.
 
-## Integrity check
+## Live fidelity and route coverage
 
-From this directory, verify the package with:
+The build packages the recovered live implementation rather than recreating its UI by hand: 12 JavaScript chunks, 2 stylesheets, 22 WOFF2 dependencies, and 11 journey media files, plus the logo, icon, and manifest. Assets are emitted at the same URL paths expected by the captured HTML and compiled app code.
 
-    sha256sum -c SOURCE-MANIFEST.sha256
+The deployment scope is the /preview experience. The Home button points to the live site's separate Home route because that route was not part of the recovery repository. The original analytics and SEO/social metadata remain in the captured HTML for fidelity; review them before moving to a different domain.
 
-The manifest was regenerated after documentation/evidence updates. The final check passed all manifest entries.
+## Source-recovery limitations
 
-## Next phase boundary
+This is compiled production source recovery, not the original uncompiled source tree. No source maps were recovered. Custom builder data, private backend systems, user-uploaded media, microphone blowing, and every custom journey or gesture state are not claimed as recovered or exhaustively tested. Review LOCAL-ASSET-GAPS.md, PREVIEW-SOURCE-MAP.md, and reference/live-audit-20261012/PREVIEW-RUNTIME-FLOW-AUDIT.md for the full audit.
 
-The next phase may use this recovered material to implement a separate landing page that behaves and looks like the live /preview route. That implementation has **not** been started in this commit.
+## Integrity
+
+SOURCE-MANIFEST.sha256 covers repository source, evidence, scripts, configuration, and documentation, excluding itself, Git metadata, and generated dist/. Check it with:
+
+sha256sum -c SOURCE-MANIFEST.sha256
