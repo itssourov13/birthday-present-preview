@@ -145,6 +145,11 @@ for (const [sourceName, outputName] of [["index.html", "index.html"], ["countdow
   await cp(path.join(ROOT, "site", sourceName), path.join(DIST, outputName));
 }
 
+// Keep Claude's self-contained countdown UI artwork and local fonts in the production package.
+const countdownUiAssetSource = path.join(ROOT, "site", "assets");
+const countdownUiFiles = await listFiles(countdownUiAssetSource);
+await cp(countdownUiAssetSource, path.join(DIST, "assets"), { recursive: true });
+
 const manifest = {
   source: "reference/live-audit-20261012/preview.live.html",
   homepage: "/",
@@ -156,6 +161,7 @@ const manifest = {
   woff2Dependencies: fontNames.size,
   rootAssets: rootAssetNames.length,
   routeMediaAssets: 11,
+  countdownUiAssets: countdownUiFiles.length,
   packagedFirstPartyResources: jsNames.length + cssNames.length + fontNames.size + 3 + 11,
   homeNavigation: "/",
   assets: copied
@@ -168,5 +174,6 @@ console.log("  Live CSS files: " + cssNames.length);
 console.log("  WOFF2 dependencies: " + fontNames.size);
 console.log("  Root logos/icons/manifest and journey media: " + rootAssetNames.length);
 console.log("  Total inventoried first-party paths: " + manifest.packagedFirstPartyResources);
+console.log("  Countdown UI assets (SVG, fonts and licences): " + countdownUiFiles.length);
 console.log("  Homepage: / (countdown UI; timer logic deferred)");
 console.log("  Birthday experience: /preview");

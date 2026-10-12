@@ -13,28 +13,26 @@ const homepage = await readFile(path.join(DIST, "index.html"), "utf8");
 const homepageCss = await readFile(path.join(DIST, "countdown.css"), "utf8");
 const manifest = JSON.parse(await readFile(path.join(DIST, "build-manifest.json"), "utf8"));
 
-assert.match(homepage, /Some moments/);
-assert.match(homepage, /countdown-panel/);
-assert.equal([...homepage.matchAll(/class="time-unit"/g)].length, 4, "Homepage should render four countdown units.");
-assert.match(homepage, /class="gift-tag"/);
-assert.match(homepage, /class="gift-stage"/);
-assert.match(homepage, /id="gift-note-toggle"[^>]*aria-expanded="false"[^>]*aria-controls="gift-note"/);
-assert.match(homepage, /id="gift-note"[^>]*hidden/);
-assert.match(homepage, /event\.key === "Escape"/);
-assert.match(homepage, /\(hover: hover\) and \(pointer: fine\)/);
-assert.match(homepage, /prefers-reduced-motion: reduce/);
-assert.match(homepage, /href="\/preview"/);
-assert.match(homepageCss, /prefers-reduced-motion/);
-assert.match(homepageCss, /@keyframes rise-in \{ from \{ opacity: 1;/,
-  "Intro motion must never hide the headline or gift if animation rendering is delayed.");
-assert.match(homepageCss, /@keyframes orbit-one/);
-assert.match(homepageCss, /@keyframes halo-breathe/);
-assert.match(homepageCss, /min-height: 50px/);
-assert.match(homepageCss, /\.gift-note\[hidden\] \{ display: none; \}/);
-assert.match(homepageCss, /@media \(hover: none\), \(pointer: coarse\)/);
-assert.match(homepageCss, /@keyframes note-reveal/);
+assert.ok(homepage.includes("Some moments"));
+assert.ok(homepage.includes("<title>A Little Surprise</title>"));
+assert.ok(homepage.includes('href="/countdown.css"'));
+assert.ok(homepage.includes('href="/preview"'), "Continue should keep the same-domain preview journey.");
+assert.ok(homepage.includes('class="stage__arch stage__arch--outer"'));
+assert.ok(homepage.includes('class="stage__gift" src="assets/gift.svg"'));
+assert.ok(homepage.includes('class="stage__seal"'));
+assert.ok(homepageCss.includes("prefers-reduced-motion"));
+assert.equal([...homepage.matchAll(/class="unit"/g)].length, 4, "Claude's countdown plate should have four time units.");
+assert.ok(homepageCss.includes("@media (max-width: 599px)"));
+assert.ok(homepageCss.includes("--w: clamp(120px, 20svh, 220px)"));
+assert.ok(homepageCss.includes("(orientation: landscape)"), "Short landscape phones should use a compact two-column layout.");
+assert.ok(homepageCss.includes("@media (hover: hover) and (pointer: fine)"));
+assert.ok(homepageCss.includes("@keyframes float"));
+assert.ok(homepageCss.includes("@keyframes twinkle"));
+assert.ok(homepageCss.includes("@media (prefers-reduced-motion: reduce)"));
+assert.ok(homepageCss.includes('font-family: "Lora"'));
 assert.equal(manifest.homepage, "/");
 assert.equal(manifest.homeNavigation, "/");
+assert.equal(manifest.countdownUiAssets, 7);
 assert.match(html, /A surprise awaits you/);
 assert.match(html, /Tap the gift to open/);
 assert.equal(manifest.jsChunks, 12);
@@ -42,6 +40,17 @@ assert.equal(manifest.stylesheets, 2);
 assert.equal(manifest.woff2Dependencies, 22);
 assert.equal(manifest.routeMediaAssets, 11);
 assert.equal(manifest.packagedFirstPartyResources, 50);
+
+const countdownUiFiles = [
+  "gift.svg",
+  "favicon.svg",
+  "fonts/Lora-Variable.woff",
+  "fonts/Lora-Italic-Variable.woff",
+  "fonts/Poppins-Regular.woff",
+  "fonts/Poppins-Medium.woff",
+  "fonts/LICENSES.txt"
+];
+for (const name of countdownUiFiles) await stat(path.join(DIST, "assets", name));
 
 const chunkNames = new Set(
   [...html.matchAll(/\/_next\/static\/chunks\/([^"'?#]+?\.(?:js|css))/g)].map((match) => match[1])
@@ -137,7 +146,11 @@ try {
     ["/_next/static/chunks/3klunzeywsa48.css", /text\/css/],
     ["/_next/static/media/03bda585a99c6450-s.p.32sris142tqlb.woff2", /font\/woff2/],
     ["/memory1.png", /image\/png/],
-    ["/song.mp3", /audio\/mpeg/]
+    ["/song.mp3", /audio\/mpeg/],
+    ["/assets/gift.svg", /image\/svg\+xml/],
+    ["/assets/favicon.svg", /image\/svg\+xml/],
+    ["/assets/fonts/Lora-Variable.woff", /font\/woff/],
+    ["/assets/fonts/Poppins-Regular.woff", /font\/woff/]
   ];
   for (const [resourcePath, typePattern] of resources) {
     const response = await fetch(origin + resourcePath);
@@ -162,7 +175,8 @@ try {
   if (server.exitCode === null) server.kill("SIGKILL");
 }
 
-console.log("PASS: countdown homepage packaging and internal Home navigation.");
+console.log("PASS: Claude countdown UI, four-unit plate, responsive and reduced-motion styles.");
+console.log("PASS: bundled SVG/fonts/licence assets and same-domain Continue navigation.");
 console.log("PASS: recovered birthday HTML, all 50 inventoried dependencies, and preview route.");
-console.log("PASS: local homepage/query routing, static MIME types, path containment, and audio range requests.");
-console.log("PASS: 12 JS chunks, 2 CSS files, 22 fonts, and all 11 journey-media assets.");
+console.log("PASS: local homepage/query routing, UI asset MIME types, path containment, and audio range requests.");
+console.log("PASS: 12 JS chunks, 2 CSS files, 22 route fonts, and all 11 journey-media assets.");

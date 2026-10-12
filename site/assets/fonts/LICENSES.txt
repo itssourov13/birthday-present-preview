@@ -1,0 +1,9 @@
+Bundled fonts (Latin subsets, converted to WOFF). Both are licensed under the SIL Open Font License 1.1 — https://openfontlicense.org
+
+Lora (Lora-Variable.woff, Lora-Italic-Variable.woff)
+  Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic), with Reserved Font Name "Lora".
+  Used for: headline, countdown numerals, italic footnote.
+
+Poppins (Poppins-Regular.woff, Poppins-Medium.woff)
+  Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
+  Used for: labels, body copy, button text.
