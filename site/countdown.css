@@ -271,6 +271,26 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
   .colophon { min-height: 38px; padding-block: 6px; font-size: 8px; letter-spacing: .1em; }
 }
 
+/* Low-power/mobile profile: retain the art direction without continuously repainting filtered layers. */
+@media (max-width: 899px), (hover: none) and (pointer: coarse) {
+  /* SVG turbulence + blend-mode noise is decorative and expensive to rasterize on small GPUs. */
+  .atmosphere__grain { display: none; }
+
+  /* Keep the star field, but make it static so the whole viewport is not repeatedly composited. */
+  .atmosphere__dust--twinkle::before { animation: none; opacity: .65; }
+
+  /* backdrop-filter on a rising card can trigger repeated backdrop sampling during the entrance. */
+  .plate {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: linear-gradient(155deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025) 42%, rgba(224, 85, 138, .075));
+  }
+
+  /* Keep the light cone and gift artwork, but avoid infinite opacity/filter work on phones. */
+  .stage__light { filter: none; animation: none; opacity: .85; }
+  .stage__gift { animation: none; filter: none; transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .stage__gift { transform: translateX(-50%); }

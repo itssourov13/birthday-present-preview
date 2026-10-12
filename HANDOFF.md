@@ -21,6 +21,10 @@ The root URL (`/`) serves the countdown homepage; `/preview` serves the recovere
 
 To use another local port, set `PORT` when starting the server, for example `PORT=4180 npm run start`. `npm test` builds `dist/` before checking the generated output. The `dist/` directory is generated and ignored by Git.
 
+### Countdown mobile performance
+
+The mobile/touch-first CSS profile suppresses the decorative SVG turbulence grain, disables continuous star/gift/light animation, removes CSS blur/drop-shadow filters from the animated gift/light, and disables the countdown plate's backdrop blur. Introductory opacity/transform reveals remain for visual polish; the page still supports `prefers-reduced-motion`. These are code-level rendering-cost mitigations, not a claim of measured FPS or power consumption across physical phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md). The smoke suite guards these mobile overrides against accidental removal.
+
 ## How the package is assembled
 
 - `site/index.html` and `site/countdown.css` define the responsive countdown homepage, with a custom SVG gift illustration and CSS ambience. The displayed time is currently a visual placeholder, not a running clock.

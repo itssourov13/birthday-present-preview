@@ -26,6 +26,10 @@ Run the build and smoke tests together with:
 npm test
 ```
 
+### Mobile rendering and performance
+
+The countdown homepage uses a reduced-cost visual profile on narrow or touch-first devices: the animated SVG-grain layer is hidden, the star field and gift are static, the gift/light CSS filters are removed, and the countdown plate avoids backdrop blur. This keeps the same artwork, palette, and layout while reducing continuous compositing and filtered-layer work on phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md) for the cause analysis and verification notes. The page also respects `prefers-reduced-motion`.
+
 ## Deploy to Vercel
 
 Import the repository into Vercel and keep the included `vercel.json` settings: `npm run build` is the build command and `dist` is the output directory. The root route serves the countdown homepage; `/preview` serves the recovered birthday experience.
