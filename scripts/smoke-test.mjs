@@ -16,7 +16,13 @@ const manifest = JSON.parse(await readFile(path.join(DIST, "build-manifest.json"
 assert.ok(homepage.includes("Some moments"));
 assert.ok(homepage.includes("<title>A Little Surprise</title>"));
 assert.ok(homepage.includes('href="/countdown.css"'));
-assert.ok(homepage.includes('href="/preview"'), "Continue should keep the same-domain preview journey.");
+assert.ok(homepage.includes('data-preview-href="/preview"'), "The unlock button should keep the same-domain preview destination.");
+assert.ok(homepage.includes('src="/assets/countdown-config.js"'));
+assert.ok(homepage.includes('src="/assets/countdown.js"'));
+assert.ok(homepage.includes('data-countdown'));
+assert.ok(homepage.includes('data-countdown-value="days"'));
+assert.ok(homepage.includes('role="timer"') && homepage.includes('aria-live="off"'));
+assert.ok(homepage.includes('disabled data-unlock-button'), "Preview navigation must remain disabled before the unlock time.");
 assert.ok(homepage.includes('class="stage__arch stage__arch--outer"'));
 assert.ok(homepage.includes('class="stage__gift" src="assets/gift.svg"'));
 assert.ok(homepage.includes('class="stage__seal"'));
@@ -48,10 +54,17 @@ assert.match(homepageCss, /\.atmosphere__grain \{ display: none; \}/);
 assert.match(homepageCss, /\.plate \{[\s\S]*?backdrop-filter: none;/, "Mobile countdown plate must not use backdrop blur.");
 assert.match(homepageCss, /\.stage__light \{ filter: none; animation: none;/);
 assert.match(homepageCss, /\.stage__gift \{ animation: none; filter: none;/);
+assert.match(homepageCss, /\.cta:disabled \{[\s\S]*?cursor: not-allowed;/);
+assert.ok(homepageCss.includes('.cta:not(:disabled):hover'), "Disabled Continue must not run active hover effects.");
 assert.ok(homepageCss.includes('font-family: "Lora"'));
 assert.equal(manifest.homepage, "/");
 assert.equal(manifest.homeNavigation, "/");
-assert.equal(manifest.countdownUiAssets, 11);
+assert.equal(manifest.countdownUiAssets, 13);
+assert.equal(manifest.homepageScript, "/assets/countdown.js");
+assert.equal(manifest.countdownConfig, "/assets/countdown-config.js");
+assert.equal(manifest.previewGuard, "/assets/countdown-config.js");
+assert.ok(html.includes('<script src="/assets/countdown-config.js"></script>'), "Generated /preview output must receive the client-side date gate.");
+assert.ok(html.indexOf('<script src="/assets/countdown-config.js"></script>') < html.indexOf('/_next/static/chunks/'), "The release guard must precede recovered app scripts.");
 assert.match(html, /A surprise awaits you/);
 assert.match(html, /Tap the gift to open/);
 assert.equal(manifest.jsChunks, 12);
@@ -68,12 +81,22 @@ const countdownUiFiles = [
   "fonts/Poppins-Regular.woff",
   "fonts/Poppins-Medium.woff",
   "fonts/LICENSES.txt",
+  "countdown-config.js",
+  "countdown.js",
   "images/moonlit-garden-768.webp",
   "images/moonlit-garden.webp",
   "images/skylight-garden-768.webp",
   "images/skylight-garden.webp"
 ];
 for (const name of countdownUiFiles) await stat(path.join(DIST, "assets", name));
+const countdownConfig = await readFile(path.join(DIST, "assets/countdown-config.js"), "utf8");
+const countdownScript = await readFile(path.join(DIST, "assets/countdown.js"), "utf8");
+assert.ok(countdownConfig.includes('targetISO: "2026-10-14T00:00:00+06:00"'));
+assert.ok(countdownConfig.includes('timeZone: "Asia/Dhaka"'));
+assert.ok(countdownConfig.includes('window.location.replace(config.homePath)'));
+assert.ok(countdownScript.includes('Date.now()'), "The timer should calculate from the absolute target instead of decrementing stored digits.");
+assert.ok(countdownScript.includes('visibilitychange'), "The timer should resync when the document becomes visible again.");
+assert.ok(countdownScript.includes('unlockButton.disabled = !unlocked'));
 const mobileInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden-768.webp"));
 const desktopInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden.webp"));
 assert.ok(mobileInterludeImage.size < 60_000, "The mobile image variant should stay below 60 KB.");
@@ -179,6 +202,8 @@ try {
     ["/memory1.png", /image\/png/],
     ["/song.mp3", /audio\/mpeg/],
     ["/assets/gift.svg", /image\/svg\+xml/],
+    ["/assets/countdown-config.js", /javascript/],
+    ["/assets/countdown.js", /javascript/],
     ["/assets/images/moonlit-garden-768.webp", /image\/webp/],
     ["/assets/images/moonlit-garden.webp", /image\/webp/],
     ["/assets/images/skylight-garden-768.webp", /image\/webp/],
@@ -210,7 +235,8 @@ try {
   if (server.exitCode === null) server.kill("SIGKILL");
 }
 
-console.log("PASS: countdown UI, responsive/reduced-motion styles, and lazy responsive homepage image.");
+console.log("PASS: live countdown, timestamp-based UI unlock, and generated preview route guard.");
+console.log("PASS: countdown UI, responsive/reduced-motion styles, and lazy responsive homepage images.");
 console.log("PASS: bundled SVG/fonts/licence/WebP assets and same-domain Continue navigation.");
 console.log("PASS: recovered birthday HTML, all 50 inventoried dependencies, and preview route.");
 console.log("PASS: local homepage/query routing, UI asset MIME types, path containment, and audio range requests.");

@@ -10,6 +10,8 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="/countdown.css">
+  <script src="/assets/countdown-config.js" defer></script>
+  <script src="/assets/countdown.js" defer></script>
 </head>
 <body>
   <!-- Atmosphere: purely decorative, sits behind everything. -->
@@ -51,37 +53,36 @@
 
         <p class="intro">A little more time. A little more magic. <span class="intro__rest">Something special is waiting just for&nbsp;you.</span></p>
 
-        <section class="plate" aria-labelledby="plate-title">
+        <section class="plate" aria-labelledby="plate-title" data-countdown>
           <header class="plate__head">
-            <h2 class="plate__title" id="plate-title"><span class="plate__dot" aria-hidden="true"></span>Counting down to your moment</h2>
+            <h2 class="plate__title" id="plate-title" data-countdown-title><span class="plate__dot" aria-hidden="true"></span><span data-countdown-title-text>Counting down to your moment</span></h2>
             <span class="plate__star" aria-hidden="true">✦</span>
           </header>
 
-          <!-- DESIGN PLACEHOLDERS ONLY — static digits, not a live countdown.
-               Integration: replace the four .unit__num values with real data later. -->
-          <div class="plate__units" role="group" aria-label="Time remaining (static design placeholder)">
-            <div class="unit"><span class="unit__num">01</span><span class="unit__label">Days</span></div>
-            <div class="unit"><span class="unit__num">06</span><span class="unit__label">Hours</span></div>
-            <div class="unit"><span class="unit__num">24</span><span class="unit__label">Minutes</span></div>
-            <div class="unit"><span class="unit__num">38</span><span class="unit__label">Seconds</span></div>
+          <!-- The live countdown is driven by the explicit timestamp in countdown-config.js. -->
+          <div class="plate__units" role="timer" aria-label="Countdown to your surprise" aria-live="off">
+            <div class="unit"><span class="unit__num" data-countdown-value="days">00</span><span class="unit__label">Days</span></div>
+            <div class="unit"><span class="unit__num" data-countdown-value="hours">00</span><span class="unit__label">Hours</span></div>
+            <div class="unit"><span class="unit__num" data-countdown-value="minutes">00</span><span class="unit__label">Minutes</span></div>
+            <div class="unit"><span class="unit__num" data-countdown-value="seconds">00</span><span class="unit__label">Seconds</span></div>
           </div>
 
           <footer class="plate__foot">
-            <p class="plate__note">Good things are worth waiting for.</p>
+            <p class="plate__note" data-countdown-status>Good things are worth waiting for.</p>
             <span class="plate__track" aria-hidden="true"></span>
             <p class="plate__sign">Made for you <span aria-hidden="true">♥</span></p>
           </footer>
         </section>
 
         <div class="actions">
-          <!-- Keep the existing same-domain preview journey; unlock logic is a separate phase. -->
-          <a class="cta" href="/preview">
-            <span class="cta__text">Continue</span>
+          <!-- The button stays disabled until the configured timestamp is reached. -->
+          <button class="cta" type="button" disabled data-unlock-button data-preview-href="/preview" aria-describedby="unlock-status">
+            <span class="cta__text" data-unlock-label>Continue</span>
             <span class="cta__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-          </a>
-          <p class="actions__caption"><span aria-hidden="true">✦</span> Your little moment is almost here</p>
+          </button>
+          <p class="actions__caption" id="unlock-status" data-unlock-status role="status" aria-live="polite"><span aria-hidden="true">✦</span> Your little moment is almost here</p>
         </div>
       </section>
 

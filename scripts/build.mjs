@@ -59,9 +59,18 @@ async function copyAsset(roots, requestedName, destination) {
 await rm(DIST, { recursive: true, force: true });
 await mkdir(DIST, { recursive: true });
 
-const html = await readFile(HTML_SOURCE, "utf8");
+let html = await readFile(HTML_SOURCE, "utf8");
 if (!html.includes("A surprise awaits you")) fail("Recovered HTML does not contain the expected opening screen.");
 if (!html.includes("preview")) fail("Recovered HTML does not appear to be the /preview route.");
+
+// Inject a small, synchronous client-side release guard into generated output only.
+// The recovered source capture under reference/ remains byte-for-byte untouched.
+const previewGuardTag = '<script src="/assets/countdown-config.js"></script>';
+if (html.includes(previewGuardTag)) fail("Recovered HTML unexpectedly already contains the countdown release guard.");
+const headOpening = /<head\b[^>]*>/i.exec(html);
+if (!headOpening) fail("Recovered preview HTML is missing its head element; cannot safely add the release guard.");
+const guardInsertAt = headOpening.index + headOpening[0].length;
+html = html.slice(0, guardInsertAt) + "\n" + previewGuardTag + html.slice(guardInsertAt);
 await writeFile(path.join(DIST, "preview.html"), html);
 
 const chunkNames = new Set();
@@ -154,6 +163,9 @@ const manifest = {
   source: "reference/live-audit-20261012/preview.live.html",
   homepage: "/",
   homepageStylesheet: "/countdown.css",
+  homepageScript: "/assets/countdown.js",
+  countdownConfig: "/assets/countdown-config.js",
+  previewGuard: "/assets/countdown-config.js",
   route: "/preview",
   output: "preview.html",
   jsChunks: jsNames.length,
@@ -175,5 +187,5 @@ console.log("  WOFF2 dependencies: " + fontNames.size);
 console.log("  Root logos/icons/manifest and journey media: " + rootAssetNames.length);
 console.log("  Total inventoried first-party paths: " + manifest.packagedFirstPartyResources);
 console.log("  Countdown UI assets (SVG, fonts and licences): " + countdownUiFiles.length);
-console.log("  Homepage: / (countdown UI; timer logic deferred)");
+console.log("  Homepage: / (live countdown with configured preview release gate)");
 console.log("  Birthday experience: /preview");
