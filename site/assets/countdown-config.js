@@ -10,6 +10,7 @@
   const config = Object.freeze({
     targetISO: "2026-10-14T00:00:00+06:00",
     timeZone: "Asia/Dhaka",
+    timeZoneLabel: "Bangladesh time",
     homePath: "/",
     previewPath: "/preview"
   });
@@ -18,7 +19,9 @@
 
   // Gate direct browser navigation too, while keeping the recovered capture untouched.
   // This is a client-side presentation gate, not server-side security enforcement.
-  if (window.location.pathname === config.previewPath) {
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isPreviewPath = currentPath === config.previewPath || currentPath === `${config.previewPath}.html`;
+  if (isPreviewPath) {
     const targetAt = Date.parse(config.targetISO);
     if (!Number.isFinite(targetAt) || Date.now() < targetAt) {
       window.location.replace(config.homePath);

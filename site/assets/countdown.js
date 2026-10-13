@@ -11,6 +11,7 @@
   const config = window.BIRTHDAY_COUNTDOWN_CONFIG;
   const targetAt = Date.parse(config?.targetISO || "");
   const timezone = config?.timeZone || "Asia/Dhaka";
+  const timezoneLabel = config?.timeZoneLabel || timezone;
   const valueNodes = {
     days: document.querySelector('[data-countdown-value="days"]'),
     hours: document.querySelector('[data-countdown-value="hours"]'),
@@ -64,6 +65,7 @@
       plate.dataset.countdownState = "unconfigured";
       for (const node of Object.values(valueNodes)) if (node) node.textContent = "--";
       if (targetStatus) targetStatus.textContent = "The surprise time hasn't been set yet.";
+      if (unlockStatus) unlockStatus.textContent = "The surprise time hasn't been set yet.";
       return false;
     }
 
@@ -92,7 +94,15 @@
       if (unlockLabel) unlockLabel.textContent = unlocked ? "Open your surprise" : "Continue";
       if (unlockStatus) {
         const prefix = unlockStatus.querySelector("span[aria-hidden='true']");
-        unlockStatus.textContent = unlocked ? "Your little moment is here" : "Your little moment is almost here";
+        const timeLabel = new Intl.DateTimeFormat("en-US", {
+          timeZone: timezone,
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(new Date(targetAt));
+        const message = unlocked
+          ? "Your little moment is here"
+          : `Unlocks at ${timeLabel} · ${timezoneLabel}`;
+        unlockStatus.textContent = message;
         if (prefix) {
           prefix.textContent = "✦";
           unlockStatus.prepend(prefix);

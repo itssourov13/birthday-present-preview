@@ -17,6 +17,8 @@ assert.ok(homepage.includes("Some moments"));
 assert.ok(homepage.includes("<title>A Little Surprise</title>"));
 assert.ok(homepage.includes('href="/countdown.css"'));
 assert.ok(homepage.includes('data-preview-href="/preview"'), "The unlock button should keep the same-domain preview destination.");
+assert.ok(homepage.includes('cta__icon-svg--lock'), "The locked CTA should communicate its disabled state with a lock icon.");
+assert.ok(homepage.includes('Unlocks at 12:00 AM · Bangladesh time'));
 assert.ok(homepage.includes('src="/assets/countdown-config.js"'));
 assert.ok(homepage.includes('src="/assets/countdown.js"'));
 assert.ok(homepage.includes('data-countdown'));
@@ -97,6 +99,9 @@ const countdownConfig = await readFile(path.join(DIST, "assets/countdown-config.
 const countdownScript = await readFile(path.join(DIST, "assets/countdown.js"), "utf8");
 assert.ok(countdownConfig.includes('targetISO: "2026-10-14T00:00:00+06:00"'));
 assert.ok(countdownConfig.includes('timeZone: "Asia/Dhaka"'));
+assert.ok(countdownConfig.includes('timeZoneLabel: "Bangladesh time"'));
+assert.ok(countdownConfig.includes('window.location.pathname.replace(/\\/+$/, "")'), "The preview route should normalize trailing slashes.");
+assert.ok(countdownConfig.includes('currentPath === `${config.previewPath}.html`'), "The direct /preview.html alias should share the release guard.");
 assert.ok(countdownConfig.includes('window.location.replace(config.homePath)'));
 assert.ok(countdownScript.includes('Date.now()'), "The timer should calculate from the absolute target instead of decrementing stored digits.");
 assert.ok(countdownScript.includes('visibilitychange'), "The timer should resync when the document becomes visible again.");
@@ -198,6 +203,12 @@ try {
   const previewResponse = await fetch(origin + "/preview");
   assert.equal(previewResponse.status, 200);
   assert.match(previewResponse.headers.get("content-type") || "", /text\/html/);
+  const previewSlashResponse = await fetch(origin + "/preview/");
+  assert.equal(previewSlashResponse.status, 200, "The trailing-slash preview alias should still serve the guarded capture.");
+  assert.ok((await previewSlashResponse.text()).includes('<script src="/assets/countdown-config.js"></script>'));
+  const previewHtmlResponse = await fetch(origin + "/preview.html");
+  assert.equal(previewHtmlResponse.status, 200, "The direct static HTML alias should receive the same release guard.");
+  assert.ok((await previewHtmlResponse.text()).includes('<script src="/assets/countdown-config.js"></script>'));
 
   const resources = [
     ["/_next/static/chunks/44irkf401yrm6.js", /javascript/],
