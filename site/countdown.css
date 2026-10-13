@@ -91,7 +91,7 @@ h1 .line:nth-child(2) { animation-delay: .08s; } h1 .line:nth-child(3) { animati
 h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
   background: linear-gradient(100deg, #ffd3e4 5%, var(--rose) 45%, #f0cd92 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-.intro { max-width: 30em; margin-top: clamp(16px, 2.6vh, 26px); color: var(--text-soft); font-size: clamp(14px, 1.15vw, 16px); line-height: 1.8; }
+.intro { max-width: 30em; margin-top: clamp(16px, 2.6vh, 26px); color: var(--text-soft); font-size: clamp(14px, 1.15vw, 16px); line-height: 1.8; animation: rise .85s var(--ease) .2s both; }
 .intro__rest { color: var(--text-mute); }
 
 /* ───────────── Countdown plate ───────────── */
@@ -134,10 +134,18 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
 .cta__text { font-size: 16px; font-weight: 500; letter-spacing: .02em; }
 .cta__icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #2a1220; color: var(--gold); transition: transform .3s var(--ease); }
 .cta__icon svg { width: 20px; height: 20px; }
+.cta__icon-svg--lock { display: none; }
+.cta:disabled .cta__icon-svg--arrow { display: none; }
+.cta:disabled .cta__icon-svg--lock { display: block; }
+.cta:disabled {
+  opacity: .72; filter: saturate(.76); cursor: not-allowed;
+  box-shadow: 0 7px 20px rgba(207, 161, 90, .12), 0 0 0 5px rgba(233, 201, 141, .035), inset 0 1px 0 rgba(255, 255, 255, .42);
+}
+.cta:disabled::before { display: none; }
 @media (hover: hover) and (pointer: fine) {
-  .cta:hover { transform: translateY(-2px); filter: brightness(1.04); box-shadow: 0 16px 40px rgba(207, 161, 90, .38), 0 0 0 8px rgba(233, 201, 141, .09), inset 0 1px 0 rgba(255, 255, 255, .7), inset 0 -2px 0 rgba(140, 90, 30, .18); }
-  .cta:hover::before { transform: translateX(120%); }
-  .cta:hover .cta__icon { transform: translateX(3px); }
+  .cta:not(:disabled):hover { transform: translateY(-2px); filter: brightness(1.04); box-shadow: 0 16px 40px rgba(207, 161, 90, .38), 0 0 0 8px rgba(233, 201, 141, .09), inset 0 1px 0 rgba(255, 255, 255, .7), inset 0 -2px 0 rgba(140, 90, 30, .18); }
+  .cta:not(:disabled):hover::before { transform: translateX(120%); }
+  .cta:not(:disabled):hover .cta__icon { transform: translateX(3px); }
 }
 .cta:active { transform: translateY(1px) scale(.985); filter: brightness(.97); box-shadow: 0 5px 16px rgba(207, 161, 90, .25), inset 0 2px 6px rgba(120, 70, 20, .25); }
 .cta:focus-visible { outline: 2px solid var(--ivory); outline-offset: 5px; border-radius: 999px; box-shadow: 0 0 0 8px rgba(233, 201, 141, .35), 0 10px 30px rgba(207, 161, 90, .28); }
@@ -155,8 +163,8 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
 .stage__light { position: absolute; z-index: -1; left: 22%; width: 56%; top: 4%; height: 80%; filter: blur(16px);
   background: linear-gradient(180deg, transparent, rgba(255, 233, 200, .24) 28%, rgba(255, 190, 215, .08) 70%, transparent);
   clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%); animation: breathe 9s ease-in-out infinite; }
-.stage__gift { position: absolute; z-index: 1; left: 50%; top: 0; width: 118%; max-width: none; height: auto; transform: translateX(-50%); pointer-events: none;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .25)); animation: float 9s ease-in-out infinite; }
+.stage__gift { --gift-float-offset: -8px; position: absolute; z-index: 1; left: 50%; top: 0; width: 118%; max-width: none; height: auto; transform: translateX(-50%); pointer-events: none;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .25)); animation: float 8.5s ease-in-out infinite; }
 .stage__seal { position: absolute; z-index: 2; left: -10%; top: 9%; width: max(33%, 136px); height: auto; filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .4)); }
 .seal__ring { fill: var(--gold); font-family: var(--sans); font-size: 10.4px; font-weight: 500; }
 .seal__month { fill: var(--text-soft); font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: .24em; }
@@ -177,7 +185,7 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
 @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
 @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-7px); } }
+@keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(var(--gift-float-offset, -8px)); } }
 @keyframes breathe { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
 @keyframes twinkle { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
 
@@ -286,9 +294,9 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
     background: linear-gradient(155deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .025) 42%, rgba(224, 85, 138, .075));
   }
 
-  /* Keep the light cone and gift artwork, but avoid infinite opacity/filter work on phones. */
+  /* Keep the light cone static; let the gift float using transform only, without filters. */
   .stage__light { filter: none; animation: none; opacity: .85; }
-  .stage__gift { animation: none; filter: none; transform: translateX(-50%); }
+  .stage__gift { --gift-float-offset: -5px; animation: float 8.5s ease-in-out infinite; filter: none; transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -18,7 +18,7 @@ npm run build
 npm run start
 ```
 
-Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the new countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. To use another port, start the server with `PORT=4180 npm run start`. The countdown numbers are currently visual placeholders; clock and unlock behavior are a separate follow-up phase.
+Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. The live countdown target is configured in `site/assets/countdown-config.js` as an explicit ISO timestamp. Current target: October 15, 2026 at 00:00 Bangladesh time (UTC+06:00). The Continue button and a lightweight generated-output guard for `/preview` stay locked until that timestamp. The guard is client-side UX, not server-side access security. To use another port, start the server with `PORT=4180 npm run start`.
 
 Run the build and smoke tests together with:
 
@@ -28,7 +28,7 @@ npm test
 
 ### Mobile rendering and performance
 
-The countdown homepage uses a reduced-cost visual profile on narrow or touch-first devices: the animated SVG-grain layer is hidden, the star field and gift are static, the gift/light CSS filters are removed, and the countdown plate avoids backdrop blur. This keeps the same artwork, palette, and layout while reducing continuous compositing and filtered-layer work on phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md) for the cause analysis and verification notes. The page also respects `prefers-reduced-motion`.
+The countdown homepage uses a reduced-cost visual profile on narrow or touch-first devices: the animated SVG-grain layer is hidden, the star field remains static, the gift keeps a low-amplitude transform-only float, and gift/light CSS filters are removed, and the countdown plate avoids backdrop blur. This keeps the same artwork, palette, and layout while reducing continuous compositing and filtered-layer work on phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md) for the cause analysis and verification notes. The page also respects `prefers-reduced-motion`.
 
 ## Deploy to Vercel
 
@@ -48,7 +48,7 @@ Import the repository into Vercel and keep the included `vercel.json` settings: 
 
 ## Important notes
 
-This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The recovered experience's Home control now returns to this project's countdown homepage. The countdown display is UI-only at this stage; no target-time calculation or date-based gate has been implemented yet. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
+This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The recovered experience's Home control now returns to this project's countdown homepage. The homepage countdown and client-side preview-release gate now use the same explicit ISO timestamp in `site/assets/countdown-config.js`; confirm the intended unlock time before a real release. The guard improves the visitor flow but is not a security boundary because the deployment is static. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
 
 ## Integrity check
 
