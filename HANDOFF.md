@@ -23,7 +23,7 @@ To use another local port, set `PORT` when starting the server, for example `POR
 
 ### Countdown mobile performance
 
-The mobile/touch-first CSS profile suppresses the decorative SVG turbulence grain, disables continuous star/gift/light animation, removes CSS blur/drop-shadow filters from the animated gift/light, and disables the countdown plate's backdrop blur. Introductory opacity/transform reveals remain for visual polish; the page still supports `prefers-reduced-motion`. These are code-level rendering-cost mitigations, not a claim of measured FPS or power consumption across physical phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md). The smoke suite guards these mobile overrides against accidental removal.
+The mobile/touch-first CSS profile suppresses the decorative SVG turbulence grain, keeps star/light layers static, allows only a low-amplitude transform-based gift float, and removes CSS blur/drop-shadow filters from the gift/light, and disables the countdown plate's backdrop blur. Introductory opacity/transform reveals remain for visual polish; the page still supports `prefers-reduced-motion`. These are code-level rendering-cost mitigations, not a claim of measured FPS or power consumption across physical phones. See [`reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md`](reference/reports/COUNTDOWN-PERFORMANCE-AUDIT.md). The smoke suite guards these mobile overrides against accidental removal.
 
 ## How the package is assembled
 

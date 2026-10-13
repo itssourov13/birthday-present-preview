@@ -53,7 +53,11 @@ assert.match(homepageCss, /@media \(max-width: 899px\), \(hover: none\) and \(po
 assert.match(homepageCss, /\.atmosphere__grain \{ display: none; \}/);
 assert.match(homepageCss, /\.plate \{[\s\S]*?backdrop-filter: none;/, "Mobile countdown plate must not use backdrop blur.");
 assert.match(homepageCss, /\.stage__light \{ filter: none; animation: none;/);
-assert.match(homepageCss, /\.stage__gift \{ animation: none; filter: none;/);
+assert.match(homepageCss, /\.stage__gift \{ --gift-float-offset: -5px; animation: float 8\.5s ease-in-out infinite; filter: none;/);
+assert.match(homepageCss, /@keyframes float \{[\s\S]*?transform: translateX\(-50%\) translateY\(var\(--gift-float-offset, -8px\)\)/);
+assert.match(homepageCss, /\.intro \{[\s\S]*?animation: rise \.85s var\(--ease\) \.2s both;/);
+assert.ok(homepageCss.includes('.stage__gift { --gift-float-offset: -5px; animation: float 8.5s ease-in-out infinite; filter: none; transform: translateX(-50%); }'));
+assert.ok(homepageCss.includes('@media (prefers-reduced-motion: reduce)'));
 assert.match(homepageCss, /\.cta:disabled \{[\s\S]*?cursor: not-allowed;/);
 assert.ok(homepageCss.includes('.cta:not(:disabled):hover'), "Disabled Continue must not run active hover effects.");
 assert.ok(homepageCss.includes('font-family: "Lora"'));
