@@ -20,6 +20,19 @@ assert.ok(homepage.includes('href="/preview"'), "Continue should keep the same-d
 assert.ok(homepage.includes('class="stage__arch stage__arch--outer"'));
 assert.ok(homepage.includes('class="stage__gift" src="assets/gift.svg"'));
 assert.ok(homepage.includes('class="stage__seal"'));
+assert.ok(homepage.includes('class="interlude"'), "The homepage should include the visual interlude.");
+assert.ok(homepage.includes('src="/assets/images/moonlit-garden.webp"'));
+assert.ok(homepage.includes('srcset="/assets/images/moonlit-garden-768.webp 768w, /assets/images/moonlit-garden.webp 1152w"'));
+assert.ok(homepage.includes('class="interlude__chapter"'), "The second visual should have its own editorial heading.");
+assert.ok(homepage.includes('src="/assets/images/skylight-garden.webp"'));
+assert.ok(homepage.includes('srcset="/assets/images/skylight-garden-768.webp 768w, /assets/images/skylight-garden.webp 1152w"'));
+assert.equal([...homepage.matchAll(/loading="lazy"/g)].length, 2, "Both below-the-fold images should lazy-load.");
+assert.ok(homepage.includes('loading="lazy"'), "The below-the-fold image should not compete with the hero's initial load.");
+assert.ok(homepage.includes('decoding="async"'));
+assert.ok(homepage.includes('width="1152"') && homepage.includes('height="864"'), "The image's intrinsic dimensions should be declared.");
+assert.ok(!homepage.includes("<video"), "The homepage polish must not add video playback.");
+assert.ok(homepageCss.includes(".interlude__scene"));
+assert.ok(homepageCss.includes("@media (max-width: 599px)"));
 assert.ok(homepageCss.includes("prefers-reduced-motion"));
 assert.equal([...homepage.matchAll(/class="unit"/g)].length, 4, "Claude's countdown plate should have four time units.");
 assert.ok(homepageCss.includes("@media (max-width: 599px)"));
@@ -38,7 +51,7 @@ assert.match(homepageCss, /\.stage__gift \{ animation: none; filter: none;/);
 assert.ok(homepageCss.includes('font-family: "Lora"'));
 assert.equal(manifest.homepage, "/");
 assert.equal(manifest.homeNavigation, "/");
-assert.equal(manifest.countdownUiAssets, 7);
+assert.equal(manifest.countdownUiAssets, 11);
 assert.match(html, /A surprise awaits you/);
 assert.match(html, /Tap the gift to open/);
 assert.equal(manifest.jsChunks, 12);
@@ -54,9 +67,21 @@ const countdownUiFiles = [
   "fonts/Lora-Italic-Variable.woff",
   "fonts/Poppins-Regular.woff",
   "fonts/Poppins-Medium.woff",
-  "fonts/LICENSES.txt"
+  "fonts/LICENSES.txt",
+  "images/moonlit-garden-768.webp",
+  "images/moonlit-garden.webp",
+  "images/skylight-garden-768.webp",
+  "images/skylight-garden.webp"
 ];
 for (const name of countdownUiFiles) await stat(path.join(DIST, "assets", name));
+const mobileInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden-768.webp"));
+const desktopInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden.webp"));
+assert.ok(mobileInterludeImage.size < 60_000, "The mobile image variant should stay below 60 KB.");
+assert.ok(desktopInterludeImage.size < 100_000, "The desktop image variant should stay below 100 KB.");
+const mobileSkylightImage = await stat(path.join(DIST, "assets/images/skylight-garden-768.webp"));
+const desktopSkylightImage = await stat(path.join(DIST, "assets/images/skylight-garden.webp"));
+assert.ok(mobileSkylightImage.size < 90_000, "The second mobile image variant should stay below 90 KB.");
+assert.ok(desktopSkylightImage.size < 125_000, "The second desktop image variant should stay below 125 KB.");
 
 const chunkNames = new Set(
   [...html.matchAll(/\/_next\/static\/chunks\/([^"'?#]+?\.(?:js|css))/g)].map((match) => match[1])
@@ -154,6 +179,10 @@ try {
     ["/memory1.png", /image\/png/],
     ["/song.mp3", /audio\/mpeg/],
     ["/assets/gift.svg", /image\/svg\+xml/],
+    ["/assets/images/moonlit-garden-768.webp", /image\/webp/],
+    ["/assets/images/moonlit-garden.webp", /image\/webp/],
+    ["/assets/images/skylight-garden-768.webp", /image\/webp/],
+    ["/assets/images/skylight-garden.webp", /image\/webp/],
     ["/assets/favicon.svg", /image\/svg\+xml/],
     ["/assets/fonts/Lora-Variable.woff", /font\/woff/],
     ["/assets/fonts/Poppins-Regular.woff", /font\/woff/]
@@ -181,8 +210,8 @@ try {
   if (server.exitCode === null) server.kill("SIGKILL");
 }
 
-console.log("PASS: Claude countdown UI, four-unit plate, responsive and reduced-motion styles.");
-console.log("PASS: bundled SVG/fonts/licence assets and same-domain Continue navigation.");
+console.log("PASS: countdown UI, responsive/reduced-motion styles, and lazy responsive homepage image.");
+console.log("PASS: bundled SVG/fonts/licence/WebP assets and same-domain Continue navigation.");
 console.log("PASS: recovered birthday HTML, all 50 inventoried dependencies, and preview route.");
 console.log("PASS: local homepage/query routing, UI asset MIME types, path containment, and audio range requests.");
 console.log("PASS: 12 JS chunks, 2 CSS files, 22 route fonts, and all 11 journey-media assets.");

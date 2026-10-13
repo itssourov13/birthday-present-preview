@@ -27,7 +27,7 @@ The mobile/touch-first CSS profile suppresses the decorative SVG turbulence grai
 
 ## How the package is assembled
 
-- `site/index.html` and `site/countdown.css` define the responsive countdown homepage, with a custom SVG gift illustration and CSS ambience. The displayed time is currently a visual placeholder, not a running clock.
+- `site/index.html` and `site/countdown.css` define the responsive countdown homepage, with a custom SVG gift illustration and CSS ambience. A below-the-fold visual interlude uses two responsive WebP image pairs: moonlit garden (`site/assets/images/moonlit-garden-768.webp` and `moonlit-garden.webp`) and skylight garden with butterflies (`skylight-garden-768.webp` and `skylight-garden.webp`). Both use `srcset`, intrinsic dimensions, lazy loading, and asynchronous decoding; the original PNGs and optional video are not bundled. The displayed time is currently a visual placeholder, not a running clock.
 - `scripts/build.mjs` reads `reference/live-audit-20261012/preview.live.html`, recovered bundles, captured public assets, recovered journey media, additional fonts, and the homepage files; it writes the deployable files and build manifest to `dist/`.
 - `scripts/serve.mjs` is the dependency-free local HTTP server. It serves `/` as the homepage and `/preview` as the recovered experience, with static MIME types, path containment, and audio byte-range responses.
 - `scripts/smoke-test.mjs` checks required first-party resources, generated route behavior, MIME handling, path containment, and MP3 range requests.
