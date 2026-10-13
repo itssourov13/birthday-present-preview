@@ -17,7 +17,7 @@ npm test         # Rebuild and run routing/resource smoke tests
 sha256sum -c SOURCE-MANIFEST.sha256  # Verify source/evidence hashes
 ```
 
-The root URL (`/`) serves the countdown homepage; `/preview` serves the recovered birthday experience after the configured release time. The live clock and the generated preview guard share the single ISO timestamp in `site/assets/countdown-config.js`. Current assumption: `2026-10-14T00:00:00+06:00` (midnight at the start of October 14 in Bangladesh). The Continue button remains disabled before that time and is enabled after the clock reaches zero. The guard runs in the browser and is not server-side security; the captured HTML in `reference/` remains unchanged.
+The root URL (`/`) serves the countdown homepage; `/preview` serves the recovered birthday experience after the configured release time. The live clock and the generated preview guard share the single ISO timestamp in `site/assets/countdown-config.js`. Current target: `2026-10-15T00:00:00+06:00` (midnight at the start of October 15 in Bangladesh). The Continue button remains disabled before that time and is enabled after the clock reaches zero. The guard runs in the browser and is not server-side security; the captured HTML in `reference/` remains unchanged.
 
 To use another local port, set `PORT` when starting the server, for example `PORT=4180 npm run start`. `npm test` builds `dist/` before checking the generated output. The `dist/` directory is generated and ignored by Git.
 

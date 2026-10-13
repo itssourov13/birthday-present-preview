@@ -1,6 +1,6 @@
 /*
  * Single source of truth for the countdown and the preview's release time.
- * The date-only design shows October 14, 2026, so the current assumption is
+ * The intended release date is October 15, 2026, so the current target is
  * midnight at the beginning of that date in Bangladesh: UTC+06:00.
  * Confirm/change this ISO timestamp here if a different release time is intended.
  */
@@ -8,7 +8,7 @@
   "use strict";
 
   const config = Object.freeze({
-    targetISO: "2026-10-14T00:00:00+06:00",
+    targetISO: "2026-10-15T00:00:00+06:00",
     timeZone: "Asia/Dhaka",
     timeZoneLabel: "Bangladesh time",
     homePath: "/",

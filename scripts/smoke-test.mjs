@@ -97,7 +97,7 @@ const countdownUiFiles = [
 for (const name of countdownUiFiles) await stat(path.join(DIST, "assets", name));
 const countdownConfig = await readFile(path.join(DIST, "assets/countdown-config.js"), "utf8");
 const countdownScript = await readFile(path.join(DIST, "assets/countdown.js"), "utf8");
-assert.ok(countdownConfig.includes('targetISO: "2026-10-14T00:00:00+06:00"'));
+assert.ok(countdownConfig.includes('targetISO: "2026-10-15T00:00:00+06:00"'));
 assert.ok(countdownConfig.includes('timeZone: "Asia/Dhaka"'));
 assert.ok(countdownConfig.includes('timeZoneLabel: "Bangladesh time"'));
 assert.ok(countdownConfig.includes('window.location.pathname.replace(/\\/+$/, "")'), "The preview route should normalize trailing slashes.");

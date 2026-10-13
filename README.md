@@ -18,7 +18,7 @@ npm run build
 npm run start
 ```
 
-Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. The live countdown target is configured in `site/assets/countdown-config.js` as an explicit ISO timestamp. Current assumption: October 14, 2026 at 00:00 Bangladesh time (UTC+06:00). The Continue button and a lightweight generated-output guard for `/preview` stay locked until that timestamp. The guard is client-side UX, not server-side access security. To use another port, start the server with `PORT=4180 npm run start`.
+Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. The live countdown target is configured in `site/assets/countdown-config.js` as an explicit ISO timestamp. Current target: October 15, 2026 at 00:00 Bangladesh time (UTC+06:00). The Continue button and a lightweight generated-output guard for `/preview` stay locked until that timestamp. The guard is client-side UX, not server-side access security. To use another port, start the server with `PORT=4180 npm run start`.
 
 Run the build and smoke tests together with:
 
