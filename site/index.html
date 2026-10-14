@@ -10,8 +10,7 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="/countdown.css">
-  <script src="/assets/countdown-config.js" defer></script>
-  <script src="/assets/countdown.js" defer></script>
+  <script type="module" src="/assets/countdown.js"></script>
 </head>
 <body>
   <!-- Atmosphere: purely decorative, sits behind everything. -->
@@ -36,7 +35,7 @@
       <p class="date-chip">
         <span class="date-chip__label">A moment made for you</span>
         <span class="date-chip__rule" aria-hidden="true"></span>
-        <time datetime="2026-10-15">Oct 15, 2026</time>
+        <time>Jun 25</time>
       </p>
     </header>
 
@@ -55,11 +54,11 @@
 
         <section class="plate" aria-labelledby="plate-title" data-countdown>
           <header class="plate__head">
-            <h2 class="plate__title" id="plate-title" data-countdown-title><span class="plate__dot" aria-hidden="true"></span><span data-countdown-title-text>Counting down to your moment</span></h2>
+            <h2 class="plate__title" id="plate-title" data-countdown-title><span class="plate__dot" aria-hidden="true"></span><span data-countdown-title-text>Counting down to your birthday</span></h2>
             <span class="plate__star" aria-hidden="true">✦</span>
           </header>
 
-          <!-- The live countdown is driven by the explicit timestamp in countdown-config.js. -->
+          <!-- The live countdown follows the next annual birthday in countdown-config.js. -->
           <div class="plate__units" role="timer" aria-label="Countdown to your surprise" aria-live="off">
             <div class="unit"><span class="unit__num" data-countdown-value="days">00</span><span class="unit__label">Days</span></div>
             <div class="unit"><span class="unit__num" data-countdown-value="hours">00</span><span class="unit__label">Hours</span></div>
@@ -75,15 +74,14 @@
         </section>
 
         <div class="actions">
-          <!-- The button stays disabled until the configured timestamp is reached. -->
-          <button class="cta" type="button" disabled data-unlock-button data-preview-href="/preview" aria-describedby="unlock-status">
-            <span class="cta__text" data-unlock-label>Continue</span>
+          <!-- Opening the surprise is an ordinary link, never gated by the countdown. -->
+          <a class="cta" href="/preview" data-unlock-button aria-describedby="unlock-status">
+            <span class="cta__text">Open your surprise</span>
             <span class="cta__icon" aria-hidden="true">
               <svg class="cta__icon-svg cta__icon-svg--arrow" viewBox="0 0 24 24" fill="none"><path d="M4.5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <svg class="cta__icon-svg cta__icon-svg--lock" viewBox="0 0 24 24" fill="none"><rect x="5.5" y="10" width="13" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="14.5" r="1" fill="currentColor"/><path d="M12 15.5v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </span>
-          </button>
-          <p class="actions__caption" id="unlock-status" data-unlock-status role="status" aria-live="polite"><span aria-hidden="true">✦</span> Unlocks at 12:00 AM · Bangladesh time</p>
+          </a>
+          <p class="actions__caption" id="unlock-status" data-unlock-status role="status" aria-live="polite"><span aria-hidden="true">✦</span> Your next birthday is on its way.</p>
         </div>
       </section>
 
@@ -104,9 +102,9 @@
           </defs>
           <circle cx="70" cy="70" r="68" fill="url(#seal-fill)" stroke="#e9c98d" stroke-opacity=".45"/>
           <circle cx="70" cy="70" r="40" fill="none" stroke="#e9c98d" stroke-opacity=".35" stroke-dasharray="1.5 4" stroke-linecap="round"/>
-          <text class="seal__ring"><textPath href="#seal-ring" startOffset="0" textLength="326" lengthAdjust="spacing">OCT 15 · 2026 · A LITTLE SURPRISE ·</textPath></text>
-          <text class="seal__month" x="70" y="62" text-anchor="middle">OCT</text>
-          <text class="seal__day" x="70" y="92" text-anchor="middle">15</text>
+          <text class="seal__ring"><textPath href="#seal-ring" startOffset="0" textLength="326" lengthAdjust="spacing">JUN 25 · A LITTLE SURPRISE ·</textPath></text>
+          <text class="seal__month" x="70" y="62" text-anchor="middle">JUN</text>
+          <text class="seal__day" x="70" y="92" text-anchor="middle">25</text>
         </svg>
 
         <p class="stage__caption" aria-hidden="true"><span></span>The wait is part of the magic<span></span></p>

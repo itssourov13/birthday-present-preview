@@ -1,6 +1,8 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { BIRTHDAY_COUNTDOWN_CONFIG } from "../site/assets/countdown-config.js";
+import { isValidTimeZone, parseBirthDate } from "../site/assets/birthday-date-utils.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -56,6 +58,15 @@ async function copyAsset(roots, requestedName, destination) {
   return { source: path.relative(ROOT, source), destination: path.relative(DIST, destination) };
 }
 
+const configuredBirthDate = parseBirthDate(BIRTHDAY_COUNTDOWN_CONFIG.birthDate);
+if (!configuredBirthDate) fail("Invalid birthDate in site/assets/countdown-config.js; expected a valid YYYY-MM-DD date.");
+if (!isValidTimeZone(BIRTHDAY_COUNTDOWN_CONFIG.timeZone)) {
+  fail("Invalid timeZone in site/assets/countdown-config.js; expected an IANA time-zone identifier.");
+}
+if (typeof BIRTHDAY_COUNTDOWN_CONFIG.timeZoneLabel !== "string" || !BIRTHDAY_COUNTDOWN_CONFIG.timeZoneLabel.trim()) {
+  fail("timeZoneLabel in site/assets/countdown-config.js must be a non-empty string.");
+}
+
 await rm(DIST, { recursive: true, force: true });
 await mkdir(DIST, { recursive: true });
 
@@ -63,14 +74,8 @@ let html = await readFile(HTML_SOURCE, "utf8");
 if (!html.includes("A surprise awaits you")) fail("Recovered HTML does not contain the expected opening screen.");
 if (!html.includes("preview")) fail("Recovered HTML does not appear to be the /preview route.");
 
-// Inject a small, synchronous client-side release guard into generated output only.
+// The release-date redirect was intentionally removed: the preview is always accessible.
 // The recovered source capture under reference/ remains byte-for-byte untouched.
-const previewGuardTag = '<script src="/assets/countdown-config.js"></script>';
-if (html.includes(previewGuardTag)) fail("Recovered HTML unexpectedly already contains the countdown release guard.");
-const headOpening = /<head\b[^>]*>/i.exec(html);
-if (!headOpening) fail("Recovered preview HTML is missing its head element; cannot safely add the release guard.");
-const guardInsertAt = headOpening.index + headOpening[0].length;
-html = html.slice(0, guardInsertAt) + "\n" + previewGuardTag + html.slice(guardInsertAt);
 await writeFile(path.join(DIST, "preview.html"), html);
 
 const chunkNames = new Set();
@@ -84,22 +89,45 @@ if (cssNames.length !== 2) fail("Expected 2 live-linked stylesheets; found " + c
 
 const copied = [];
 const chunkDestination = path.join(DIST, "_next/static/chunks");
+let configuredBirthDateReplacements = 0;
 for (const name of [...jsNames, ...cssNames]) {
   const roots = name.endsWith(".js") ? [BUNDLE_SOURCE] : [PUBLIC_SOURCE];
   const dest = path.join(chunkDestination, name);
   const record = await copyAsset(roots, name, dest);
 
-  // Route the recovered Home control to this project's new countdown homepage.
-  if (name === "44irkf401yrm6.js") {
+  if (name.endsWith(".js")) {
     let code = await readFile(dest, "utf8");
-    const homeNeedle = '"/?showHome=1"';
-    const occurrences = code.split(homeNeedle).length - 1;
-    if (occurrences !== 1) fail("Expected one recovered Home-route reference; found " + occurrences + ".");
-    code = code.replace(homeNeedle, '"/"');
-    await writeFile(dest, code);
-    record.homeNavigation = "/";
+    let changed = false;
+
+    // Configure only the generated bundle copy; forensic/source captures remain untouched.
+    const birthdayDatePattern = /\bbirthDate\s*:\s*"\d{4}-\d{2}-\d{2}"/g;
+    const birthdayDateMatches = [...code.matchAll(birthdayDatePattern)];
+    if (birthdayDateMatches.length > 0) {
+      if (birthdayDateMatches.length !== 1 || configuredBirthDateReplacements !== 0) {
+        fail("Expected exactly one compiled default birthDate field; found an ambiguous match.");
+      }
+      code = code.replace(birthdayDatePattern, 'birthDate: "' + BIRTHDAY_COUNTDOWN_CONFIG.birthDate + '"');
+      configuredBirthDateReplacements += 1;
+      record.configuredBirthDate = BIRTHDAY_COUNTDOWN_CONFIG.birthDate;
+      changed = true;
+    }
+
+    // Route the recovered Home control to this project's new countdown homepage.
+    if (name === "44irkf401yrm6.js") {
+      const homeNeedle = '"/?showHome=1"';
+      const occurrences = code.split(homeNeedle).length - 1;
+      if (occurrences !== 1) fail("Expected one recovered Home-route reference; found " + occurrences + ".");
+      code = code.replace(homeNeedle, '"/"');
+      record.homeNavigation = "/";
+      changed = true;
+    }
+
+    if (changed) await writeFile(dest, code);
   }
   copied.push(record);
+}
+if (configuredBirthDateReplacements !== 1) {
+  fail("Expected exactly one compiled default birthDate field; found " + configuredBirthDateReplacements + ".");
 }
 
 const fontNames = new Set();
@@ -165,7 +193,7 @@ const manifest = {
   homepageStylesheet: "/countdown.css",
   homepageScript: "/assets/countdown.js",
   countdownConfig: "/assets/countdown-config.js",
-  previewGuard: "/assets/countdown-config.js",
+  birthdayDateUtils: "/assets/birthday-date-utils.js",
   route: "/preview",
   output: "preview.html",
   jsChunks: jsNames.length,
@@ -187,5 +215,5 @@ console.log("  WOFF2 dependencies: " + fontNames.size);
 console.log("  Root logos/icons/manifest and journey media: " + rootAssetNames.length);
 console.log("  Total inventoried first-party paths: " + manifest.packagedFirstPartyResources);
 console.log("  Countdown UI assets (SVG, fonts and licences): " + countdownUiFiles.length);
-console.log("  Homepage: / (live countdown with configured preview release gate)");
+console.log("  Homepage: / (recurring birthday countdown; preview always accessible)");
 console.log("  Birthday experience: /preview");

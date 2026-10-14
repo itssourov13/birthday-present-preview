@@ -134,14 +134,6 @@ h1 em { font-style: italic; font-weight: 500; padding-right: .06em;
 .cta__text { font-size: 16px; font-weight: 500; letter-spacing: .02em; }
 .cta__icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #2a1220; color: var(--gold); transition: transform .3s var(--ease); }
 .cta__icon svg { width: 20px; height: 20px; }
-.cta__icon-svg--lock { display: none; }
-.cta:disabled .cta__icon-svg--arrow { display: none; }
-.cta:disabled .cta__icon-svg--lock { display: block; }
-.cta:disabled {
-  opacity: .72; filter: saturate(.76); cursor: not-allowed;
-  box-shadow: 0 7px 20px rgba(207, 161, 90, .12), 0 0 0 5px rgba(233, 201, 141, .035), inset 0 1px 0 rgba(255, 255, 255, .42);
-}
-.cta:disabled::before { display: none; }
 @media (hover: hover) and (pointer: fine) {
   .cta:not(:disabled):hover { transform: translateY(-2px); filter: brightness(1.04); box-shadow: 0 16px 40px rgba(207, 161, 90, .38), 0 0 0 8px rgba(233, 201, 141, .09), inset 0 1px 0 rgba(255, 255, 255, .7), inset 0 -2px 0 rgba(140, 90, 30, .18); }
   .cta:not(:disabled):hover::before { transform: translateX(120%); }

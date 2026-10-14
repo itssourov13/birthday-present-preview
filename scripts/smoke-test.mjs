@@ -4,10 +4,67 @@ import { once } from "node:events";
 import { readFile, stat } from "node:fs/promises";
 import net from "node:net";
 import path from "node:path";
+import { BIRTHDAY_COUNTDOWN_CONFIG } from "../site/assets/countdown-config.js";
+import { getNextBirthdayTarget, isValidTimeZone, parseBirthDate } from "../site/assets/birthday-date-utils.js";
 import { setTimeout as delay } from "node:timers/promises";
 
 const ROOT = process.cwd();
 const DIST = path.join(ROOT, "dist");
+
+// Date math is tested against fixed instants to cover annual rollover deterministically.
+assert.deepEqual(parseBirthDate("2007-06-25"), { year: 2007, month: 6, day: 25 });
+assert.deepEqual(parseBirthDate("2004-02-29"), { year: 2004, month: 2, day: 29 });
+assert.equal(parseBirthDate("2023-02-29"), null, "Invalid calendar dates must be rejected.");
+assert.equal(parseBirthDate("2007-6-25"), null, "Birthday config must use strict YYYY-MM-DD format.");
+assert.equal(isValidTimeZone("Asia/Dhaka"), true);
+assert.equal(isValidTimeZone("Not/A-Timezone"), false);
+
+const beforeBirthday = getNextBirthdayTarget(
+  "2007-06-25", Date.parse("2026-10-14T12:00:00+06:00"), "Asia/Dhaka"
+);
+assert.equal(beforeBirthday.year, 2027);
+assert.equal(beforeBirthday.month, 6);
+assert.equal(beforeBirthday.day, 25);
+assert.equal(beforeBirthday.isBirthdayToday, false);
+assert.equal(beforeBirthday.targetAt, Date.parse("2027-06-24T18:00:00.000Z"));
+
+const onBirthday = getNextBirthdayTarget(
+  "2007-06-25", Date.parse("2027-06-25T12:00:00+06:00"), "Asia/Dhaka"
+);
+assert.equal(onBirthday.isBirthdayToday, true, "Birthday state must persist for the complete local calendar day.");
+assert.equal(onBirthday.targetAt, Date.parse("2027-06-24T18:00:00.000Z"));
+
+const afterBirthday = getNextBirthdayTarget(
+  "2007-06-25", Date.parse("2027-06-26T00:01:00+06:00"), "Asia/Dhaka"
+);
+assert.deepEqual(
+  { year: afterBirthday.year, month: afterBirthday.month, day: afterBirthday.day },
+  { year: 2028, month: 6, day: 25 },
+  "After birthday midnight, the target must roll to the next year automatically."
+);
+
+const timezoneBoundaryDhaka = getNextBirthdayTarget(
+  "2007-06-25", Date.parse("2027-06-25T00:30:00Z"), "Asia/Dhaka"
+);
+const timezoneBoundaryNewYork = getNextBirthdayTarget(
+  "2007-06-25", Date.parse("2027-06-25T00:30:00Z"), "America/New_York"
+);
+assert.equal(timezoneBoundaryDhaka.isBirthdayToday, true);
+assert.equal(timezoneBoundaryNewYork.isBirthdayToday, false,
+  "The birthday day-state must follow the configured time zone, not the visitor device zone.");
+assert.equal(timezoneBoundaryNewYork.targetAt, Date.parse("2027-06-25T04:00:00Z"));
+
+const leapBirthday = getNextBirthdayTarget(
+  "2004-02-29", Date.parse("2025-02-28T12:00:00+06:00"), "Asia/Dhaka"
+);
+assert.deepEqual(
+  { year: leapBirthday.year, month: leapBirthday.month, day: leapBirthday.day },
+  { year: 2025, month: 3, day: 1 },
+  "February 29 birthdays use March 1 in non-leap years, matching Date's existing rollover behavior."
+);
+assert.equal(getNextBirthdayTarget("invalid", Date.now(), "Asia/Dhaka"), null);
+assert.equal(getNextBirthdayTarget("2007-06-25", Date.now(), "Not/A-Timezone"), null);
+assert.ok(parseBirthDate(BIRTHDAY_COUNTDOWN_CONFIG.birthDate), "The configured birthday must be a valid date.");
 const html = await readFile(path.join(DIST, "preview.html"), "utf8");
 const homepage = await readFile(path.join(DIST, "index.html"), "utf8");
 const homepageCss = await readFile(path.join(DIST, "countdown.css"), "utf8");
@@ -16,15 +73,17 @@ const manifest = JSON.parse(await readFile(path.join(DIST, "build-manifest.json"
 assert.ok(homepage.includes("Some moments"));
 assert.ok(homepage.includes("<title>A Little Surprise</title>"));
 assert.ok(homepage.includes('href="/countdown.css"'));
-assert.ok(homepage.includes('data-preview-href="/preview"'), "The unlock button should keep the same-domain preview destination.");
-assert.ok(homepage.includes('cta__icon-svg--lock'), "The locked CTA should communicate its disabled state with a lock icon.");
-assert.ok(homepage.includes('Unlocks at 12:00 AM · Bangladesh time'));
-assert.ok(homepage.includes('src="/assets/countdown-config.js"'));
-assert.ok(homepage.includes('src="/assets/countdown.js"'));
+assert.ok(homepage.includes('href="/preview"'), "The always-enabled CTA should link directly to the same-domain preview.");
+assert.ok(!homepage.includes('cta__icon-svg--lock'), "The countdown CTA must not show a lock icon.");
+assert.ok(homepage.includes('Open your surprise'));
+assert.ok(homepage.includes('Your next birthday is on its way.'));
+assert.ok(homepage.includes('<script type="module" src="/assets/countdown.js"></script>'));
+assert.ok(!homepage.includes('src="/assets/countdown-config.js"'), "The countdown config is imported as a module, not loaded as a redirect script.");
 assert.ok(homepage.includes('data-countdown'));
 assert.ok(homepage.includes('data-countdown-value="days"'));
 assert.ok(homepage.includes('role="timer"') && homepage.includes('aria-live="off"'));
-assert.ok(homepage.includes('disabled data-unlock-button'), "Preview navigation must remain disabled before the unlock time.");
+assert.ok(homepage.includes('data-unlock-button'));
+assert.ok(!/\bdisabled\b[^>]*data-unlock-button|data-unlock-button[^>]*\bdisabled\b/.test(homepage), "The preview CTA must never be disabled by the countdown.");
 assert.ok(homepage.includes('class="stage__arch stage__arch--outer"'));
 assert.ok(homepage.includes('class="stage__gift" src="assets/gift.svg"'));
 assert.ok(homepage.includes('class="stage__seal"'));
@@ -60,17 +119,17 @@ assert.match(homepageCss, /@keyframes float \{[\s\S]*?transform: translateX\(-50
 assert.match(homepageCss, /\.intro \{[\s\S]*?animation: rise \.85s var\(--ease\) \.2s both;/);
 assert.ok(homepageCss.includes('.stage__gift { --gift-float-offset: -5px; animation: float 8.5s ease-in-out infinite; filter: none; transform: translateX(-50%); }'));
 assert.ok(homepageCss.includes('@media (prefers-reduced-motion: reduce)'));
-assert.match(homepageCss, /\.cta:disabled \{[\s\S]*?cursor: not-allowed;/);
-assert.ok(homepageCss.includes('.cta:not(:disabled):hover'), "Disabled Continue must not run active hover effects.");
+assert.ok(!homepageCss.includes(".cta:disabled"), "The visual lock/disabled state must be removed.");
+assert.ok(homepageCss.includes('.cta:not(:disabled):hover'), "The always-enabled CTA should retain hover polish.");
 assert.ok(homepageCss.includes('font-family: "Lora"'));
 assert.equal(manifest.homepage, "/");
 assert.equal(manifest.homeNavigation, "/");
-assert.equal(manifest.countdownUiAssets, 13);
+assert.equal(manifest.countdownUiAssets, 14);
 assert.equal(manifest.homepageScript, "/assets/countdown.js");
 assert.equal(manifest.countdownConfig, "/assets/countdown-config.js");
-assert.equal(manifest.previewGuard, "/assets/countdown-config.js");
-assert.ok(html.includes('<script src="/assets/countdown-config.js"></script>'), "Generated /preview output must receive the client-side date gate.");
-assert.ok(html.indexOf('<script src="/assets/countdown-config.js"></script>') < html.indexOf('/_next/static/chunks/'), "The release guard must precede recovered app scripts.");
+assert.equal(manifest.birthdayDateUtils, "/assets/birthday-date-utils.js");
+assert.ok(!Object.hasOwn(manifest, "previewGuard"), "The obsolete release guard must not appear in the build manifest.");
+assert.ok(!html.includes('<script src="/assets/countdown-config.js"></script>'), "Generated /preview output must not inject a date-based redirect.");
 assert.match(html, /A surprise awaits you/);
 assert.match(html, /Tap the gift to open/);
 assert.equal(manifest.jsChunks, 12);
@@ -88,6 +147,7 @@ const countdownUiFiles = [
   "fonts/Poppins-Medium.woff",
   "fonts/LICENSES.txt",
   "countdown-config.js",
+  "birthday-date-utils.js",
   "countdown.js",
   "images/moonlit-garden-768.webp",
   "images/moonlit-garden.webp",
@@ -97,15 +157,18 @@ const countdownUiFiles = [
 for (const name of countdownUiFiles) await stat(path.join(DIST, "assets", name));
 const countdownConfig = await readFile(path.join(DIST, "assets/countdown-config.js"), "utf8");
 const countdownScript = await readFile(path.join(DIST, "assets/countdown.js"), "utf8");
-assert.ok(countdownConfig.includes('targetISO: "2026-10-15T00:00:00+06:00"'));
-assert.ok(countdownConfig.includes('timeZone: "Asia/Dhaka"'));
-assert.ok(countdownConfig.includes('timeZoneLabel: "Bangladesh time"'));
-assert.ok(countdownConfig.includes('window.location.pathname.replace(/\\/+$/, "")'), "The preview route should normalize trailing slashes.");
-assert.ok(countdownConfig.includes('currentPath === `${config.previewPath}.html`'), "The direct /preview.html alias should share the release guard.");
-assert.ok(countdownConfig.includes('window.location.replace(config.homePath)'));
+assert.ok(countdownConfig.includes('birthDate: "' + BIRTHDAY_COUNTDOWN_CONFIG.birthDate + '"'));
+assert.ok(countdownConfig.includes('timeZone: "' + BIRTHDAY_COUNTDOWN_CONFIG.timeZone + '"'));
+assert.ok(countdownConfig.includes('timeZoneLabel: "' + BIRTHDAY_COUNTDOWN_CONFIG.timeZoneLabel + '"'));
+assert.ok(countdownConfig.includes('export const BIRTHDAY_COUNTDOWN_CONFIG'));
+assert.ok(countdownScript.includes('getNextBirthdayTarget'), "The timer must calculate the next recurring birthday.");
 assert.ok(countdownScript.includes('Date.now()'), "The timer should calculate from the absolute target instead of decrementing stored digits.");
 assert.ok(countdownScript.includes('visibilitychange'), "The timer should resync when the document becomes visible again.");
-assert.ok(countdownScript.includes('unlockButton.disabled = !unlocked'));
+assert.ok(!countdownScript.includes('.disabled'), "The countdown script must not disable the preview link.");
+assert.ok(!countdownScript.includes('window.location.replace'), "Countdown code must not redirect visitors away from the preview.");
+const dateUtils = await readFile(path.join(DIST, "assets/birthday-date-utils.js"), "utf8");
+assert.ok(dateUtils.includes('function annualBirthdayDate'));
+assert.ok(dateUtils.includes('export function getNextBirthdayTarget'));
 const mobileInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden-768.webp"));
 const desktopInterludeImage = await stat(path.join(DIST, "assets/images/moonlit-garden.webp"));
 assert.ok(mobileInterludeImage.size < 60_000, "The mobile image variant should stay below 60 KB.");
@@ -121,6 +184,18 @@ const chunkNames = new Set(
 for (const name of chunkNames) await stat(path.join(DIST, "_next/static/chunks", name));
 assert.equal([...chunkNames].filter((name) => name.endsWith(".js")).length, 12);
 assert.equal([...chunkNames].filter((name) => name.endsWith(".css")).length, 2);
+
+const generatedBirthdayDates = [];
+for (const name of chunkNames) {
+  if (!name.endsWith(".js")) continue;
+  const code = await readFile(path.join(DIST, "_next/static/chunks", name), "utf8");
+  for (const match of code.matchAll(/\bbirthDate\s*:\s*"([^"]+)"/g)) generatedBirthdayDates.push(match[1]);
+}
+assert.deepEqual(generatedBirthdayDates, [BIRTHDAY_COUNTDOWN_CONFIG.birthDate],
+  "The built birthday journey must use the single shared configurable birthDate.");
+const originalBundle = await readFile(path.join(ROOT, "source/raw-bundles/7640d6d361_3z5ozuetb4fvu.js"), "utf8");
+assert.ok(originalBundle.includes('birthDate:"2007-06-25"'),
+  "The original recovered source bundle must remain byte-for-byte unmodified.");
 
 const fonts = new Set();
 for (const match of html.matchAll(/\/_next\/static\/media\/([^"'?#]+\.woff2)/g)) fonts.add(match[1]);
@@ -200,15 +275,20 @@ try {
   assert.equal(homeCssResponse.status, 200);
   assert.match(homeCssResponse.headers.get("content-type") || "", /text\/css/);
 
-  const previewResponse = await fetch(origin + "/preview");
-  assert.equal(previewResponse.status, 200);
+  const previewResponse = await fetch(origin + "/preview", { redirect: "manual" });
+  assert.equal(previewResponse.status, 200, "The preview route must respond directly instead of redirecting based on a date.");
+  assert.equal(previewResponse.headers.get("location"), null);
   assert.match(previewResponse.headers.get("content-type") || "", /text\/html/);
   const previewSlashResponse = await fetch(origin + "/preview/");
-  assert.equal(previewSlashResponse.status, 200, "The trailing-slash preview alias should still serve the guarded capture.");
-  assert.ok((await previewSlashResponse.text()).includes('<script src="/assets/countdown-config.js"></script>'));
+  assert.equal(previewSlashResponse.status, 200, "The trailing-slash preview alias should remain directly accessible.");
+  const previewSlashHtml = await previewSlashResponse.text();
+  assert.match(previewSlashHtml, /A surprise awaits you/);
+  assert.ok(!previewSlashHtml.includes('<script src="/assets/countdown-config.js"></script>'), "The trailing-slash preview must not have a date gate.");
   const previewHtmlResponse = await fetch(origin + "/preview.html");
-  assert.equal(previewHtmlResponse.status, 200, "The direct static HTML alias should receive the same release guard.");
-  assert.ok((await previewHtmlResponse.text()).includes('<script src="/assets/countdown-config.js"></script>'));
+  assert.equal(previewHtmlResponse.status, 200, "The direct static HTML alias should remain accessible.");
+  const directPreviewHtml = await previewHtmlResponse.text();
+  assert.match(directPreviewHtml, /A surprise awaits you/);
+  assert.ok(!directPreviewHtml.includes('<script src="/assets/countdown-config.js"></script>'), "The static HTML alias must not have a date gate.");
 
   const resources = [
     ["/_next/static/chunks/44irkf401yrm6.js", /javascript/],
@@ -218,6 +298,7 @@ try {
     ["/song.mp3", /audio\/mpeg/],
     ["/assets/gift.svg", /image\/svg\+xml/],
     ["/assets/countdown-config.js", /javascript/],
+    ["/assets/birthday-date-utils.js", /javascript/],
     ["/assets/countdown.js", /javascript/],
     ["/assets/images/moonlit-garden-768.webp", /image\/webp/],
     ["/assets/images/moonlit-garden.webp", /image\/webp/],
@@ -250,7 +331,7 @@ try {
   if (server.exitCode === null) server.kill("SIGKILL");
 }
 
-console.log("PASS: live countdown, timestamp-based UI unlock, and generated preview route guard.");
+console.log("PASS: recurring birthday countdown, event-day state, timezone math, and automatic yearly rollover.");
 console.log("PASS: countdown UI, responsive/reduced-motion styles, and lazy responsive homepage images.");
 console.log("PASS: bundled SVG/fonts/licence/WebP assets and same-domain Continue navigation.");
 console.log("PASS: recovered birthday HTML, all 50 inventoried dependencies, and preview route.");

@@ -18,7 +18,17 @@ npm run build
 npm run start
 ```
 
-Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. The live countdown target is configured in `site/assets/countdown-config.js` as an explicit ISO timestamp. Current target: October 15, 2026 at 00:00 Bangladesh time (UTC+06:00). The Continue button and a lightweight generated-output guard for `/preview` stay locked until that timestamp. The guard is client-side UX, not server-side access security. To use another port, start the server with `PORT=4180 npm run start`.
+Open [http://127.0.0.1:4179/](http://127.0.0.1:4179/) for the countdown homepage or [http://127.0.0.1:4179/preview](http://127.0.0.1:4179/preview) for the recovered birthday experience. The preview is accessible at any time; the countdown never locks the Continue button or redirects visitors away from `/preview`.
+
+### Customize the birthday
+
+The default birthday is `2007-06-25`, configured in one place: `site/assets/countdown-config.js`. Change the `birthDate` value to a valid `YYYY-MM-DD` date, then run `npm test` and deploy the resulting build. The build validates the date and syncs it into the generated birthday journey, so the countdown and recovered journey use the same configured date. The original recovered bundles and forensic captures remain unchanged.
+
+The countdown uses the configured date's month and day to select the next birthday in the configured time zone. The birth year is retained in the recovered journey for age calculation. It counts down to local midnight, stays at zero throughout the birthday, then automatically advances to the next year's birthday after that local calendar day ends. No annual manual date update is needed.
+
+The default time zone is `Asia/Dhaka` with the label `Bangladesh time`. When customizing the project for another location, update `timeZone` and `timeZoneLabel` in the same config file. February 29 birthdays fall on March 1 in non-leap years, matching the recovered journey's date rollover behavior.
+
+To use another local port, start the server with `PORT=4180 npm run start`.
 
 Run the build and smoke tests together with:
 
@@ -48,7 +58,7 @@ Import the repository into Vercel and keep the included `vercel.json` settings: 
 
 ## Important notes
 
-This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The recovered experience's Home control now returns to this project's countdown homepage. The homepage countdown and client-side preview-release gate now use the same explicit ISO timestamp in `site/assets/countdown-config.js`; confirm the intended unlock time before a real release. The guard improves the visitor flow but is not a security boundary because the deployment is static. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
+This is a **compiled production recovery**, not the original uncompiled React/TypeScript source. No source maps or private backend were recovered; arbitrary builder-created journeys and uploaded media are outside this package. The recovered experience's Home control now returns to this project's countdown homepage. The birthday config is applied to the generated preview bundle at build time; original captures and raw bundles are preserved for forensic reference. Before deploying on another domain, review the captured HTML's analytics and SEO/social metadata, confirm permission to republish the recovered code and assets, and check the limitations in the [handoff](HANDOFF.md).
 
 ## Integrity check
 
