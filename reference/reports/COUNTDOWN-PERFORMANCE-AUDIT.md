@@ -5,7 +5,7 @@
 
 ## Root-cause assessment
 
-The countdown page is a static HTML/CSS composition; the countdown values are still visual placeholders and there is no client-side timer loop. The primary code-level cost candidates were decorative CSS effects rather than application JavaScript:
+Historical baseline (before the birthday countdown was implemented): the countdown values were static placeholders and there was no client-side timer loop. The primary code-level cost candidates at that time were decorative CSS effects rather than application JavaScript. The current recurring countdown implementation is documented in `README.md` and `HANDOFF.md`; this report remains an audit of the earlier mobile-performance pass.
 
 - `.atmosphere__grain` uses an inline SVG `feTurbulence` filter at three octaves, then applies `mix-blend-mode` across a fixed full-viewport layer. This texture is decorative and can increase rasterization/compositing work on mobile GPUs.
 - `.plate` combines `backdrop-filter: blur(14px)` with a `rise` transform animation. Backdrop sampling while the card is moving can be disproportionately expensive on lower-power mobile devices.
@@ -48,4 +48,4 @@ The changes do not add JavaScript, libraries, timers, or external network reques
 
 ## Follow-up boundaries
 
-The displayed time is not yet a live countdown and the `/preview` journey is still reachable via Continue for testing. Countdown math, target-date unlock gating, and production access policy are separate functional work and were not changed by this performance pass.
+At the time of this performance pass, the displayed time was not yet a live countdown and the `/preview` journey remained reachable via Continue for testing. The recurring birthday countdown was implemented later; the current behavior and configuration are documented in `README.md` and `HANDOFF.md`.
